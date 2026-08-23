@@ -2773,3 +2773,876 @@ p {
         line-height: 1.45;
     }
 }
+
+/* =========================================================
+   24. FINAL TEXT + BACKGROUND + IMAGE FIX
+   ปรับให้อ่านง่าย / ไม่ติดขอบ / รูปไม่ใหญ่เกิน
+   ========================================================= */
+
+
+/* =========================================================
+   01. พื้นฐานของหน้าเว็บ
+   ========================================================= */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        "Noto Sans Thai",
+        "Segoe UI",
+        Tahoma,
+        sans-serif;
+
+    /*
+       พื้นหลังชมพูแดงแบบนุ่ม ๆ
+       ไม่ทำให้ตัวหนังสืออ่านยาก
+    */
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f4 0%,
+            #ffe4eb 45%,
+            #fff7f9 100%
+        );
+
+    color: var(--text);
+
+    font-size: 16px;
+
+    line-height: 1.8;
+
+    letter-spacing: 0.01em;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================================================
+   02. ขอบเนื้อหาทุกหน้า
+   ========================================================= */
+
+.container {
+    width: calc(100% - 64px);
+
+    max-width: 1180px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 0;
+    padding-right: 0;
+
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   03. Section
+   ========================================================= */
+
+.section {
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+
+
+/* ทำให้แต่ละส่วนมีพื้นหลังอ่านง่าย */
+.intro-section,
+.cta-section {
+    background: rgba(255, 255, 255, 0.82);
+}
+
+
+/* =========================================================
+   04. ตัวหนังสือทั่วไป
+   ========================================================= */
+
+p {
+    margin-top: 0;
+
+    margin-bottom: 16px;
+
+    line-height: 1.85;
+
+    font-size: 0.98rem;
+}
+
+
+/* หัวข้อทั้งหมดไม่ให้ใหญ่เกินไป */
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+
+    line-height: 1.4;
+
+    letter-spacing: -0.015em;
+}
+
+
+/* =========================================================
+   05. SECTION HEADING
+   ========================================================= */
+
+.section-heading {
+    max-width: 700px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-bottom: 45px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+
+    box-sizing: border-box;
+}
+
+.section-heading h2 {
+    font-size:
+        clamp(
+            1.8rem,
+            4vw,
+            2.7rem
+        );
+
+    line-height: 1.35;
+
+    margin-bottom: 16px;
+}
+
+.section-heading > p:last-child {
+    max-width: 650px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    color: var(--text-soft);
+
+    font-size: 0.98rem;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   06. HERO
+   ========================================================= */
+
+.hero {
+    background:
+        radial-gradient(
+            circle at 85% 15%,
+            #ffd6e2 0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 10% 85%,
+            #ffdfe3 0,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #fff7f9 0%,
+            #ffe8ef 100%
+        );
+}
+
+
+/* ลดขนาดหัวข้อ Hero */
+
+.hero h1 {
+    max-width: 650px;
+
+    font-size:
+        clamp(
+            2.5rem,
+            6vw,
+            4.7rem
+        );
+
+    line-height: 1.15;
+
+    letter-spacing: -0.035em;
+
+    margin-bottom: 22px;
+}
+
+
+/* ข้อความใต้หัวข้อ */
+
+.hero-description {
+    max-width: 560px;
+
+    color: var(--text-soft);
+
+    font-size: 1rem;
+
+    line-height: 1.9;
+
+    margin-bottom: 28px;
+}
+
+
+/* เนื้อหา Hero ไม่ให้ชิดขอบ */
+
+.hero-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+
+/* =========================================================
+   07. NAVIGATION
+   ========================================================= */
+
+.navbar {
+    width: calc(100% - 64px);
+
+    max-width: 1180px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+/* เมนูไม่ให้ตัวหนังสือใหญ่ */
+
+.nav-links a {
+    font-size: 0.88rem;
+
+    padding: 9px 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   08. FEATURE CARD
+   ========================================================= */
+
+.feature-card {
+    padding: 28px;
+}
+
+.feature-card h3 {
+    font-size: 1.2rem;
+
+    line-height: 1.45;
+
+    margin-bottom: 10px;
+}
+
+.feature-card p {
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   09. CTA
+   ========================================================= */
+
+.cta-card {
+    padding: 45px;
+
+    box-sizing: border-box;
+}
+
+.cta-card h2 {
+    font-size:
+        clamp(
+            1.6rem,
+            3vw,
+            2.3rem
+        );
+
+    line-height: 1.4;
+}
+
+.cta-card p {
+    font-size: 0.95rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   10. PAGE HERO
+   ========================================================= */
+
+.page-hero {
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            #ffd8e4 0,
+            transparent 28%
+        ),
+        linear-gradient(
+            135deg,
+            #fff0f5,
+            #ffe5eb
+        );
+}
+
+.page-hero-content {
+    padding-top: 65px;
+    padding-bottom: 65px;
+
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.page-hero h1 {
+    font-size:
+        clamp(
+            2.5rem,
+            6vw,
+            4.3rem
+        );
+
+    line-height: 1.15;
+
+    margin-bottom: 18px;
+}
+
+.page-hero-content > p:last-child {
+    max-width: 620px;
+
+    font-size: 0.98rem;
+
+    line-height: 1.85;
+}
+
+
+/* =========================================================
+   11. PROFILE
+   รูปประวัติส่วนตัวให้เล็กลง
+   ========================================================= */
+
+.profile-layout {
+    grid-template-columns:
+        0.85fr
+        1.15fr;
+
+    gap: 65px;
+}
+
+
+/* จำกัดขนาดรูป */
+
+.profile-image-wrap {
+    width: 100%;
+
+    max-width: 360px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    padding: 15px;
+
+    box-sizing: border-box;
+}
+
+
+/* รูปจริง */
+
+.profile-image-wrap img {
+    width: 100%;
+
+    max-width: 330px;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    border-radius:
+        28px 28px 60px 28px;
+
+    box-shadow: var(--shadow-lg);
+}
+
+
+/* ตกแต่งด้านหลังรูป */
+
+.image-decoration {
+    width: 88%;
+    height: 88%;
+
+    right: 2px;
+    bottom: 2px;
+}
+
+
+/* ป้ายบนรูปไม่ให้ล้น */
+
+.image-caption {
+    right: 0;
+    top: 25px;
+
+    padding: 9px 14px;
+
+    font-size: 0.7rem;
+}
+
+
+/* หัวข้อประวัติ */
+
+.profile-info h2 {
+    font-size:
+        clamp(
+            2rem,
+            4vw,
+            3.2rem
+        );
+
+    line-height: 1.25;
+
+    margin-bottom: 18px;
+}
+
+
+/* =========================================================
+   12. ABOUT
+   ========================================================= */
+
+.about-grid {
+    gap: 65px;
+}
+
+.about-text {
+    max-width: 650px;
+}
+
+.about-text > p {
+    color: var(--text-soft);
+
+    font-size: 0.98rem;
+
+    line-height: 1.9;
+
+    margin-bottom: 17px;
+}
+
+
+/* =========================================================
+   13. FACTS
+   ========================================================= */
+
+.fact-card {
+    padding: 25px 18px;
+}
+
+.fact-card strong {
+    font-size: 0.9rem;
+}
+
+.fact-card small {
+    font-size: 0.7rem;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   14. TIMELINE
+   ========================================================= */
+
+.timeline-content {
+    padding: 24px;
+}
+
+.timeline-content h3 {
+    font-size: 1.1rem;
+
+    line-height: 1.45;
+}
+
+.timeline-content p {
+    font-size: 0.86rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   15. EDUCATION
+   ========================================================= */
+
+.education-card {
+    padding: 28px;
+}
+
+.education-card h3 {
+    font-size: 1.05rem;
+
+    line-height: 1.5;
+}
+
+.education-card p {
+    font-size: 0.9rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   16. TABLE
+   ========================================================= */
+
+th,
+td {
+    padding: 15px 20px;
+
+    line-height: 1.7;
+}
+
+th {
+    font-size: 0.8rem;
+}
+
+td {
+    font-size: 0.85rem;
+}
+
+
+/* =========================================================
+   17. HOBBY
+   ========================================================= */
+
+.hobby-card {
+    padding: 28px;
+}
+
+.hobby-card h3 {
+    font-size: 1.35rem;
+
+    line-height: 1.45;
+}
+
+.hobby-card p {
+    font-size: 0.88rem;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   18. CONTACT
+   ========================================================= */
+
+.contact-layout {
+    gap: 65px;
+}
+
+.contact-intro h2 {
+    font-size:
+        clamp(
+            2.1rem,
+            4.5vw,
+            3.5rem
+        );
+
+    line-height: 1.2;
+}
+
+.contact-intro > p:not(.section-label) {
+    font-size: 0.95rem;
+
+    line-height: 1.85;
+}
+
+.contact-card {
+    padding: 21px;
+}
+
+.contact-card strong {
+    font-size: 0.92rem;
+}
+
+.contact-card small {
+    font-size: 0.68rem;
+}
+
+
+/* =========================================================
+   19. FOOTER
+   ========================================================= */
+
+.footer {
+    padding: 50px 0 25px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #9c1745,
+            #c62848
+        );
+}
+
+.footer-content p {
+    font-size: 0.78rem;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   20. ป้องกันข้อความชนขอบในทุกองค์ประกอบ
+   ========================================================= */
+
+.feature-card,
+.education-card,
+.hobby-card,
+.contact-card,
+.contact-cta,
+.timeline-content,
+.quote-card,
+.fact-card,
+.cta-card,
+.table-wrapper {
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   21. TABLET
+   ========================================================= */
+
+@media (max-width: 950px) {
+
+    .container {
+        width: calc(100% - 50px);
+    }
+
+    .navbar {
+        width: calc(100% - 50px);
+    }
+
+    .hero-content {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+
+    .profile-image-wrap {
+        max-width: 330px;
+    }
+
+    .profile-image-wrap img {
+        max-width: 300px;
+    }
+
+    .section {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
+}
+
+
+/* =========================================================
+   22. MOBILE
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    /* ขอบซ้ายขวาของเว็บ */
+    .container {
+        width: calc(100% - 36px);
+
+        max-width: none;
+    }
+
+    .navbar {
+        width: calc(100% - 36px);
+    }
+
+
+    /* ระยะห่าง Section */
+    .section {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+
+    /* ตัวหนังสือพื้นฐาน */
+    body {
+        font-size: 15.5px;
+
+        line-height: 1.8;
+    }
+
+
+    /* หัวข้อ Section */
+    .section-heading {
+        padding-left: 4px;
+        padding-right: 4px;
+
+        margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+        font-size: 1.85rem;
+
+        line-height: 1.4;
+    }
+
+
+    /* Hero */
+    .hero {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .hero h1 {
+        font-size:
+            clamp(
+                2.35rem,
+                12vw,
+                3.5rem
+            );
+
+        line-height: 1.2;
+    }
+
+    .hero-description {
+        font-size: 0.92rem;
+
+        line-height: 1.9;
+    }
+
+
+    /* Page Hero */
+    .page-hero-content {
+        padding-top: 50px;
+        padding-bottom: 50px;
+
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .page-hero h1 {
+        font-size:
+            clamp(
+                2.3rem,
+                12vw,
+                3.5rem
+            );
+    }
+
+
+    /* =====================================================
+       รูปประวัติส่วนตัวบนมือถือ
+       ===================================================== */
+
+    .profile-image-wrap {
+        width: 100%;
+
+        max-width: 280px;
+
+        padding: 12px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .profile-image-wrap img {
+        width: 100%;
+
+        max-width: 255px;
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .image-caption {
+        right: -2px;
+
+        top: 18px;
+
+        padding: 8px 12px;
+
+        font-size: 0.65rem;
+    }
+
+
+    /* Profile text */
+    .profile-info h2 {
+        font-size: 2rem;
+
+        line-height: 1.3;
+    }
+
+
+    /* การ์ด */
+    .feature-card,
+    .education-card,
+    .hobby-card {
+        padding: 23px;
+    }
+
+
+    /* CTA */
+    .cta-card {
+        padding: 32px 23px;
+
+        border-radius:
+            28px 28px 45px 28px;
+    }
+
+    .cta-card h2 {
+        font-size: 1.65rem;
+    }
+
+
+    /* Contact */
+    .contact-card {
+        padding: 18px;
+    }
+
+
+    /* Footer */
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+
+/* =========================================================
+   23. EXTRA SMALL SCREEN
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+        width: calc(100% - 28px);
+    }
+
+    .navbar {
+        width: calc(100% - 28px);
+    }
+
+    .hero h1 {
+        font-size: 2.25rem;
+    }
+
+    .section-heading h2 {
+        font-size: 1.7rem;
+    }
+
+    .profile-image-wrap {
+        max-width: 250px;
+    }
+
+    .profile-image-wrap img {
+        max-width: 225px;
+    }
+}
