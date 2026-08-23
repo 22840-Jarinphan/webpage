@@ -2640,3 +2640,136 @@ tr:last-child td {
     }
 }
 ```
+
+/* =========================================
+   ปรับระยะขอบและตัวหนังสือให้อ่านง่าย
+   ========================================= */
+
+/* จำกัดความกว้างเนื้อหาและเว้นขอบซ้าย-ขวา */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-left: 28px;
+    padding-right: 28px;
+    box-sizing: border-box;
+}
+
+/* ตัวหนังสือทั่วไป */
+body {
+    margin: 0;
+    font-family: "Noto Sans Thai", "Segoe UI", Tahoma, sans-serif;
+    line-height: 1.8;
+    letter-spacing: 0.01em;
+}
+
+/* หัวข้อ */
+h1,
+h2,
+h3 {
+    line-height: 1.35;
+    margin-top: 0;
+}
+
+/* ย่อหน้า */
+p {
+    line-height: 1.8;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+/* ข้อความส่วน Hero */
+.hero-content {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.hero-description {
+    max-width: 600px;
+    line-height: 1.9;
+    margin-bottom: 28px;
+}
+
+/* ส่วนเนื้อหาแต่ละ Section */
+.section {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* หัวข้อของ Section */
+.section-heading {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.section-heading p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* การ์ดต่าง ๆ ไม่ให้ข้อความติดขอบ */
+.card,
+.intro-card,
+.cta-card {
+    padding: 28px;
+    box-sizing: border-box;
+}
+
+/* เมนูด้านบน */
+.navbar {
+    padding-left: 28px;
+    padding-right: 28px;
+    box-sizing: border-box;
+}
+
+/* Footer */
+.footer {
+    padding-left: 28px;
+    padding-right: 28px;
+}
+
+/* =========================
+   รองรับมือถือ
+   ========================= */
+@media (max-width: 768px) {
+
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .navbar {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-content {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .section-heading {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .card,
+    .intro-card,
+    .cta-card {
+        padding: 22px;
+    }
+
+    body {
+        font-size: 16px;
+        line-height: 1.8;
+    }
+
+    h1 {
+        line-height: 1.4;
+    }
+
+    h2 {
+        line-height: 1.45;
+    }
+}
