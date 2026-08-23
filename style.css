@@ -3646,3 +3646,681 @@ td {
         max-width: 225px;
     }
 }
+
+/* =========================================================
+   24. SAKURA × HEART × KURO
+   EXTRA DECORATION SYSTEM
+   ========================================================= */
+
+/* -------------------------
+   พื้นหลังเคลื่อนไหว
+------------------------- */
+
+body {
+    position: relative;
+    background:
+        linear-gradient(
+            -45deg,
+            #fff0f5,
+            #ffdce8,
+            #ffe9ee,
+            #fff7fa,
+            #ffd5e2
+        );
+
+    background-size: 400% 400%;
+
+    animation: movingPinkBackground 15s ease infinite;
+}
+
+@keyframes movingPinkBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    25% {
+        background-position: 50% 100%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    75% {
+        background-position: 50% 0%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+/* =========================================================
+   Sakura Layer
+   ========================================================= */
+
+.sakura-container {
+    position: fixed;
+
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 999;
+
+    opacity: 0.9;
+}
+
+.sakura {
+    position: absolute;
+
+    top: -80px;
+
+    font-size: 30px;
+
+    filter:
+        drop-shadow(
+            0 4px 8px
+            rgba(216, 27, 96, 0.15)
+        );
+
+    animation:
+        sakuraFall linear infinite;
+
+    user-select: none;
+}
+
+@keyframes sakuraFall {
+
+    0% {
+        transform:
+            translate3d(0, -80px, 0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translate3d(
+                80px,
+                50vh,
+                0
+            )
+            rotate(180deg);
+    }
+
+    100% {
+        transform:
+            translate3d(
+                -120px,
+                110vh,
+                0
+            )
+            rotate(360deg);
+
+        opacity: 0.2;
+    }
+}
+
+
+/* =========================================================
+   หัวใจลอย
+   ========================================================= */
+
+.floating-hearts {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 998;
+}
+
+.heart-decoration {
+    position: absolute;
+
+    bottom: -60px;
+
+    color: #ec407a;
+
+    font-size: 28px;
+
+    filter:
+        drop-shadow(
+            0 5px 12px
+            rgba(216, 27, 96, 0.2)
+        );
+
+    animation:
+        heartFloat 8s ease-in infinite;
+}
+
+@keyframes heartFloat {
+
+    0% {
+        transform:
+            translateY(0)
+            scale(0.7)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(50px)
+            scale(1)
+            rotate(15deg);
+    }
+
+    100% {
+        transform:
+            translateY(-115vh)
+            translateX(-70px)
+            scale(1.2)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   ประกายระยิบระยับ
+   ========================================================= */
+
+.sparkle-container {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 997;
+}
+
+.sparkle {
+    position: absolute;
+
+    color: #ffffff;
+
+    font-size: 24px;
+
+    text-shadow:
+        0 0 5px #ffffff,
+        0 0 12px #ff80ab,
+        0 0 20px #ec407a;
+
+    animation:
+        sparklePulse 2s ease-in-out infinite;
+}
+
+@keyframes sparklePulse {
+
+    0%,
+    100% {
+        opacity: 0.2;
+
+        transform:
+            scale(0.5)
+            rotate(0deg);
+    }
+
+    50% {
+        opacity: 1;
+
+        transform:
+            scale(1.5)
+            rotate(180deg);
+    }
+}
+
+
+/* =========================================================
+   KURO CHARACTER
+   ใส่รูปคุโระลอยอยู่รอบเว็บไซต์
+   ========================================================= */
+
+.kuro-decoration {
+    position: fixed;
+
+    width: 90px;
+
+    height: 90px;
+
+    object-fit: contain;
+
+    pointer-events: none;
+
+    z-index: 996;
+
+    filter:
+        drop-shadow(
+            0 8px 15px
+            rgba(120, 40, 70, 0.2)
+        );
+
+    animation:
+        kuroFloat 5s ease-in-out infinite;
+}
+
+@keyframes kuroFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(-5deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(5deg);
+    }
+}
+
+
+/* ตำแหน่งตัวละคร */
+
+.kuro-one {
+    left: 2%;
+
+    top: 20%;
+}
+
+.kuro-two {
+    right: 2%;
+
+    top: 45%;
+
+    animation-delay: 1s;
+}
+
+.kuro-three {
+    left: 4%;
+
+    bottom: 12%;
+
+    animation-delay: 2s;
+}
+
+.kuro-four {
+    right: 4%;
+
+    bottom: 8%;
+
+    animation-delay: 3s;
+}
+
+
+/* =========================================================
+   เอฟเฟกต์แสงรอบเว็บไซต์
+   ========================================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+
+    height: 450px;
+
+    top: -180px;
+
+    right: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 128, 171, 0.28),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        glowMove 8s ease-in-out infinite alternate;
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 400px;
+
+    height: 400px;
+
+    left: -160px;
+
+    bottom: -150px;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(229, 57, 53, 0.18),
+            transparent 70%
+        );
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        glowMove 10s ease-in-out infinite alternate-reverse;
+}
+
+@keyframes glowMove {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(80px, 60px)
+            scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   การ์ดมีประกายเมื่อ Hover
+   ========================================================= */
+
+.feature-card,
+.education-card,
+.hobby-card,
+.fact-card,
+.contact-card,
+.timeline-content {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.feature-card::before,
+.education-card::before,
+.hobby-card::before,
+.fact-card::before,
+.contact-card::before,
+.timeline-content::before {
+    content: "✦";
+
+    position: absolute;
+
+    right: 15px;
+
+    top: 10px;
+
+    color: #ffd1df;
+
+    font-size: 22px;
+
+    opacity: 0;
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+.feature-card:hover::before,
+.education-card:hover::before,
+.hobby-card:hover::before,
+.fact-card:hover::before,
+.contact-card:hover::before,
+.timeline-content:hover::before {
+    opacity: 1;
+
+    transform:
+        scale(1.5)
+        rotate(25deg);
+}
+
+
+/* =========================================================
+   ปุ่มมีประกาย
+   ========================================================= */
+
+.btn {
+    position: relative;
+
+    overflow: hidden;
+}
+
+.btn::after {
+    content: "✦";
+
+    position: absolute;
+
+    left: -30px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(20deg);
+
+    color: rgba(255,255,255,0.8);
+
+    font-size: 18px;
+
+    transition:
+        left 0.5s ease;
+}
+
+.btn:hover::after {
+    left: calc(100% + 10px);
+}
+
+
+/* =========================================================
+   Logo หัวใจ
+   ========================================================= */
+
+.logo-mark {
+    position: relative;
+}
+
+.logo-mark::after {
+    content: "♡";
+
+    position: absolute;
+
+    right: -12px;
+
+    top: -13px;
+
+    color: #ec407a;
+
+    font-size: 18px;
+
+    animation:
+        miniHeart 2s ease-in-out infinite;
+}
+
+@keyframes miniHeart {
+
+    0%,
+    100% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+
+/* =========================================================
+   หัวข้อมีเส้นตกแต่ง
+   ========================================================= */
+
+.section-heading h2::after {
+    content: "  ✦ ♡ ✦";
+
+    display: block;
+
+    margin-top: 8px;
+
+    color: #ec407a;
+
+    font-size: 0.65rem;
+
+    letter-spacing: 0.3em;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   รูป Profile มีประกาย
+   ========================================================= */
+
+.profile-image-wrap::after {
+    content: "✦";
+
+    position: absolute;
+
+    right: -8px;
+
+    bottom: 10px;
+
+    z-index: 5;
+
+    color: #ec407a;
+
+    font-size: 28px;
+
+    text-shadow:
+        0 0 10px #ffffff,
+        0 0 18px #ff80ab;
+
+    animation:
+        sparklePulse 2s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   รูป Hover
+   ========================================================= */
+
+.profile-image-wrap img {
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+.profile-image-wrap:hover img {
+    transform:
+        scale(1.025)
+        rotate(-1deg);
+
+    filter:
+        brightness(1.04)
+        saturate(1.08);
+}
+
+
+/* =========================================================
+   ตาราง
+   ========================================================= */
+
+.table-wrapper {
+    background:
+        rgba(255,255,255,0.88);
+
+    backdrop-filter: blur(10px);
+}
+
+
+/* =========================================================
+   ลดความแรงบนมือถือ
+   ========================================================= */
+
+@media (max-width: 650px) {
+
+    .kuro-decoration {
+        width: 58px;
+        height: 58px;
+    }
+
+    .kuro-one {
+        left: 0;
+    }
+
+    .kuro-two {
+        right: 0;
+    }
+
+    .kuro-three {
+        left: 0;
+    }
+
+    .kuro-four {
+        right: 0;
+    }
+
+    .sakura {
+        font-size: 23px;
+    }
+
+    .heart-decoration {
+        font-size: 22px;
+    }
+
+    .sparkle {
+        font-size: 18px;
+    }
+
+    .section-heading h2::after {
+        font-size: 0.55rem;
+    }
+}
+
+
+/* =========================================================
+   Accessibility
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    body,
+    body::before,
+    body::after,
+    .sakura,
+    .heart-decoration,
+    .sparkle,
+    .kuro-decoration {
+        animation: none !important;
+    }
+}
