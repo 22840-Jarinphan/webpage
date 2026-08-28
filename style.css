@@ -3884,3 +3884,57 @@ footer a:hover {
         transition-duration: 0.01ms !important;
     }
 }
+/* =========================================================
+   ✨ HERO PREMIUM MOVEMENT
+   ========================================================= */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+
+/* รูปโปรไฟล์ลอยเบา ๆ */
+
+.hero-image,
+.profile-frame {
+    animation:
+        profileFloat 5s ease-in-out infinite;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.45s ease,
+        box-shadow 0.45s ease;
+}
+
+
+@keyframes profileFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-12px) rotate(1deg);
+    }
+
+}
+
+
+/* ตอนเอาเมาส์ไปวาง */
+
+.hero-image:hover,
+.profile-frame:hover {
+
+    animation-play-state: paused;
+
+    transform:
+        translateY(-10px)
+        scale(1.025)
+        rotate(-1deg);
+
+    box-shadow:
+        0 35px 90px rgba(233, 30, 99, 0.30);
+}
