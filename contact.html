@@ -11,185 +11,248 @@
 
 <body>
 
-    <!-- Sakura Background -->
-    <div class="sakura-background" aria-hidden="true">
-        <span>🌸</span>
-        <span>💗</span>
-        <span>🌸</span>
-        <span>♡</span>
-        <span>🌸</span>
-        <span>💗</span>
-    </div>
-
     <!-- Navigation -->
     <header class="site-header">
-        <nav class="navbar">
+        <nav class="navbar container">
 
             <a href="index.html" class="logo">
-                🌸 My Portfolio
+                <span class="logo-mark">M</span>
+                <span>My Portfolio</span>
             </a>
 
-            <div class="nav-menu">
+            <div class="nav-links">
                 <a href="index.html">หน้าแรก</a>
                 <a href="profile.html">ประวัติส่วนตัว</a>
                 <a href="education.html">การศึกษา</a>
                 <a href="hobby.html">งานอดิเรก</a>
-                <a href="contact.html" class="active">ติดต่อ</a>
+                <a href="contact.html" class="active" aria-current="page">
+                    ติดต่อ
+                </a>
             </div>
 
         </nav>
     </header>
 
+
     <main>
 
-        <!-- Contact Hero -->
-        <section class="contact-hero section">
+        <!-- Page Hero -->
+        <section class="page-hero contact-hero">
 
-            <div>
+            <div class="page-hero-decoration"></div>
 
-                <span class="small-label">
-                    💌 CONTACT ME
+            <div class="container page-hero-content">
+
+                <span class="section-label light">
+                    CONTACT ME
                 </span>
 
-                <h1>
-                    สามารถติดต่อฉันได้ที่
-                </h1>
+                <h1>ติดต่อฉัน</h1>
 
                 <p>
-                    หากต้องการพูดคุยหรือสอบถามข้อมูลเพิ่มเติม
-                    สามารถติดต่อผ่านช่องทางด้านล่างได้เลยค่ะ / ครับ 🌸
+                    หากต้องการพูดคุยหรือรู้จักฉันมากขึ้น
+                    สามารถติดต่อได้ตามช่องทางด้านล่าง
                 </p>
 
             </div>
 
-            <div class="contact-heart">
-                💗
+        </section>
+
+
+        <!-- Contact -->
+        <section class="section section-white">
+
+            <div class="container contact-layout">
+
+                <div class="contact-intro">
+
+                    <span class="section-label">
+                        LET'S CONNECT
+                    </span>
+
+                    <h2>
+                        สามารถติดต่อ
+                        <span>ฉันได้ที่</span>
+                    </h2>
+
+                    <p>
+                        ข้อมูลด้านล่างเป็นข้อมูลตัวอย่าง
+                        สามารถเปลี่ยนเป็นข้อมูลจริงของนักเรียน
+                        ก่อนนำเว็บไซต์ไปใช้งานได้
+                    </p>
+
+
+                    <div class="contact-social-note">
+
+                        <span class="social-note-icon">
+                            ♥
+                        </span>
+
+                        <div>
+                            <strong>
+                                ขอบคุณที่เข้าชม Portfolio
+                            </strong>
+
+                            <p>
+                                หวังว่าเว็บไซต์นี้จะช่วยให้คุณรู้จักฉันมากขึ้น
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="contact-cards">
+
+                    <a href="mailto:example@email.com" class="contact-card">
+
+                        <span class="contact-card-icon">
+                            ✉
+                        </span>
+
+                        <div>
+                            <small>EMAIL</small>
+                            <strong>
+                                example@email.com
+                            </strong>
+                            <span>
+                                ส่งอีเมลหาฉัน →
+                            </span>
+                        </div>
+
+                    </a>
+
+
+                    <div class="contact-card">
+
+                        <span class="contact-card-icon">
+                            🌐
+                        </span>
+
+                        <div>
+                            <small>WEBSITE</small>
+                            <strong>
+                                My Portfolio
+                            </strong>
+                            <span>
+                                เว็บไซต์แนะนำตัวของฉัน
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-card">
+
+                        <span class="contact-card-icon">
+                            📱
+                        </span>
+
+                        <div>
+                            <small>SOCIAL</small>
+                            <strong>
+                                [ไอจี]
+                            </strong>
+                            <span>
+                                ช่องทางติดต่อเพิ่มเติม
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="contact-card">
+
+                        <span class="contact-card-icon">
+                            📍
+                        </span>
+
+                        <div>
+                            <small>LOCATION</small>
+                            <strong>
+                                [เชียงใหม่]
+                            </strong>
+                            <span>
+                                ประเทศไทย
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
         </section>
 
-        <!-- Contact Cards -->
-        <section class="contact-section section">
-
-            <div class="contact-grid">
-
-                <article class="contact-card">
-
-                    <div class="contact-icon">
-                        📧
-                    </div>
-
-                    <div>
-                        <span>Email</span>
-                        <h2>[crinthrphrrn@gmail.com]</h2>
-                        <p>สำหรับการติดต่อเรื่องทั่วไป</p>
-
-                        <a
-                            href="mailto:example@email.com"
-                            class="contact-link"
-                        >
-                            ส่งอีเมล →
-                        </a>
-                    </div>
-
-                </article>
-
-                <article class="contact-card">
-
-                    <div class="contact-icon">
-                        🌐
-                    </div>
-
-                    <div>
-                        <span>Website</span>
-                        <h2>My Portfolio</h2>
-                        <p>เว็บไซต์แนะนำตัวของฉัน</p>
-
-                        <a
-                            href="index.html"
-                            class="contact-link"
-                        >
-                            กลับหน้าแรก →
-                        </a>
-                    </div>
-
-                </article>
-
-                <article class="contact-card">
-
-                    <div class="contact-icon">
-                        💬
-                    </div>
-
-                    <div>
-                        <span>Social / Contact</span>
-                        <h2>[ไอจี]</h2>
-                        <p>[jarinphan_59]</p>
-
-                        <a
-                            href="mailto:example@email.com"
-                            class="contact-link"
-                        >
-                            ติดต่อฉัน →
-                        </a>
-                    </div>
-
-                </article>
-
-            </div>
-
-        </section>
 
         <!-- CTA -->
-        <section class="contact-cta section">
+        <section class="section section-soft">
 
-            <div class="cta-decoration">
-                🌸
-            </div>
+            <div class="container">
 
-            <div>
+                <div class="contact-cta">
 
-                <span class="section-label">
-                    LET'S CONNECT
-                </span>
+                    <div class="cta-icon">
+                        ✦
+                    </div>
 
-                <h2>
-                    ขอบคุณที่เข้ามาเยี่ยมชม Portfolio ของฉัน 💗
-                </h2>
+                    <div>
 
-                <p>
-                    หวังว่าคุณจะได้รู้จักตัวฉัน
-                    ผ่านเรื่องราวต่าง ๆ ที่นำเสนอในเว็บไซต์นี้
-                </p>
+                        <span class="section-label">
+                            THANK YOU
+                        </span>
 
-                <a
-                    href="index.html"
-                    class="btn btn-primary"
-                >
-                    กลับไปหน้าแรก →
-                </a>
+                        <h2>
+                            ขอบคุณที่เข้าชมเว็บไซต์ของฉัน
+                        </h2>
 
-            </div>
+                        <p>
+                            สามารถกลับไปดูหน้าอื่น ๆ
+                            เพื่อทำความรู้จักฉันเพิ่มเติมได้
+                        </p>
 
-            <div class="cta-flower">
-                🌸
+                    </div>
+
+                    <a href="index.html" class="btn btn-primary">
+                        กลับหน้าแรก
+                        <span>→</span>
+                    </a>
+
+                </div>
+
             </div>
 
         </section>
 
     </main>
 
+
     <!-- Footer -->
     <footer class="site-footer">
 
-        <div class="footer-inner">
+        <div class="container footer-grid">
 
-            <div>
-                <h3>🌸 My Portfolio</h3>
-                <p>Personal Portfolio ของนักเรียน ม.3</p>
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo footer-logo">
+                    <span class="logo-mark">M</span>
+                    <span>My Portfolio</span>
+                </a>
+
+                <p>
+                    เว็บไซต์ Portfolio ของนักเรียน
+                </p>
+
             </div>
 
-            <div class="footer-links">
+            <div class="footer-info">
+                <strong>[จรินทร์พรรณ แก้วเคียงคำ]</strong>
+                <span>นักเรียนชั้น ม.3/[2]</span>
+            </div>
+
+            <div class="footer-nav">
                 <a href="index.html">หน้าแรก</a>
                 <a href="profile.html">ประวัติส่วนตัว</a>
                 <a href="education.html">การศึกษา</a>
@@ -199,8 +262,10 @@
 
         </div>
 
-        <div class="copyright">
-            © 2026 [จริน] | Made with ♡ and 🌸
+        <div class="footer-bottom container">
+            <p>
+                © 2026 My Portfolio. Created for Computer Project.
+            </p>
         </div>
 
     </footer>
