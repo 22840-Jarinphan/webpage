@@ -1,528 +1,370 @@
 <!DOCTYPE html>
 <html lang="th">
-
 <head>
     <meta charset="UTF-8">
-
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>My Portfolio | การศึกษา</title>
 
-    <link
-        rel="stylesheet"
-        href="style.css"
-    >
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-    <!-- =====================================================
-         🌸 Animated Sakura Background
-    ====================================================== -->
-
-    <div
-        class="sakura-background"
-        aria-hidden="true"
-    >
-        <span>🌸</span>
-        <span>♡</span>
-        <span>🌸</span>
-        <span>💗</span>
-        <span>🌸</span>
-        <span>♡</span>
-        <span>🌸</span>
-        <span>💗</span>
-        <span>🌸</span>
-        <span>♡</span>
-    </div>
-
-
-    <!-- =====================================================
-         💗 NAVIGATION
-    ====================================================== -->
-
+    <!-- Navigation -->
     <header class="site-header">
+        <nav class="navbar container">
 
-        <nav class="navbar">
-
-            <a
-                href="index.html"
-                class="logo"
-            >
-                🌸 My Portfolio
+            <a href="index.html" class="logo">
+                <span class="logo-mark">M</span>
+                <span>My Portfolio</span>
             </a>
 
-
-            <div class="nav-menu">
-
-                <a href="index.html">
-                    หน้าแรก
-                </a>
-
-                <a href="profile.html">
-                    ประวัติส่วนตัว
-                </a>
-
-                <a
-                    href="education.html"
-                    class="active"
-                >
+            <div class="nav-links">
+                <a href="index.html">หน้าแรก</a>
+                <a href="profile.html">ประวัติส่วนตัว</a>
+                <a href="education.html" class="active" aria-current="page">
                     การศึกษา
                 </a>
-
-                <a href="hobby.html">
-                    งานอดิเรก
-                </a>
-
-                <a href="contact.html">
-                    ติดต่อ
-                </a>
-
+                <a href="hobby.html">งานอดิเรก</a>
+                <a href="contact.html">ติดต่อ</a>
             </div>
 
         </nav>
-
     </header>
 
 
-    <!-- =====================================================
-         MAIN
-    ====================================================== -->
-
     <main>
 
+        <!-- Page Hero -->
+        <section class="page-hero">
 
-        <!-- =================================================
-             🌸 PAGE HERO
-        ================================================== -->
+            <div class="page-hero-decoration"></div>
 
-        <section class="page-hero section">
+            <div class="container page-hero-content">
 
-            <div class="page-hero-content">
-
-                <span class="small-label">
-                    🌸 MY EDUCATION
+                <span class="section-label light">
+                    MY EDUCATION
                 </span>
 
-                <h1>
-                    การศึกษา
-                </h1>
+                <h1>เส้นทางการศึกษา</h1>
 
                 <p>
-                    เส้นทางการเรียนรู้ของฉัน
-                    และประสบการณ์ที่ช่วยให้ฉันเติบโตขึ้น
+                    การเรียนรู้ในแต่ละช่วงเวลา
+                    คือส่วนหนึ่งของการเติบโตของฉัน
                 </p>
-
-            </div>
-
-
-            <div class="page-hero-decoration">
-
-                <div class="hero-flower">
-                    🌸
-                </div>
-
-                <div class="hero-heart">
-                    ♡
-                </div>
 
             </div>
 
         </section>
 
 
+        <!-- Timeline -->
+        <section class="section section-white">
 
-        <!-- =================================================
-             📚 EDUCATION TIMELINE
-        ================================================== -->
+            <div class="container">
 
-        <section class="education-timeline section">
-
-            <div class="section-heading">
-
-                <span class="section-label">
-                    💗 MY JOURNEY
-                </span>
-
-                <h2>
-                    เส้นทางการศึกษาของฉัน
-                </h2>
-
-                <p>
-                    ทุกช่วงเวลาของการเรียน
-                    ล้วนเป็นประสบการณ์ที่ช่วยให้ฉันพัฒนาตัวเอง
-                </p>
-
-            </div>
-
-
-            <div class="timeline">
-
-
-                <!-- Primary -->
-
-                <article class="timeline-item">
-
-                    <div class="timeline-dot">
-                        🌸
-                    </div>
-
-                    <div class="timeline-card">
-
-                        <span class="timeline-year">
-                            🎒 ระดับประถมศึกษา
-                        </span>
-
-                        <h3>
-                            ประถมศึกษา
-                        </h3>
-
-                        <p>
-                            ช่วงเวลาแห่งการเริ่มต้นเรียนรู้
-                            ฝึกทักษะพื้นฐาน และสร้างประสบการณ์
-                            จากการเรียนและกิจกรรมต่าง ๆ
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- Junior High -->
-
-                <article class="timeline-item">
-
-                    <div class="timeline-dot">
-                        💗
-                    </div>
-
-                    <div class="timeline-card">
-
-                        <span class="timeline-year">
-                            📚 ระดับมัธยมศึกษาตอนต้น
-                        </span>
-
-                        <h3>
-                            มัธยมศึกษาตอนต้น
-                        </h3>
-
-                        <p>
-                            ได้เรียนรู้เนื้อหาที่หลากหลายมากขึ้น
-                            พร้อมทั้งค้นหาความสนใจ
-                            และความสามารถของตัวเอง
-                        </p>
-
-                    </div>
-
-                </article>
-
-
-
-                <!-- Current -->
-
-                <article class="timeline-item current">
-
-                    <div class="timeline-dot">
-                        🎓
-                    </div>
-
-                    <div class="timeline-card">
-
-                        <span class="timeline-year">
-                            ✨ ปัจจุบัน
-                        </span>
-
-                        <h3>
-                            มัธยมศึกษาปีที่ 3
-                        </h3>
-
-                        <p>
-                            ปัจจุบันกำลังศึกษาอยู่ระดับ
-                            ชั้นมัธยมศึกษาปีที่ 3
-                            และกำลังพัฒนาความรู้
-                            เพื่อเตรียมพร้อมสำหรับอนาคต
-                        </p>
-
-                        <span class="current-badge">
-                            NOW 💗
-                        </span>
-
-                    </div>
-
-                </article>
-
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =================================================
-             💗 MY SCHOOL LIFE
-        ================================================== -->
-
-        <section class="school-life section">
-
-
-            <div class="school-life-header">
-
-                <div>
+                <div class="section-heading center">
 
                     <span class="section-label">
-                        💗 MY SCHOOL LIFE
+                        EDUCATION JOURNEY
                     </span>
 
                     <h2>
-                        เรื่องน่ารู้เกี่ยวกับการเรียนของฉัน
+                        เส้นทางการเรียนรู้
                     </h2>
 
                     <p>
-                        ข้อมูลเล็ก ๆ เกี่ยวกับโรงเรียน
-                        ระดับชั้น วิชาที่ชอบ
-                        และสิ่งที่ฉันสนใจ
+                        ตั้งแต่อดีตจนถึงปัจจุบัน
                     </p>
 
                 </div>
 
 
-                <div class="school-life-flower">
-                    🌸
+                <div class="timeline">
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            01
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-year">
+                                ประถมศึกษา
+                            </span>
+
+                            <h3>
+                                [โรงเรียนบ้านโรงวัว]
+                            </h3>
+
+                            <p>
+                                ระดับประถมศึกษา
+                                เป็นช่วงเวลาที่ได้เรียนรู้พื้นฐานต่าง ๆ
+                                และเริ่มค้นหาสิ่งที่ตัวเองสนใจ
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot">
+                            02
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-year">
+                                มัธยมศึกษาตอนต้น
+                            </span>
+
+                            <h3>
+                                [โรงเรียนจอมทอง]
+                            </h3>
+
+                            <p>
+                                ได้เรียนรู้วิชาที่หลากหลายมากขึ้น
+                                รวมถึงได้พัฒนาทักษะด้านเทคโนโลยี
+                                และการทำงานร่วมกับผู้อื่น
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="timeline-item current">
+
+                        <div class="timeline-dot">
+                            03
+                        </div>
+
+                        <div class="timeline-card">
+
+                            <span class="timeline-year">
+                                ปัจจุบัน
+                            </span>
+
+                            <h3>
+                                มัธยมศึกษาปีที่ 3
+                            </h3>
+
+                            <p>
+                                กำลังศึกษาอยู่ชั้น ม.3/[2]
+                                และกำลังเรียนรู้การสร้างเว็บไซต์
+                                สำหรับโครงงานวิชาคอมพิวเตอร์
+                            </p>
+
+                            <span class="current-badge">
+                                CURRENT
+                            </span>
+
+                        </div>
+
+                    </div>
+
                 </div>
 
             </div>
 
+        </section>
 
 
-            <!-- Information Cards -->
+        <!-- Education Highlight -->
+        <section class="section section-soft">
 
-            <div class="school-info-grid">
+            <div class="container">
+
+                <div class="section-heading center">
+
+                    <span class="section-label">
+                        MY HIGHLIGHTS
+                    </span>
+
+                    <h2>
+                        ข้อมูลด้านการศึกษา
+                    </h2>
+
+                </div>
 
 
-                <!-- School -->
+                <div class="education-highlight-grid">
 
-                <article class="school-info-card">
+                    <div class="education-highlight">
 
-                    <div class="school-icon">
-                        🏫
-                    </div>
-
-                    <div class="school-info-content">
-
-                        <span>
-                            โรงเรียน
+                        <span class="highlight-icon">
+                            🏫
                         </span>
 
-                        <h3>
-                            [โรงเรียนจอมทอง]
-                        </h3>
+                        <small>โรงเรียน</small>
 
-                        <p>
-                            โรงเรียนที่ฉันกำลังศึกษา
-                            และพัฒนาความรู้ในทุกวัน
-                        </p>
+                        <strong>
+                            [จอมทอง]
+                        </strong>
 
                     </div>
 
-                </article>
 
+                    <div class="education-highlight">
 
-
-                <!-- Class -->
-
-                <article class="school-info-card">
-
-                    <div class="school-icon">
-                        🎓
-                    </div>
-
-                    <div class="school-info-content">
-
-                        <span>
-                            ระดับชั้น
+                        <span class="highlight-icon">
+                            🎓
                         </span>
 
-                        <h3>
+                        <small>ระดับชั้น</small>
+
+                        <strong>
                             ม.3/[2]
-                        </h3>
-
-                        <p>
-                            กำลังศึกษาอยู่ในระดับ
-                            ชั้นมัธยมศึกษาปีที่ 3
-                        </p>
+                        </strong>
 
                     </div>
 
-                </article>
 
+                    <div class="education-highlight">
 
-
-                <!-- Subject -->
-
-                <article class="school-info-card">
-
-                    <div class="school-icon">
-                        📚
-                    </div>
-
-                    <div class="school-info-content">
-
-                        <span>
-                            วิชาที่ชอบ
+                        <span class="highlight-icon">
+                            📖
                         </span>
 
-                        <h3>
-                            [คณิตศาสตร์]
-                        </h3>
+                        <small>วิชาที่ชอบ</small>
 
-                        <p>
-                            วิชาที่ช่วยฝึกการคิดวิเคราะห์
-                            และการแก้ปัญหา
-                        </p>
+                        <strong>
+                            [คณิต]
+                        </strong>
 
                     </div>
 
-                </article>
 
+                    <div class="education-highlight">
 
-
-                <!-- Interest -->
-
-                <article class="school-info-card">
-
-                    <div class="school-icon">
-                        💡
-                    </div>
-
-                    <div class="school-info-content">
-
-                        <span>
-                            สิ่งที่สนใจ
+                        <span class="highlight-icon">
+                            💡
                         </span>
 
-                        <h3>
-                            [แต่งนิยาย]
-                        </h3>
+                        <small>ความสนใจ</small>
 
-                        <p>
-                            สิ่งที่ฉันสนใจและอยากพัฒนา
-                            ความสามารถให้มากขึ้น
-                        </p>
+                        <strong>
+                            [วาดรูป]
+                        </strong>
 
                     </div>
 
-                </article>
-
+                </div>
 
             </div>
 
         </section>
 
 
+        <!-- Table -->
+        <section class="section section-white">
 
-        <!-- =================================================
-             ✨ STUDY HIGHLIGHT
-        ================================================== -->
+            <div class="container">
 
-        <section class="study-highlight section">
+                <div class="section-heading">
 
-            <div class="study-highlight-text">
+                    <span class="section-label">
+                        EDUCATION RECORD
+                    </span>
 
-                <span class="section-label">
-                    🌸 KEEP LEARNING
-                </span>
+                    <h2>
+                        ประวัติการศึกษา
+                    </h2>
 
-                <h2>
-                    เรียนรู้วันนี้
-                    เพื่อสร้างอนาคตของฉัน
-                </h2>
-
-                <p>
-                    ฉันเชื่อว่าการเรียนรู้ไม่ได้เกิดขึ้น
-                    เฉพาะในห้องเรียน แต่เกิดขึ้นได้จาก
-                    ทุกประสบการณ์ที่เราได้พบเจอ
-                </p>
-
-            </div>
+                </div>
 
 
-            <div class="study-highlight-symbol">
-                💗
+                <div class="table-wrapper">
+
+                    <table class="education-table">
+
+                        <thead>
+                            <tr>
+                                <th>ระดับ</th>
+                                <th>โรงเรียน</th>
+                                <th>สถานะ</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>ประถมศึกษา</td>
+                                <td>[โรงเรียนบ้านโรงวัว]</td>
+                                <td>
+                                    <span class="status completed">
+                                        สำเร็จการศึกษา
+                                    </span>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td>มัธยมศึกษาตอนต้น</td>
+                                <td>[โรงเรียนจอมทอง]</td>
+                                <td>
+                                    <span class="status current-status">
+                                        กำลังศึกษา
+                                    </span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
             </div>
 
         </section>
-
 
     </main>
 
 
-
-    <!-- =====================================================
-         🌸 FOOTER
-    ====================================================== -->
-
+    <!-- Footer -->
     <footer class="site-footer">
 
-        <div class="footer-inner">
-
+        <div class="container footer-grid">
 
             <div class="footer-brand">
 
-                <h3>
-                    🌸 My Portfolio
-                </h3>
+                <a href="index.html" class="logo footer-logo">
+                    <span class="logo-mark">M</span>
+                    <span>My Portfolio</span>
+                </a>
 
                 <p>
-                    Personal Portfolio
-                    ของนักเรียน ม.3
+                    เว็บไซต์ Portfolio ของนักเรียน
                 </p>
 
             </div>
 
+            <div class="footer-info">
+                <strong>[จรินทร์พรรณ แก้วเคียงคำ]</strong>
+                <span>นักเรียนชั้น ม.3/[2]</span>
+            </div>
 
-            <div class="footer-links">
-
-                <a href="index.html">
-                    หน้าแรก
-                </a>
-
-                <a href="profile.html">
-                    ประวัติส่วนตัว
-                </a>
-
-                <a href="education.html">
-                    การศึกษา
-                </a>
-
-                <a href="hobby.html">
-                    งานอดิเรก
-                </a>
-
-                <a href="contact.html">
-                    ติดต่อ
-                </a>
-
+            <div class="footer-nav">
+                <a href="index.html">หน้าแรก</a>
+                <a href="profile.html">ประวัติส่วนตัว</a>
+                <a href="education.html">การศึกษา</a>
+                <a href="hobby.html">งานอดิเรก</a>
+                <a href="contact.html">ติดต่อ</a>
             </div>
 
         </div>
 
-
-        <div class="copyright">
-
-            © 2026 [จริน]
-            <span>♡</span>
-            Made with 🌸
-
+        <div class="footer-bottom container">
+            <p>
+                © 2026 My Portfolio. Created for Computer Project.
+            </p>
         </div>
 
     </footer>
 
-
 </body>
-
 </html>
