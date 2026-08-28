@@ -5045,3 +5045,91 @@ body::after {
 
 }
 ```
+/* ================= MY SCHOOL LIFE BOX ================= */
+
+.education-box{
+    background: linear-gradient(135deg,#ffffff,#fff5f8);
+    border:2px solid #ffd6e5;
+    border-radius:28px;
+    padding:35px;
+    box-shadow:0 15px 35px rgba(233,30,99,.12);
+    position:relative;
+    overflow:hidden;
+}
+
+.education-box::before{
+    content:"🌸";
+    position:absolute;
+    top:15px;
+    right:20px;
+    font-size:38px;
+    opacity:.25;
+}
+
+.education-box h2{
+    color:#c2185b;
+    margin:10px 0;
+}
+
+.education-text{
+    margin-bottom:25px;
+    color:#6d4c57;
+}
+
+/* การ์ด 4 ช่อง */
+
+.education-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.education-card{
+    background:#fff;
+    border:1px solid #ffd6e5;
+    border-radius:20px;
+    padding:22px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(233,30,99,.08);
+    transition:.3s;
+}
+
+.education-card:hover{
+    transform:translateY(-6px);
+    box-shadow:0 15px 30px rgba(233,30,99,.18);
+}
+
+.education-icon{
+    width:60px;
+    height:60px;
+    margin:auto auto 12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:18px;
+    background:#ffe4ef;
+    font-size:28px;
+}
+
+.education-card span{
+    color:#888;
+    font-size:13px;
+}
+
+.education-card h3{
+    margin-top:6px;
+    color:#c2185b;
+    font-size:18px;
+}
+
+/* มือถือ */
+
+@media(max-width:768px){
+    .education-grid{
+        grid-template-columns:1fr;
+    }
+
+    .education-box{
+        padding:25px 20px;
+    }
+}
