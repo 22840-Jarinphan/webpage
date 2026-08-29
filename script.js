@@ -731,3 +731,20 @@ document.querySelectorAll(".btn-home").forEach((button) => {
     });
 
 });
+
+window.addEventListener("load", () => {
+
+    const loader = document.getElementById("page-loader");
+
+    if (!loader) return;
+
+    setTimeout(() => {
+        loader.classList.add("hide");
+
+        setTimeout(() => {
+            loader.remove();
+        }, 700);
+
+    }, 1200);
+
+});
