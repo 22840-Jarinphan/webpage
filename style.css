@@ -5475,3 +5475,422 @@ document.querySelectorAll(".btn-home").forEach((button) => {
     });
 
 });
+
+/* =========================================================
+   💗 FLOATING EMOJI BACKGROUND
+   พื้นหลังอิโมจิลอยเคลื่อนไหว
+   ========================================================= */
+
+.emoji-background {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* ทำให้เนื้อหาเว็บไซต์อยู่เหนืออิโมจิ */
+body > *:not(.emoji-background) {
+    position: relative;
+    z-index: 2;
+}
+
+/* ตัวอิโมจิ */
+.float-emoji {
+    position: absolute;
+    display: block;
+    user-select: none;
+    pointer-events: none;
+
+    font-size: 25px;
+
+    opacity: 0.65;
+
+    filter:
+        drop-shadow(0 0 6px rgba(255, 105, 180, 0.35))
+        drop-shadow(0 0 14px rgba(255, 20, 147, 0.18));
+
+    animation:
+        emojiFloat 9s ease-in-out infinite,
+        emojiRotate 6s ease-in-out infinite;
+
+    will-change: transform;
+}
+
+
+/* =========================================================
+   ตำแหน่งอิโมจิแต่ละตัว
+   ========================================================= */
+
+.e1 {
+    left: 3%;
+    top: 15%;
+    animation-duration: 8s, 5s;
+}
+
+.e2 {
+    left: 9%;
+    top: 72%;
+    animation-duration: 11s, 7s;
+    font-size: 34px;
+}
+
+.e3 {
+    left: 15%;
+    top: 38%;
+    animation-duration: 10s, 6s;
+}
+
+.e4 {
+    left: 21%;
+    top: 8%;
+    animation-duration: 12s, 8s;
+    font-size: 30px;
+}
+
+.e5 {
+    left: 27%;
+    top: 78%;
+    animation-duration: 9s, 5s;
+}
+
+.e6 {
+    left: 33%;
+    top: 25%;
+    animation-duration: 13s, 7s;
+    font-size: 38px;
+}
+
+.e7 {
+    left: 39%;
+    top: 62%;
+    animation-duration: 10s, 6s;
+}
+
+.e8 {
+    left: 45%;
+    top: 12%;
+    animation-duration: 8s, 5s;
+    font-size: 28px;
+}
+
+.e9 {
+    left: 51%;
+    top: 83%;
+    animation-duration: 12s, 8s;
+    font-size: 35px;
+}
+
+.e10 {
+    left: 57%;
+    top: 43%;
+    animation-duration: 9s, 6s;
+}
+
+.e11 {
+    left: 63%;
+    top: 18%;
+    animation-duration: 11s, 7s;
+    font-size: 32px;
+}
+
+.e12 {
+    left: 69%;
+    top: 75%;
+    animation-duration: 13s, 9s;
+}
+
+.e13 {
+    left: 75%;
+    top: 31%;
+    animation-duration: 8s, 5s;
+    font-size: 37px;
+}
+
+.e14 {
+    left: 81%;
+    top: 9%;
+    animation-duration: 10s, 6s;
+}
+
+.e15 {
+    left: 87%;
+    top: 56%;
+    animation-duration: 12s, 8s;
+    font-size: 31px;
+}
+
+.e16 {
+    left: 94%;
+    top: 24%;
+    animation-duration: 9s, 5s;
+}
+
+.e17 {
+    left: 6%;
+    top: 48%;
+    animation-duration: 14s, 8s;
+}
+
+.e18 {
+    left: 18%;
+    top: 88%;
+    animation-duration: 10s, 6s;
+    font-size: 36px;
+}
+
+.e19 {
+    left: 30%;
+    top: 52%;
+    animation-duration: 12s, 7s;
+}
+
+.e20 {
+    left: 42%;
+    top: 70%;
+    animation-duration: 9s, 5s;
+    font-size: 29px;
+}
+
+.e21 {
+    left: 54%;
+    top: 32%;
+    animation-duration: 11s, 8s;
+}
+
+.e22 {
+    left: 66%;
+    top: 88%;
+    animation-duration: 13s, 7s;
+    font-size: 35px;
+}
+
+.e23 {
+    left: 78%;
+    top: 64%;
+    animation-duration: 10s, 6s;
+}
+
+.e24 {
+    left: 89%;
+    top: 40%;
+    animation-duration: 8s, 5s;
+    font-size: 30px;
+}
+
+.e25 {
+    left: 96%;
+    top: 82%;
+    animation-duration: 12s, 8s;
+}
+
+.e26 {
+    left: 12%;
+    top: 4%;
+    animation-duration: 9s, 6s;
+    font-size: 27px;
+}
+
+.e27 {
+    left: 47%;
+    top: 57%;
+    animation-duration: 14s, 9s;
+}
+
+.e28 {
+    left: 72%;
+    top: 5%;
+    animation-duration: 11s, 7s;
+    font-size: 33px;
+}
+
+.e29 {
+    left: 84%;
+    top: 91%;
+    animation-duration: 10s, 6s;
+}
+
+.e30 {
+    left: 58%;
+    top: 67%;
+    animation-duration: 13s, 8s;
+    font-size: 39px;
+}
+
+
+/* =========================================================
+   Animation 1 — ลอยขึ้นลง + ส่ายซ้ายขวา
+   ========================================================= */
+
+@keyframes emojiFloat {
+
+    0% {
+        transform:
+            translate3d(0, 0, 0)
+            rotate(0deg)
+            scale(1);
+    }
+
+    25% {
+        transform:
+            translate3d(18px, -28px, 0)
+            rotate(8deg)
+            scale(1.08);
+    }
+
+    50% {
+        transform:
+            translate3d(-15px, -55px, 0)
+            rotate(-8deg)
+            scale(0.94);
+    }
+
+    75% {
+        transform:
+            translate3d(22px, -25px, 0)
+            rotate(6deg)
+            scale(1.05);
+    }
+
+    100% {
+        transform:
+            translate3d(0, 0, 0)
+            rotate(0deg)
+            scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   Animation 2 — หมุนเบา ๆ
+   ========================================================= */
+
+@keyframes emojiRotate {
+
+    0% {
+        rotate: 0deg;
+    }
+
+    50% {
+        rotate: 12deg;
+    }
+
+    100% {
+        rotate: 0deg;
+    }
+
+}
+
+
+/* =========================================================
+   ✨ เพิ่มแสงนุ่ม ๆ ให้พื้นหลัง
+   ========================================================= */
+
+.emoji-background::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+
+    top: 10%;
+    left: 10%;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 20, 147, 0.12),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    animation: backgroundGlow 8s ease-in-out infinite alternate;
+}
+
+
+.emoji-background::after {
+    content: "";
+    position: absolute;
+    width: 500px;
+    height: 500px;
+
+    right: 5%;
+    bottom: 0;
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 105, 180, 0.10),
+            transparent 70%
+        );
+
+    filter: blur(35px);
+
+    animation: backgroundGlow 10s ease-in-out infinite alternate-reverse;
+}
+
+
+@keyframes backgroundGlow {
+
+    0% {
+        transform: translate(0, 0) scale(0.9);
+        opacity: 0.5;
+    }
+
+    50% {
+        transform: translate(40px, -30px) scale(1.1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-30px, 20px) scale(0.95);
+        opacity: 0.6;
+    }
+
+}
+
+
+/* =========================================================
+   📱 MOBILE
+   ลดขนาดเพื่อไม่ให้บังเนื้อหา
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .float-emoji {
+        font-size: 20px;
+        opacity: 0.48;
+    }
+
+    .e2,
+    .e6,
+    .e13,
+    .e18,
+    .e22,
+    .e30 {
+        font-size: 27px;
+    }
+
+}
+
+
+/* =========================================================
+   ♿ ผู้ที่เปิด Reduce Motion
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .float-emoji,
+    .emoji-background::before,
+    .emoji-background::after {
+        animation: none;
+    }
+
+}
