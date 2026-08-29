@@ -4438,3 +4438,221 @@ footer a:hover {
     }
 
 }
+
+/* =========================================
+   HERO MOTION + CLICK EFFECT
+========================================= */
+
+/* ให้ Hero ไม่ล้น */
+.hero-visual{
+    position:relative;
+}
+
+/* -------------------------
+   รูปโปรไฟล์ลอย
+------------------------- */
+
+.profile-frame{
+    position:relative;
+    z-index:5;
+    cursor:pointer;
+    animation:profileFloat 4s ease-in-out infinite;
+    transition:.4s;
+}
+
+@keyframes profileFloat{
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-18px);
+    }
+}
+
+.profile-frame:hover{
+    animation-play-state:paused;
+    transform:translateY(-10px) scale(1.03);
+}
+
+/* รูปขยายเล็กน้อย */
+
+.profile-frame img{
+    transition:.5s;
+}
+
+.profile-frame:hover img{
+    transform:scale(1.05);
+}
+
+/* -------------------------
+   วงแหวนหมุน
+------------------------- */
+
+.hero-orbit{
+    pointer-events:none;
+}
+
+.orbit-one{
+    animation:rotateOne 15s linear infinite;
+}
+
+.orbit-two{
+    animation:rotateTwo 22s linear infinite reverse;
+}
+
+@keyframes rotateOne{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes rotateTwo{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+/* -------------------------
+   Creative / My Story
+------------------------- */
+
+.floating-card{
+    text-decoration:none;
+    color:inherit;
+
+    cursor:pointer;
+
+    animation:floatCard 3.5s ease-in-out infinite;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease,
+        background .3s ease;
+
+    z-index:20;
+}
+
+.floating-card-top{
+    animation-delay:0s;
+}
+
+.floating-card-bottom{
+    animation-delay:1.5s;
+}
+
+@keyframes floatCard{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+}
+
+.floating-card:hover{
+    animation-play-state:paused;
+
+    transform:
+        translateY(-10px)
+        scale(1.06);
+
+    box-shadow:
+        0 20px 45px rgba(233,30,99,.22);
+}
+
+/* -------------------------
+   ไอคอนหมุน
+------------------------- */
+
+.floating-card:hover .floating-icon{
+    transform:rotate(15deg) scale(1.2);
+}
+
+.floating-icon{
+    transition:.3s;
+}
+
+/* -------------------------
+   ปุ่มสวยขึ้น
+------------------------- */
+
+.btn{
+    position:relative;
+    overflow:hidden;
+}
+
+.btn::before{
+    content:"";
+    position:absolute;
+
+    top:0;
+    left:-100%;
+
+    width:70%;
+    height:100%;
+
+    background:linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,.35),
+        transparent
+    );
+
+    transform:skewX(-20deg);
+
+    transition:.6s;
+}
+
+.btn:hover::before{
+    left:140%;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+}
+
+/* -------------------------
+   Glow หลังรูป
+------------------------- */
+
+.profile-glow{
+    animation:glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse{
+
+    0%,100%{
+        transform:scale(1);
+        opacity:.55;
+    }
+
+    50%{
+        transform:scale(1.18);
+        opacity:.9;
+    }
+
+}
+
+/* มือถือ */
+
+@media(max-width:768px){
+
+    .profile-frame{
+        animation:profileFloat 4s ease-in-out infinite;
+    }
+
+    .floating-card{
+        transform:scale(.9);
+    }
+
+}
