@@ -4881,3 +4881,990 @@ footer a:hover {
 
     transform: translateX(0);
 }
+
+/* =========================================================
+   💗❤️ DARK PINK / RED PREMIUM THEME
+   ใช้ทับสีเดิมของเว็บไซต์ทั้งเว็บ
+========================================================= */
+
+:root {
+    --pink-deep: #9c124f;
+    --pink-dark: #7a0d3d;
+    --pink: #d4145a;
+    --pink-bright: #ed174f;
+    --pink-light: #f04478;
+    --pink-soft: #ff7a9b;
+
+    --red-deep: #7f102f;
+    --red: #b5123f;
+    --red-bright: #e3264f;
+
+    --wine: #4f0928;
+    --wine-light: #680c36;
+
+    --bg-main: #250817;
+    --bg-secondary: #390b20;
+    --bg-card: #4b0d2a;
+    --bg-card-light: #601039;
+
+    --text-main: #fff5f8;
+    --text-soft: #ffd5e1;
+    --text-muted: #e9aabd;
+
+    --border-pink: rgba(255, 100, 150, 0.28);
+
+    --shadow-pink:
+        0 20px 50px rgba(181, 18, 63, 0.28);
+
+    --shadow-dark:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   🌹 GLOBAL BACKGROUND
+========================================================= */
+
+html {
+    background: #250817;
+}
+
+body {
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(237, 23, 79, 0.16),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(212, 20, 90, 0.13),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #250817 0%,
+            #390b20 45%,
+            #260817 100%
+        );
+
+    color: var(--text-main);
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ✨ ทำให้พื้นที่สีขาวต่าง ๆ หายไป
+========================================================= */
+
+.section-white {
+
+    background:
+        linear-gradient(
+            135deg,
+            #3b0b22,
+            #50102d
+        ) !important;
+
+    color: var(--text-main);
+}
+
+
+.section {
+
+    background-color: transparent;
+}
+
+
+/* =========================================================
+   🌸 NAVIGATION
+========================================================= */
+
+.site-header {
+
+    background:
+        rgba(61, 8, 31, 0.94) !important;
+
+    border-color:
+        rgba(255, 105, 145, 0.25) !important;
+
+    box-shadow:
+        0 15px 45px rgba(91, 5, 42, 0.35) !important;
+
+    backdrop-filter: blur(18px);
+}
+
+
+.navbar {
+    background: transparent;
+}
+
+
+.logo {
+
+    color: #fff0f5 !important;
+}
+
+
+.logo-mark {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed174f,
+            #a70e4e
+        ) !important;
+
+    color: #ffffff !important;
+
+    box-shadow:
+        0 12px 30px rgba(237, 23, 79, 0.35);
+}
+
+
+.nav-links a {
+
+    color: #f9cbd8 !important;
+
+    transition:
+        .3s ease;
+}
+
+
+.nav-links a:hover {
+
+    color: #ffffff !important;
+
+    transform:
+        translateY(-3px);
+}
+
+
+.nav-links a.active {
+
+    background:
+        linear-gradient(
+            135deg,
+            #e91e63,
+            #c51245
+        ) !important;
+
+    color: white !important;
+
+    box-shadow:
+        0 12px 30px rgba(233, 30, 99, 0.3);
+}
+
+
+/* =========================================================
+   ❤️ HERO
+========================================================= */
+
+.hero {
+
+    background:
+        radial-gradient(
+            circle at 15% 40%,
+            rgba(237, 23, 79, .20),
+            transparent 30%
+        ),
+
+        radial-gradient(
+            circle at 85% 30%,
+            rgba(212, 20, 90, .18),
+            transparent 35%
+        ),
+
+        linear-gradient(
+            135deg,
+            #30091d,
+            #5b0b32 50%,
+            #3c0924
+        ) !important;
+
+    color: #fff5f8;
+
+    overflow: hidden;
+}
+
+
+/* ข้อความ Hero */
+
+.hero h1,
+.hero h2,
+.hero h3 {
+
+    color: #ffffff;
+}
+
+
+.hero-description,
+.hero-small-title {
+
+    color: #ffd5e1;
+}
+
+
+.eyebrow {
+
+    color: #ff9eba;
+}
+
+
+/* =========================================================
+   💎 HERO STATS
+========================================================= */
+
+.hero-stats {
+
+    background:
+        rgba(255, 255, 255, 0.045);
+
+    border:
+        1px solid rgba(255, 128, 160, .2);
+
+    border-radius:
+        24px;
+
+    padding:
+        18px 24px;
+
+    box-shadow:
+        0 15px 40px rgba(0,0,0,.18);
+
+    backdrop-filter:
+        blur(12px);
+}
+
+
+.stat-item strong {
+
+    color:
+        #ff5d8a !important;
+}
+
+
+.stat-item span {
+
+    color:
+        #f0b4c5 !important;
+}
+
+
+.stat-divider {
+
+    background:
+        rgba(255, 150, 175, .25) !important;
+}
+
+
+/* =========================================================
+   🌹 PROFILE FRAME
+========================================================= */
+
+.profile-frame {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed174f,
+            #8e1047
+        ) !important;
+
+    border:
+        5px solid #ed174f !important;
+
+    box-shadow:
+        0 30px 80px rgba(0,0,0,.35),
+        0 0 50px rgba(237,23,79,.25);
+}
+
+
+.profile-glow {
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(237,23,79,.42),
+            transparent 68%
+        ) !important;
+}
+
+
+/* =========================================================
+   💗 FLOATING CARDS
+========================================================= */
+
+.floating-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #631039,
+            #4a0b29
+        ) !important;
+
+    border:
+        1px solid rgba(255, 122, 155, .3);
+
+    color:
+        #fff !important;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.28) !important;
+
+    backdrop-filter:
+        blur(15px);
+}
+
+
+.floating-card:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #851044,
+            #601034
+        ) !important;
+
+    box-shadow:
+        0 25px 55px rgba(237,23,79,.28) !important;
+}
+
+
+.floating-icon {
+
+    background:
+        rgba(237,23,79,.15) !important;
+
+    color:
+        #ff5d8a !important;
+}
+
+
+/* =========================================================
+   🎀 BUTTON
+========================================================= */
+
+.btn-primary {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed174f,
+            #b51245
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 15px 35px rgba(237,23,79,.25);
+}
+
+
+.btn-primary:hover {
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff285e,
+            #c91449
+        ) !important;
+}
+
+
+.btn-outline {
+
+    background:
+        rgba(255,255,255,.04) !important;
+
+    color:
+        #ffd5e1 !important;
+
+    border-color:
+        rgba(255, 112, 150, .45) !important;
+}
+
+
+.btn-outline:hover {
+
+    background:
+        rgba(237,23,79,.15) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+.btn-white {
+
+    background:
+        #ffedf3 !important;
+
+    color:
+        #a30e48 !important;
+}
+
+
+.btn-white:hover {
+
+    background:
+        #ffffff !important;
+
+    color:
+        #d4145a !important;
+}
+
+
+/* =========================================================
+   🌸 SECTION HEADING
+========================================================= */
+
+.section-heading h2 {
+
+    color:
+        #ffffff !important;
+}
+
+
+.section-heading h2 span {
+
+    color:
+        #ff4f81 !important;
+}
+
+
+.section-heading p {
+
+    color:
+        #e8aabd !important;
+}
+
+
+.section-label {
+
+    color:
+        #ff6c96 !important;
+}
+
+
+/* =========================================================
+   💎 FEATURE CARDS
+========================================================= */
+
+.feature-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #53102f,
+            #3e0b24
+        ) !important;
+
+    border:
+        1px solid rgba(255, 105, 145, .22) !important;
+
+    color:
+        #fff !important;
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.2) !important;
+
+    transition:
+        transform .35s ease,
+        box-shadow .35s ease,
+        border-color .35s ease;
+}
+
+
+.feature-card:hover {
+
+    transform:
+        translateY(-10px);
+
+    border-color:
+        rgba(255, 93, 138, .55) !important;
+
+    box-shadow:
+        0 28px 60px rgba(197, 18, 76, .28) !important;
+}
+
+
+.feature-card h3 {
+
+    color:
+        #ffffff !important;
+}
+
+
+.feature-card p {
+
+    color:
+        #eab1c1 !important;
+}
+
+
+.feature-number {
+
+    color:
+        rgba(255, 91, 135, .45) !important;
+}
+
+
+.feature-icon {
+
+    background:
+        rgba(237,23,79,.12) !important;
+
+    color:
+        #ff5b88 !important;
+}
+
+
+/* ลิงก์ในการ์ด */
+
+.text-link {
+
+    color:
+        #ff6b94 !important;
+}
+
+
+.text-link:hover {
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   🔥 PROFILE / EDUCATION / HOBBY / CONTACT
+   กล่องเนื้อหาทั่วไป
+========================================================= */
+
+.profile-card,
+.info-card,
+.education-card,
+.hobby-card,
+.contact-card,
+.interest-card,
+.timeline-content,
+.highlight-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #50102d,
+            #3c0b24
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    border:
+        1px solid rgba(255, 105, 145, .23) !important;
+
+    box-shadow:
+        0 18px 45px rgba(0,0,0,.22) !important;
+}
+
+
+/* =========================================================
+   📝 ข้อความภายในกรอบ
+========================================================= */
+
+.profile-card p,
+.info-card p,
+.education-card p,
+.hobby-card p,
+.contact-card p,
+.interest-card p,
+.timeline-content p,
+.highlight-card p {
+
+    color:
+        #eab4c4 !important;
+}
+
+
+.profile-card h2,
+.profile-card h3,
+.info-card h2,
+.info-card h3,
+.education-card h2,
+.education-card h3,
+.hobby-card h2,
+.hobby-card h3,
+.contact-card h2,
+.contact-card h3 {
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   🎓 TIMELINE
+========================================================= */
+
+.timeline::before {
+
+    background:
+        linear-gradient(
+            180deg,
+            #ed174f,
+            #7e0c3c
+        ) !important;
+}
+
+
+.timeline-dot {
+
+    background:
+        #ed174f !important;
+
+    border:
+        5px solid #4a0c28 !important;
+
+    box-shadow:
+        0 0 0 5px rgba(237,23,79,.15);
+}
+
+
+/* =========================================================
+   🎵 HOBBY CARDS
+========================================================= */
+
+.hobby-card:hover,
+.interest-card:hover {
+
+    transform:
+        translateY(-9px);
+
+    border-color:
+        rgba(255, 92, 138, .5) !important;
+
+    box-shadow:
+        0 25px 55px rgba(205, 20, 82, .25) !important;
+}
+
+
+/* =========================================================
+   📋 TABLE
+========================================================= */
+
+table {
+
+    background:
+        #430c27 !important;
+
+    color:
+        #fff !important;
+
+    border-color:
+        rgba(255, 105, 145, .2) !important;
+}
+
+
+th {
+
+    background:
+        linear-gradient(
+            135deg,
+            #9f124f,
+            #731039
+        ) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+td {
+
+    background:
+        #4b0d2a !important;
+
+    color:
+        #f5cbd7 !important;
+
+    border-color:
+        rgba(255, 105, 145, .16) !important;
+}
+
+
+tr:hover td {
+
+    background:
+        #5b1033 !important;
+}
+
+
+/* =========================================================
+   📞 CONTACT
+========================================================= */
+
+.contact-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            #5a0d32,
+            #3d0925
+        ) !important;
+}
+
+
+.contact-card a {
+
+    color:
+        #ff7097 !important;
+}
+
+
+.contact-card a:hover {
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   🔥 CTA
+========================================================= */
+
+.cta-section {
+
+    background:
+        #250817 !important;
+}
+
+
+.cta-card {
+
+    background:
+        linear-gradient(
+            120deg,
+            #750d3b,
+            #d4145a 55%,
+            #a20e42
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    box-shadow:
+        0 30px 70px rgba(145, 10, 60, .35);
+}
+
+
+.cta-card h2 {
+
+    color:
+        #ffffff !important;
+}
+
+
+.cta-card p {
+
+    color:
+        #ffd5e1 !important;
+}
+
+
+/* =========================================================
+   🌹 PAGE HERO
+========================================================= */
+
+.page-hero {
+
+    background:
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(255, 91, 135, .18),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #39091f,
+            #790d3c,
+            #4b0b2c
+        ) !important;
+
+    color:
+        #ffffff !important;
+}
+
+
+.page-hero h1,
+.page-hero h2 {
+
+    color:
+        #ffffff !important;
+}
+
+
+.page-hero p {
+
+    color:
+        #f3b7c8 !important;
+}
+
+
+/* =========================================================
+   ❤️ FOOTER
+========================================================= */
+
+.site-footer {
+
+    background:
+        linear-gradient(
+            135deg,
+            #240717,
+            #500a2b 55%,
+            #6d0c37
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    border-top:
+        1px solid rgba(255, 91, 135, .18);
+}
+
+
+.footer-brand p {
+
+    color:
+        #dba4b6 !important;
+}
+
+
+.footer-info strong {
+
+    color:
+        #ffffff !important;
+}
+
+
+.footer-info span {
+
+    color:
+        #dca7b8 !important;
+}
+
+
+.footer-nav a {
+
+    color:
+        #f4c5d3 !important;
+}
+
+
+.footer-nav a:hover {
+
+    color:
+        #ffffff !important;
+}
+
+
+/* =========================================================
+   ✨ DECORATIVE ELEMENTS
+========================================================= */
+
+.hero-decoration,
+.hero-orbit {
+
+    opacity:
+        .8;
+}
+
+
+.hero-decoration-one,
+.hero-decoration-two {
+
+    border-color:
+        rgba(255, 92, 138, .2) !important;
+}
+
+
+/* =========================================================
+   🌙 Scrollbar
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width:
+        10px;
+}
+
+
+::-webkit-scrollbar-track {
+
+    background:
+        #250817;
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+        linear-gradient(
+            180deg,
+            #ed174f,
+            #7e0c3c
+        );
+
+    border-radius:
+        20px;
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background:
+        #ff4f81;
+}
+
+
+/* =========================================================
+   📱 MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    body {
+
+        background:
+            linear-gradient(
+                145deg,
+                #250817,
+                #420b25
+            );
+    }
+
+
+    .site-header {
+
+        background:
+            #3b0b22 !important;
+    }
+
+
+    .feature-card,
+    .profile-card,
+    .education-card,
+    .hobby-card,
+    .contact-card {
+
+        box-shadow:
+            0 15px 35px rgba(0,0,0,.25) !important;
+    }
+
+}
