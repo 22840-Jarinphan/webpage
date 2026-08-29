@@ -7860,3 +7860,643 @@ a {
             40px 0 25px !important;
     }
 }
+
+/* =========================================================
+   🎀 FINAL TEXT + CARD FIX
+   DARK PINK / RED PORTFOLIO
+   แก้สีกรอบ + ตัวหนังสืออ่านง่าย + ลดขนาด
+   วางไว้ "ล่างสุด" ของ style.css
+========================================================= */
+
+
+/* =========================================================
+   🎨 COLOR SYSTEM
+========================================================= */
+
+:root {
+    --fix-card: #54102f;
+    --fix-card-light: #64133a;
+    --fix-card-dark: #450a25;
+
+    --fix-border: rgba(255, 128, 165, 0.30);
+
+    --fix-title: #fff5f8;
+    --fix-text: #f0c5d3;
+    --fix-muted: #d39aaa;
+
+    --fix-pink: #ff6f9d;
+}
+
+
+/* =========================================================
+   📦 กล่องเนื้อหาหลัก
+   ทำให้พื้นหลังต่างจากตัวหนังสืออย่างชัดเจน
+========================================================= */
+
+.feature-card,
+.profile-card,
+.info-card,
+.fact-card,
+.education-card,
+.hobby-card,
+.contact-card,
+.timeline-card,
+.about-card,
+.stat-card,
+.highlight-card,
+.interest-card {
+
+    background:
+        linear-gradient(
+            145deg,
+            var(--fix-card-light),
+            var(--fix-card-dark)
+        ) !important;
+
+    color:
+        var(--fix-title) !important;
+
+    border:
+        1px solid var(--fix-border) !important;
+
+    box-shadow:
+        0 12px 32px rgba(20, 0, 10, 0.30) !important;
+
+    border-radius:
+        20px !important;
+
+}
+
+
+/* =========================================================
+   📝 หัวข้อในการ์ด
+========================================================= */
+
+.feature-card h3,
+.profile-card h2,
+.profile-card h3,
+.info-card h2,
+.info-card h3,
+.fact-card h2,
+.fact-card h3,
+.education-card h2,
+.education-card h3,
+.hobby-card h3,
+.contact-card h3,
+.timeline-card h2,
+.timeline-card h3,
+.about-card h2,
+.about-card h3,
+.highlight-card h2,
+.highlight-card h3,
+.interest-card h2,
+.interest-card h3 {
+
+    color:
+        var(--fix-title) !important;
+
+    font-size:
+        1.12rem !important;
+
+    line-height:
+        1.45 !important;
+
+    margin-bottom:
+        10px !important;
+
+}
+
+
+/* =========================================================
+   📖 เนื้อหาในการ์ด
+========================================================= */
+
+.feature-card p,
+.profile-card p,
+.info-card p,
+.fact-card p,
+.education-card p,
+.hobby-card p,
+.contact-card p,
+.timeline-card p,
+.about-card p,
+.highlight-card p,
+.interest-card p {
+
+    color:
+        var(--fix-text) !important;
+
+    font-size:
+        0.88rem !important;
+
+    line-height:
+        1.8 !important;
+
+}
+
+
+/* =========================================================
+   🏷 ข้อความเล็ก / รายละเอียด
+========================================================= */
+
+.profile-info span,
+.profile-details span,
+.info-grid span,
+.contact-card span,
+.footer-info span {
+
+    color:
+        var(--fix-muted) !important;
+
+    font-size:
+        0.80rem !important;
+
+}
+
+
+.profile-info strong,
+.profile-details strong,
+.info-grid strong {
+
+    color:
+        #fff4f7 !important;
+
+    font-size:
+        0.92rem !important;
+
+}
+
+
+/* =========================================================
+   🔢 ตัวเลข
+========================================================= */
+
+.feature-number,
+.hobby-number {
+
+    color:
+        rgba(255, 180, 205, 0.55) !important;
+
+    font-size:
+        0.76rem !important;
+
+}
+
+
+/* =========================================================
+   🎀 ICON
+========================================================= */
+
+.feature-icon,
+.hobby-icon,
+.contact-icon,
+.message-icon {
+
+    flex-shrink:
+        0;
+
+}
+
+
+/* =========================================================
+   🔗 ลิงก์
+========================================================= */
+
+.text-link,
+.contact-card a {
+
+    color:
+        #ff78a5 !important;
+
+    font-size:
+        0.86rem !important;
+
+    font-weight:
+        600;
+
+}
+
+.text-link:hover,
+.contact-card a:hover {
+
+    color:
+        #ffffff !important;
+
+}
+
+
+/* =========================================================
+   📐 ลดขนาดหัวข้อใหญ่ของ Section
+========================================================= */
+
+.section-heading h2 {
+
+    font-size:
+        clamp(1.75rem, 3.5vw, 2.5rem) !important;
+
+    line-height:
+        1.25 !important;
+
+}
+
+
+.section-heading p {
+
+    font-size:
+        0.90rem !important;
+
+    line-height:
+        1.8 !important;
+
+}
+
+
+/* =========================================================
+   🌸 PAGE HERO
+========================================================= */
+
+.page-hero h1 {
+
+    font-size:
+        clamp(2rem, 4.5vw, 3.2rem) !important;
+
+    line-height:
+        1.2 !important;
+
+}
+
+.page-hero p {
+
+    font-size:
+        0.92rem !important;
+
+    line-height:
+        1.8 !important;
+
+}
+
+
+/* =========================================================
+   🏠 HERO หน้าแรก
+========================================================= */
+
+.hero h1 {
+
+    font-size:
+        clamp(2.5rem, 5vw, 4rem) !important;
+
+    line-height:
+        1.15 !important;
+
+}
+
+
+.hero-description {
+
+    font-size:
+        0.95rem !important;
+
+    line-height:
+        1.85 !important;
+
+    max-width:
+        620px !important;
+
+}
+
+
+/* =========================================================
+   🔘 ปุ่มไม่ให้ใหญ่เกิน
+========================================================= */
+
+.btn {
+
+    font-size:
+        0.88rem !important;
+
+    padding:
+        11px 20px !important;
+
+    border-radius:
+        13px !important;
+
+}
+
+
+/* =========================================================
+   📊 TABLE
+========================================================= */
+
+table {
+
+    background:
+        #4c0c29 !important;
+
+    border:
+        1px solid rgba(255, 120, 160, 0.25) !important;
+
+    color:
+        #fff3f7 !important;
+
+}
+
+
+thead th {
+
+    background:
+        linear-gradient(
+            135deg,
+            #86113f,
+            #68102f
+        ) !important;
+
+    color:
+        #ffffff !important;
+
+    font-size:
+        0.86rem !important;
+
+    padding:
+        13px 15px !important;
+
+}
+
+
+tbody td {
+
+    background:
+        #54102e !important;
+
+    color:
+        #f0c7d4 !important;
+
+    font-size:
+        0.84rem !important;
+
+    padding:
+        12px 15px !important;
+
+}
+
+
+tbody tr:hover td {
+
+    background:
+        #641238 !important;
+
+}
+
+
+/* =========================================================
+   💬 QUOTE
+========================================================= */
+
+blockquote,
+.quote-box {
+
+    background:
+        linear-gradient(
+            135deg,
+            #651239,
+            #4b0b28
+        ) !important;
+
+    color:
+        #fff1f5 !important;
+
+    border-left:
+        4px solid #e83b70 !important;
+
+    padding:
+        18px 22px !important;
+
+    border-radius:
+        15px !important;
+
+}
+
+
+blockquote p,
+.quote-box p {
+
+    color:
+        #edc1cf !important;
+
+    font-size:
+        0.88rem !important;
+
+    line-height:
+        1.8 !important;
+
+}
+
+
+/* =========================================================
+   ❤️ CTA
+========================================================= */
+
+.cta-card {
+
+    background:
+        linear-gradient(
+            135deg,
+            #8f1648,
+            #c91658
+        ) !important;
+
+}
+
+
+.cta-card h2 {
+
+    color:
+        #ffffff !important;
+
+    font-size:
+        clamp(1.65rem, 3.5vw, 2.5rem) !important;
+
+    line-height:
+        1.25 !important;
+
+}
+
+
+.cta-card p {
+
+    color:
+        #ffe0e9 !important;
+
+    font-size:
+        0.90rem !important;
+
+    line-height:
+        1.8 !important;
+
+}
+
+
+/* =========================================================
+   ✨ Hover
+========================================================= */
+
+.feature-card,
+.profile-card,
+.info-card,
+.fact-card,
+.education-card,
+.hobby-card,
+.contact-card,
+.timeline-card,
+.about-card,
+.highlight-card,
+.interest-card {
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+
+}
+
+
+.feature-card:hover,
+.hobby-card:hover,
+.contact-card:hover,
+.education-card:hover {
+
+    transform:
+        translateY(-5px) !important;
+
+    border-color:
+        rgba(255, 110, 155, 0.55) !important;
+
+    box-shadow:
+        0 20px 42px rgba(20, 0, 10, 0.42) !important;
+
+}
+
+
+/* =========================================================
+   📱 TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .section-heading h2 {
+
+        font-size:
+            2.1rem !important;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            2.8rem !important;
+
+    }
+
+    .page-hero h1 {
+
+        font-size:
+            2.5rem !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   📱 MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .section-heading h2 {
+
+        font-size:
+            1.75rem !important;
+
+    }
+
+    .page-hero h1 {
+
+        font-size:
+            2rem !important;
+
+    }
+
+    .hero h1 {
+
+        font-size:
+            2.25rem !important;
+
+    }
+
+    .hero-description {
+
+        font-size:
+            0.86rem !important;
+
+    }
+
+    .feature-card h3,
+    .profile-card h3,
+    .info-card h3,
+    .education-card h3,
+    .hobby-card h3,
+    .contact-card h3 {
+
+        font-size:
+            1.02rem !important;
+
+    }
+
+    .feature-card p,
+    .profile-card p,
+    .info-card p,
+    .education-card p,
+    .hobby-card p,
+    .contact-card p {
+
+        font-size:
+            0.82rem !important;
+
+    }
+
+    .btn {
+
+        font-size:
+            0.82rem !important;
+
+        padding:
+            10px 17px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   🌸 FLOATING
+   ไม่แก้ตำแหน่งรูปและไม่ยุ่งกับ Layout
+========================================================= */
+
+.floating-particles,
+.floating-petals {
+
+    pointer-events:
+        none !important;
+
+}
+
+
+/* รูปทุกชนิดยังใช้ Layout เดิม */
+
+.profile-frame img,
+img {
+
+    max-width:
+        100%;
+
+}
