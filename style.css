@@ -4656,3 +4656,228 @@ footer a:hover {
     }
 
 }
+
+/* =========================================================
+   FOOTER NAVIGATION
+   เมนูด้านล่างขวามือ — กดได้จริง
+========================================================= */
+
+.footer-nav {
+    position: relative;
+    z-index: 50;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    gap: 28px;
+
+    pointer-events: auto;
+}
+
+
+/* ลิงก์แต่ละตัว */
+
+.footer-nav a {
+
+    position: relative;
+    z-index: 51;
+
+    display: inline-block;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    padding: 8px 2px;
+
+    cursor: pointer;
+
+    pointer-events: auto;
+
+    transition:
+        color .3s ease,
+        transform .3s ease;
+}
+
+
+/* เส้นใต้ */
+
+.footer-nav a::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff4f81,
+            #ff1744
+        );
+
+    transition:
+        width .3s ease;
+}
+
+
+/* Hover */
+
+.footer-nav a:hover {
+
+    color: #ffd5e1;
+
+    transform:
+        translateY(-4px);
+}
+
+
+.footer-nav a:hover::after {
+
+    width: 100%;
+}
+
+
+/* ตอนกด */
+
+.footer-nav a:active {
+
+    transform:
+        translateY(-1px)
+        scale(.96);
+}
+
+
+/* =========================================================
+   ป้องกัน Decorative Element มาบัง Footer
+========================================================= */
+
+.site-footer,
+.footer-grid,
+.footer-bottom {
+
+    position: relative;
+}
+
+
+.site-footer {
+
+    z-index: 10;
+
+}
+
+
+/* วงกลมตกแต่งของ Footer
+   ไม่ให้บังการคลิก */
+
+.site-footer::before,
+.site-footer::after {
+
+    pointer-events: none;
+
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .footer-nav {
+
+        justify-content: center;
+
+        gap: 16px 24px;
+
+        margin-top: 20px;
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    .footer-nav {
+
+        display: grid;
+
+        grid-template-columns: repeat(2, 1fr);
+
+        width: 100%;
+
+        gap: 10px;
+
+        text-align: center;
+
+    }
+
+
+    .footer-nav a {
+
+        padding: 10px;
+
+        border-radius: 12px;
+
+        background: rgba(255,255,255,.06);
+
+    }
+
+
+    .footer-nav a:hover {
+
+        background: rgba(255,255,255,.12);
+
+    }
+
+
+    .footer-nav a::after {
+
+        display: none;
+
+    }
+
+}
+
+/* =========================================================
+   FOOTER LINK — PREMIUM HOVER
+========================================================= */
+
+.footer-nav a::before {
+
+    content: "→";
+
+    position: absolute;
+
+    left: -16px;
+
+    opacity: 0;
+
+    transform: translateX(-6px);
+
+    transition:
+        opacity .3s ease,
+        transform .3s ease;
+
+    color: #ff7b9f;
+}
+
+
+.footer-nav a:hover::before {
+
+    opacity: 1;
+
+    transform: translateX(0);
+}
