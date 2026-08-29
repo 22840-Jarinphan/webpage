@@ -240,9 +240,123 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
 
-    /* =====================================================
-       🔗 PAGE TRANSITION
-    ===================================================== */
+   /* =========================================================
+   🔗 PAGE TRANSITION
+   ระบบเปลี่ยนหน้าพร้อม Animation
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const transition =
+        document.querySelector(".page-transition");
+
+
+    document.querySelectorAll("a[href]").forEach((link) => {
+
+        link.addEventListener("click", function(event) {
+
+            const href =
+                this.getAttribute("href");
+
+
+            /* -----------------------------------------
+               ตรวจสอบลิงก์
+            ----------------------------------------- */
+
+            if (!href) return;
+
+            if (
+                href.startsWith("#") ||
+                href.startsWith("http://") ||
+                href.startsWith("https://") ||
+                href.startsWith("mailto:") ||
+                href.startsWith("tel:")
+            ) {
+
+                return;
+
+            }
+
+
+            /* -----------------------------------------
+               ป้องกันการทำงานซ้ำ
+            ----------------------------------------- */
+
+            if (
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.altKey ||
+                event.metaKey
+            ) {
+
+                return;
+
+            }
+
+
+            event.preventDefault();
+
+
+            /* -----------------------------------------
+               ถ้าเป็นปุ่มกลับหน้าแรก
+            ----------------------------------------- */
+
+            if (
+                this.classList.contains("btn-home") ||
+                href === "index.html" ||
+                href.endsWith("/index.html")
+            ) {
+
+                if (transition) {
+
+                    transition.classList.add("active");
+
+                    setTimeout(() => {
+
+                        window.location.assign(
+                            "index.html"
+                        );
+
+                    }, 500);
+
+                } else {
+
+                    window.location.assign(
+                        "index.html"
+                    );
+
+                }
+
+                return;
+
+            }
+
+
+            /* -----------------------------------------
+               ลิงก์หน้าอื่น
+            ----------------------------------------- */
+
+            if (transition) {
+
+                transition.classList.add("active");
+
+                setTimeout(() => {
+
+                    window.location.assign(href);
+
+                }, 500);
+
+            } else {
+
+                window.location.assign(href);
+
+            }
+
+        });
+
+    });
+
+});
 
     document
         .querySelectorAll("a")
@@ -537,3 +651,83 @@ function createRipple(x, y) {
     }, 700);
 
 }
+
+/* =========================================================
+   💗 HOME BUTTON HEART EFFECT
+========================================================= */
+
+document.querySelectorAll(".btn-home").forEach((button) => {
+
+    button.addEventListener("click", (event) => {
+
+        const rect =
+            button.getBoundingClientRect();
+
+        for (let i = 0; i < 8; i++) {
+
+            const heart =
+                document.createElement("span");
+
+            heart.textContent =
+                ["💗", "💕", "💖", "✨"][Math.floor(
+                    Math.random() * 4
+                )];
+
+            heart.style.position = "fixed";
+
+            heart.style.left =
+                `${rect.left + rect.width / 2}px`;
+
+            heart.style.top =
+                `${rect.top + rect.height / 2}px`;
+
+            heart.style.pointerEvents =
+                "none";
+
+            heart.style.zIndex =
+                "100001";
+
+            heart.style.fontSize =
+                `${14 + Math.random() * 12}px`;
+
+            const x =
+                (Math.random() - .5) * 140;
+
+            const y =
+                (Math.random() - .5) * 100;
+
+            heart.animate(
+                [
+                    {
+                        transform:
+                            "translate(-50%, -50%) scale(.3)",
+                        opacity: 0
+                    },
+                    {
+                        transform:
+                            "translate(-50%, -50%) scale(1.2)",
+                        opacity: 1
+                    },
+                    {
+                        transform:
+                            `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(.3)`,
+                        opacity: 0
+                    }
+                ],
+                {
+                    duration: 750,
+                    easing: "cubic-bezier(.2,.8,.2,1)"
+                }
+            );
+
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 800);
+
+        }
+
+    });
+
+});
