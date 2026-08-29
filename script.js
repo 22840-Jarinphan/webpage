@@ -1,539 +1,298 @@
 /* =========================================================
-   🌹 MY PORTFOLIO
-   MAGIC INTERACTION SYSTEM
+   💗 MY PORTFOLIO
+   PREMIUM INTERACTION SCRIPT
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
 
     /* =====================================================
-       💕 CREATE BACKGROUND HEARTS
+       💗 PAGE LOADER
     ===================================================== */
 
-    const heartContainer = document.querySelector(
-        ".floating-particles"
-    ) || document.querySelector(
-        ".floating-petals"
-    );
+    const loader = document.getElementById("page-loader");
 
-    if (heartContainer) {
+    if (loader) {
 
-        const symbols = [
-            "♡",
-            "♥",
-            "💕",
-            "💗",
-            "🌸",
-            "💖"
-        ];
+        window.addEventListener("load", () => {
 
-        for (let i = 0; i < 22; i++) {
+            setTimeout(() => {
 
-            const heart = document.createElement("span");
+                loader.classList.add("loaded");
 
-            heart.className =
-                "floating-particle";
+            }, 1000);
 
-            heart.textContent =
-                symbols[
-                    Math.floor(
-                        Math.random() * symbols.length
-                    )
-                ];
+        });
 
-            heart.style.left =
-                Math.random() * 100 + "%";
-
-            heart.style.fontSize =
-                (12 + Math.random() * 22) + "px";
-
-            heart.style.opacity =
-                (.25 + Math.random() * .55);
-
-            heart.style.setProperty(
-                "--sway",
-                (-80 + Math.random() * 160) + "px"
-            );
-
-            heart.style.animationDuration =
-                (9 + Math.random() * 13) + "s";
-
-            heart.style.animationDelay =
-                (-Math.random() * 15) + "s";
-
-            heartContainer.appendChild(heart);
-        }
     }
 
 
     /* =====================================================
-       🖱️ CURSOR GLOW
+       💗 HEART CURSOR
     ===================================================== */
 
-    const cursor = document.createElement("div");
+    const cursor = document.getElementById("heart-cursor");
 
-    cursor.className =
-        "cursor-glow";
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
 
-    document.body.appendChild(cursor);
+    let cursorX = mouseX;
+    let cursorY = mouseY;
 
+    if (cursor && window.innerWidth > 700) {
 
-    document.addEventListener(
-        "mousemove",
-        (event) => {
+        document.addEventListener("mousemove", (event) => {
 
-            cursor.style.left =
-                event.clientX + "px";
+            mouseX = event.clientX;
+            mouseY = event.clientY;
 
-            cursor.style.top =
-                event.clientY + "px";
+        });
+
+        function animateCursor() {
+
+            cursorX += (mouseX - cursorX) * 0.18;
+            cursorY += (mouseY - cursorY) * 0.18;
+
+            cursor.style.left = `${cursorX}px`;
+            cursor.style.top = `${cursorY}px`;
+
+            requestAnimationFrame(animateCursor);
+
         }
-    );
+
+        animateCursor();
 
 
-    /* =====================================================
-       💗 CLICK HEART EXPLOSION
-    ===================================================== */
+        /* =================================================
+           💕 CURSOR TRAIL
+        ================================================= */
 
-    document.addEventListener(
-        "click",
-        (event) => {
+        let lastTrail = 0;
 
-            const hearts = [
-                "♥",
-                "♡",
-                "💕",
-                "💗",
-                "💖",
-                "💞"
-            ];
+        document.addEventListener("mousemove", (event) => {
 
-            const amount = 6;
+            const now = Date.now();
 
-            for (let i = 0; i < amount; i++) {
+            if (now - lastTrail < 70) return;
 
-                const heart =
-                    document.createElement("span");
+            lastTrail = now;
 
-                heart.className =
-                    "click-heart";
-
-                heart.textContent =
-                    hearts[
-                        Math.floor(
-                            Math.random() *
-                            hearts.length
-                        )
-                    ];
-
-                heart.style.left =
-                    event.clientX + "px";
-
-                heart.style.top =
-                    event.clientY + "px";
-
-                const angle =
-                    Math.random() * Math.PI * 2;
-
-                const distance =
-                    35 + Math.random() * 75;
-
-                heart.style.setProperty(
-                    "--x",
-                    Math.cos(angle) *
-                    distance + "px"
-                );
-
-                heart.style.setProperty(
-                    "--y",
-                    Math.sin(angle) *
-                    distance + "px"
-                );
-
-                heart.style.setProperty(
-                    "--rotate",
-                    (-45 + Math.random() * 90) +
-                    "deg"
-                );
-
-                heart.style.setProperty(
-                    "--heart-size",
-                    (15 + Math.random() * 18) +
-                    "px"
-                );
-
-                document.body.appendChild(
-                    heart
-                );
-
-                setTimeout(() => {
-
-                    heart.remove();
-
-                }, 1000);
-            }
-        }
-    );
-
-
-    /* =====================================================
-       ✨ BUTTON RIPPLE
-    ===================================================== */
-
-    document
-        .querySelectorAll(".btn, button")
-        .forEach(button => {
-
-            button.addEventListener(
-                "click",
-                function(event) {
-
-                    const rect =
-                        this.getBoundingClientRect();
-
-                    const ripple =
-                        document.createElement(
-                            "span"
-                        );
-
-                    ripple.className =
-                        "ripple";
-
-                    const size =
-                        Math.max(
-                            rect.width,
-                            rect.height
-                        );
-
-                    ripple.style.width =
-                        size + "px";
-
-                    ripple.style.height =
-                        size + "px";
-
-                    ripple.style.left =
-                        (
-                            event.clientX -
-                            rect.left -
-                            size / 2
-                        ) + "px";
-
-                    ripple.style.top =
-                        (
-                            event.clientY -
-                            rect.top -
-                            size / 2
-                        ) + "px";
-
-                    this.appendChild(
-                        ripple
-                    );
-
-                    setTimeout(() => {
-
-                        ripple.remove();
-
-                    }, 700);
-                }
+            createCursorTrail(
+                event.clientX,
+                event.clientY
             );
 
         });
 
+    }
+
 
     /* =====================================================
-       🃏 CARD 3D TILT
+       💕 INTERACTIVE HOVER
     ===================================================== */
 
-    const cards = document.querySelectorAll(
-        `
-        .feature-card,
-        .hobby-card,
-        .contact-card,
-        .education-card,
-        .info-card,
-        .fact-card,
-        .profile-card,
-        .about-card,
-        .highlight-card,
-        .interest-card
-        `
-    );
-
-
-    cards.forEach(card => {
-
-        card.addEventListener(
-            "mousemove",
-            event => {
-
-                const rect =
-                    card.getBoundingClientRect();
-
-                const x =
-                    event.clientX -
-                    rect.left;
-
-                const y =
-                    event.clientY -
-                    rect.top;
-
-                const centerX =
-                    rect.width / 2;
-
-                const centerY =
-                    rect.height / 2;
-
-                const rotateX =
-                    (y - centerY) /
-                    18;
-
-                const rotateY =
-                    (centerX - x) /
-                    18;
-
-                card.style.transform =
-                    `
-                    perspective(900px)
-                    rotateX(${rotateX}deg)
-                    rotateY(${rotateY}deg)
-                    translateY(-8px)
-                    scale(1.015)
-                    `;
-            }
+    const interactiveElements =
+        document.querySelectorAll(
+            "a, button, .btn, .feature-card, .profile-card, " +
+            ".info-card, .education-card, .hobby-card, " +
+            ".contact-card, .profile-frame"
         );
 
+    interactiveElements.forEach((element) => {
 
-        card.addEventListener(
-            "mouseleave",
-            () => {
+        element.addEventListener("mouseenter", () => {
 
-                card.style.transform =
-                    "";
+            if (cursor) {
+
+                cursor.classList.add("hovering");
+
             }
+
+        });
+
+        element.addEventListener("mouseleave", () => {
+
+            if (cursor) {
+
+                cursor.classList.remove("hovering");
+
+            }
+
+        });
+
+    });
+
+
+    /* =====================================================
+       💥 CLICK EFFECT
+    ===================================================== */
+
+    document.addEventListener("click", (event) => {
+
+        if (cursor) {
+
+            cursor.classList.remove("clicking");
+
+            void cursor.offsetWidth;
+
+            cursor.classList.add("clicking");
+
+        }
+
+        createClickRing(
+            event.clientX,
+            event.clientY
+        );
+
+        createEmojiExplosion(
+            event.clientX,
+            event.clientY
+        );
+
+        createRipple(
+            event.clientX,
+            event.clientY
         );
 
     });
 
 
     /* =====================================================
-       🖼️ IMAGE INTERACTION
+       🔄 SCROLL PROGRESS
     ===================================================== */
 
-    document
-        .querySelectorAll("img")
-        .forEach(img => {
+    const scrollProgress =
+        document.getElementById("scroll-progress");
 
-            img.addEventListener(
-                "mouseenter",
-                () => {
+    window.addEventListener("scroll", () => {
 
-                    img.style.transform =
-                        "scale(1.05) rotate(1deg)";
-                }
-            );
+        const scrollTop =
+            window.scrollY;
 
+        const documentHeight =
+            document.documentElement.scrollHeight
+            - window.innerHeight;
 
-            img.addEventListener(
-                "mouseleave",
-                () => {
+        const progress =
+            documentHeight > 0
+                ? (scrollTop / documentHeight) * 100
+                : 0;
 
-                    img.style.transform =
-                        "";
-                }
-            );
+        if (scrollProgress) {
 
-        });
+            scrollProgress.style.width =
+                `${progress}%`;
+
+        }
+
+    });
 
 
     /* =====================================================
-       💫 SCROLL REVEAL
+       ✨ SCROLL REVEAL
     ===================================================== */
 
     const revealElements =
         document.querySelectorAll(
-            `
-            .feature-card,
-            .hobby-card,
-            .contact-card,
-            .education-card,
-            .info-card,
-            .fact-card,
-            .profile-card,
-            .about-card,
-            .timeline-card,
-            .cta-card,
-            .section-heading,
-            .page-hero-content
-            `
+            ".feature-card, .profile-card, " +
+            ".info-card, .education-card, " +
+            ".hobby-card, .contact-card, " +
+            ".timeline-card, .about-card, " +
+            ".stat-card, .highlight-card, " +
+            ".interest-card, .section-heading"
         );
 
+    revealElements.forEach((element) => {
 
-    revealElements.forEach(
-        element => {
+        element.classList.add("reveal");
 
-            element.classList.add(
-                "reveal"
-            );
-
-        }
-    );
+    });
 
 
-    const observer =
+    const revealObserver =
         new IntersectionObserver(
-            entries => {
+            (entries) => {
 
-                entries.forEach(entry => {
+                entries.forEach((entry) => {
 
-                    if (
-                        entry.isIntersecting
-                    ) {
+                    if (entry.isIntersecting) {
 
-                        entry.target.classList.add(
-                            "show"
-                        );
+                        entry.target.classList.add("show");
 
-                        observer.unobserve(
+                        revealObserver.unobserve(
                             entry.target
                         );
+
                     }
 
                 });
 
             },
             {
-                threshold: .12
+                threshold: 0.12
             }
         );
 
 
-    revealElements.forEach(
-        element => observer.observe(element)
-    );
+    revealElements.forEach((element) => {
+
+        revealObserver.observe(element);
+
+    });
 
 
     /* =====================================================
-       🧭 PAGE TRANSITION
+       🔗 PAGE TRANSITION
     ===================================================== */
 
-    const transition =
-        document.createElement("div");
-
-    transition.className =
-        "page-transition";
-
-    document.body.appendChild(
-        transition
-    );
-
-
-    window.addEventListener(
-        "pageshow",
-        () => {
-
-            transition.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
     document
-        .querySelectorAll(
-            'a[href$=".html"]'
-        )
-        .forEach(link => {
+        .querySelectorAll("a")
+        .forEach((link) => {
+
+            const href =
+                link.getAttribute("href");
+
+            if (
+                !href ||
+                href.startsWith("#") ||
+                href.startsWith("http") ||
+                href.startsWith("mailto:") ||
+                href.startsWith("tel:")
+            ) {
+
+                return;
+
+            }
 
             link.addEventListener(
                 "click",
-                event => {
-
-                    const target =
-                        link.href;
-
-                    if (
-                        !target ||
-                        target.includes("#")
-                    ) {
-                        return;
-                    }
+                (event) => {
 
                     event.preventDefault();
 
-                    transition.classList.add(
-                        "active"
-                    );
+                    const transition =
+                        document.querySelector(
+                            ".page-transition"
+                        );
 
-                    setTimeout(
-                        () => {
+                    if (transition) {
+
+                        transition.classList.add(
+                            "active"
+                        );
+
+                        setTimeout(() => {
 
                             window.location.href =
-                                target;
+                                href;
 
-                        },
-                        450
-                    );
+                        }, 500);
 
-                }
-            );
+                    } else {
 
-        });
+                        window.location.href =
+                            href;
 
-
-    /* =====================================================
-       💗 CLICK SCALE EFFECT
-    ===================================================== */
-
-    document.addEventListener(
-        "mousedown",
-        event => {
-
-            cursor.classList.add(
-                "active"
-            );
-
-        }
-    );
-
-
-    document.addEventListener(
-        "mouseup",
-        () => {
-
-            cursor.classList.remove(
-                "active"
-            );
-
-        }
-    );
-
-
-    /* =====================================================
-       🌟 ACTIVE CLICK EFFECT
-    ===================================================== */
-
-    document
-        .querySelectorAll(
-            ".nav-links a"
-        )
-        .forEach(link => {
-
-            link.addEventListener(
-                "click",
-                () => {
-
-                    link.style.transform =
-                        "scale(.94)";
-
-                    setTimeout(
-                        () => {
-
-                            link.style.transform =
-                                "";
-
-                        },
-                        180
-                    );
+                    }
 
                 }
             );
@@ -541,3 +300,240 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
 });
+
+
+/* =========================================================
+   💕 CURSOR TRAIL FUNCTION
+========================================================= */
+
+function createCursorTrail(x, y) {
+
+    const heart =
+        document.createElement("span");
+
+    heart.className =
+        "cursor-trail-heart";
+
+    const hearts = [
+        "♡",
+        "♥",
+        "💗",
+        "💕"
+    ];
+
+    heart.textContent =
+        hearts[
+            Math.floor(
+                Math.random() * hearts.length
+            )
+        ];
+
+    heart.style.left =
+        `${x}px`;
+
+    heart.style.top =
+        `${y}px`;
+
+    heart.style.setProperty(
+        "--tx",
+        `${(Math.random() - .5) * 35}px`
+    );
+
+    heart.style.setProperty(
+        "--ty",
+        `${-20 - Math.random() * 30}px`
+    );
+
+    heart.style.setProperty(
+        "--rotate",
+        `${(Math.random() - .5) * 80}deg`
+    );
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    }, 800);
+
+}
+
+
+/* =========================================================
+   💥 EMOJI EXPLOSION
+========================================================= */
+
+function createEmojiExplosion(x, y) {
+
+    const emojis = [
+        "💗",
+        "💕",
+        "💖",
+        "💘",
+        "💝",
+        "🌸",
+        "🌷",
+        "✨",
+        "♡",
+        "♥"
+    ];
+
+    /* จำนวนอิโมจิต่อหนึ่งคลิก */
+
+    const amount = 10;
+
+    for (let i = 0; i < amount; i++) {
+
+        const emoji =
+            document.createElement("span");
+
+        emoji.className =
+            "click-emoji";
+
+        emoji.textContent =
+            emojis[
+                Math.floor(
+                    Math.random() * emojis.length
+                )
+            ];
+
+        emoji.style.left =
+            `${x}px`;
+
+        emoji.style.top =
+            `${y}px`;
+
+        const angle =
+            Math.random() * Math.PI * 2;
+
+        const distance =
+            50 + Math.random() * 110;
+
+        const moveX =
+            Math.cos(angle) * distance;
+
+        const moveY =
+            Math.sin(angle) * distance;
+
+        emoji.style.setProperty(
+            "--move-x",
+            `${moveX}px`
+        );
+
+        emoji.style.setProperty(
+            "--move-y",
+            `${moveY}px`
+        );
+
+        emoji.style.setProperty(
+            "--rotation",
+            `${(Math.random() - .5) * 180}deg`
+        );
+
+        emoji.style.setProperty(
+            "--emoji-size",
+            `${14 + Math.random() * 15}px`
+        );
+
+        emoji.style.setProperty(
+            "--duration",
+            `${.7 + Math.random() * .5}s`
+        );
+
+        document.body.appendChild(emoji);
+
+        setTimeout(() => {
+
+            emoji.remove();
+
+        }, 1300);
+
+    }
+
+}
+
+
+/* =========================================================
+   💗 CLICK RING
+========================================================= */
+
+function createClickRing(x, y) {
+
+    const ring =
+        document.createElement("span");
+
+    ring.className =
+        "click-ring";
+
+    ring.style.left =
+        `${x}px`;
+
+    ring.style.top =
+        `${y}px`;
+
+    document.body.appendChild(ring);
+
+    setTimeout(() => {
+
+        ring.remove();
+
+    }, 700);
+
+}
+
+
+/* =========================================================
+   💥 BUTTON RIPPLE
+========================================================= */
+
+function createRipple(x, y) {
+
+    const target =
+        document.elementFromPoint(x, y);
+
+    if (!target) return;
+
+    const button =
+        target.closest(
+            ".btn, button"
+        );
+
+    if (!button) return;
+
+    const rect =
+        button.getBoundingClientRect();
+
+    const ripple =
+        document.createElement("span");
+
+    ripple.className =
+        "ripple";
+
+    const size =
+        Math.max(
+            rect.width,
+            rect.height
+        );
+
+    ripple.style.width =
+        `${size}px`;
+
+    ripple.style.height =
+        `${size}px`;
+
+    ripple.style.left =
+        `${x - rect.left - size / 2}px`;
+
+    ripple.style.top =
+        `${y - rect.top - size / 2}px`;
+
+    button.appendChild(ripple);
+
+    setTimeout(() => {
+
+        ripple.remove();
+
+    }, 700);
+
+}
