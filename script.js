@@ -748,3 +748,11 @@ window.addEventListener("load", () => {
     }, 1200);
 
 });
+
+window.addEventListener("load", () => {
+    const loader = document.getElementById("page-loader");
+
+    setTimeout(() => {
+        loader.classList.add("hide");
+    }, 800);
+});
