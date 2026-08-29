@@ -4088,3 +4088,141 @@ tbody tr:hover {
     }
 
 }
+
+/* =========================================================
+   🚨 EMERGENCY FIX — SHOW ALL PAGE CONTENT
+   ป้องกันหน้าเว็บขาว/ว่าง หากระบบ reveal JS ไม่ทำงาน
+========================================================= */
+
+main,
+main section,
+.hero,
+.hero-grid,
+.hero-content,
+.hero-visual,
+.hero-content *,
+.hero-visual *,
+.intro,
+.intro-layout,
+.intro-main,
+.intro-side,
+.intro-grid,
+.feature-card,
+.cta-section,
+.cta-card,
+.page-header,
+.profile-section,
+.profile-layout,
+.profile-content,
+.profile-image,
+.profile-image-area {
+    visibility: visible !important;
+}
+
+/* ถ้ามี reveal แต่ JavaScript ไม่ทำงาน
+   ให้เนื้อหาแสดงตามปกติ */
+.reveal,
+[data-reveal] {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+/* ไม่ให้ animation ตัวเก่าซ่อนเนื้อหา */
+.hero-content,
+.hero-visual {
+    opacity: 1 !important;
+}
+
+/* ให้ main อยู่เหนือพื้นหลังหัวใจ */
+main {
+    position: relative;
+    z-index: 2;
+}
+
+/* แต่พื้นหลังยังอยู่ด้านหลัง */
+.sakura-background,
+.floating-particles,
+.floating-petals {
+    z-index: 1;
+}
+
+/* =========================================================
+   💗 HERO — จัดข้อความ + รูปให้อยู่คนละฝั่ง
+========================================================= */
+
+.hero-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(320px, .95fr) !important;
+    align-items: center !important;
+    gap: 55px !important;
+    width: min(calc(100% - 40px), 1120px) !important;
+    margin-inline: auto !important;
+}
+
+.hero-content {
+    min-width: 0;
+    position: relative;
+    z-index: 5;
+}
+
+.hero-visual {
+    min-width: 0;
+    position: relative;
+    min-height: 520px;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
+
+/* รูปหน้าแรก */
+.hero-visual .profile-frame {
+    width: min(330px, 100%) !important;
+    max-width: 330px !important;
+    margin: auto;
+}
+
+/* =========================================================
+   📱 TABLET / MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .hero-grid {
+        grid-template-columns: 1fr !important;
+        gap: 35px !important;
+        text-align: center;
+    }
+
+    .hero-visual {
+        min-height: 400px;
+    }
+
+    .hero-visual .profile-frame {
+        width: min(310px, 82vw) !important;
+    }
+
+    .hero-description {
+        margin-inline: auto;
+    }
+
+    .hero-buttons,
+    .hero-stats {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .hero-grid {
+        width: min(calc(100% - 28px), 1120px) !important;
+    }
+
+    .hero-visual {
+        min-height: 350px;
+    }
+
+    .hero-visual .profile-frame {
+        width: min(280px, 82vw) !important;
+    }
+}
