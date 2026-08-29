@@ -1,86 +1,113 @@
 <!DOCTYPE html>
 <html lang="th">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>My Portfolio | งานอดิเรก</title>
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>งานอดิเรก | My Portfolio</title>
 
     <link rel="stylesheet" href="style.css">
+
 </head>
+
 
 <body>
 
-    <!-- =====================================================
-     🌸 FLOATING HEARTS & SAKURA
-====================================================== -->
+    <div class="background-hearts">
+        <span>♡</span>
+        <span>♥</span>
+        <span>🌸</span>
+        <span>✦</span>
+        <span>♡</span>
+        <span>✿</span>
+    </div>
 
-<div class="floating-petals" aria-hidden="true">
+    <div class="click-effects"></div>
 
-    <span class="petal p1">🌸</span>
-    <span class="petal p2">💗</span>
-    <span class="petal p3">🌺</span>
-    <span class="petal p4">💕</span>
-    <span class="petal p5">🌸</span>
-    <span class="petal p6">❤️</span>
-    <span class="petal p7">🌸</span>
-    <span class="petal p8">💖</span>
-    <span class="petal p9">🌺</span>
-    <span class="petal p10">💗</span>
-    <span class="petal p11">🌸</span>
-    <span class="petal p12">💞</span>
-    <span class="petal p13">🌸</span>
-    <span class="petal p14">❤️</span>
-    <span class="petal p15">🌺</span>
-    <span class="petal p16">💗</span>
-    <span class="petal p17">🌸</span>
-    <span class="petal p18">💖</span>
-    <span class="petal p19">🌺</span>
-    <span class="petal p20">💕</span>
+    <div class="cursor-glow"></div>
 
-</div>
-    
-    <!-- Navigation -->
+    <div class="page-transition"></div>
+
+
     <header class="site-header">
-        <nav class="navbar container">
 
-            <a href="index.html" class="logo">
-                <span class="logo-mark">M</span>
-                <span>My Portfolio</span>
+        <nav class="navbar">
+
+            <a class="logo" href="index.html">
+
+                <span class="logo-mark">
+                    ✦
+                </span>
+
+                <span class="logo-text">
+                    MY <strong>PORTFOLIO</strong>
+                </span>
+
             </a>
 
+
             <div class="nav-links">
-                <a href="index.html">หน้าแรก</a>
-                <a href="profile.html">ประวัติส่วนตัว</a>
-                <a href="education.html">การศึกษา</a>
-                <a href="hobby.html" class="active" aria-current="page">
-                    งานอดิเรก
+
+                <a href="index.html">
+                    ⌂ หน้าแรก
                 </a>
-                <a href="contact.html">ติดต่อ</a>
+
+                <a href="profile.html">
+                    ♡ ประวัติส่วนตัว
+                </a>
+
+                <a href="education.html">
+                    ✦ การศึกษา
+                </a>
+
+                <a class="active" href="hobby.html">
+                    ☆ งานอดิเรก
+                </a>
+
+                <a href="contact.html">
+                    ✉ ติดต่อ
+                </a>
+
             </div>
 
         </nav>
+
     </header>
+
 
 
     <main>
 
-        <!-- Page Hero -->
-        <section class="page-hero hobby-hero">
+        <section class="page-hero">
 
-            <div class="page-hero-decoration"></div>
+            <div class="container reveal">
 
-            <div class="container page-hero-content">
-
-                <span class="section-label light">
-                    MY HOBBIES
+                <span class="section-kicker">
+                    HOBBY / 03
                 </span>
 
-                <h1>สิ่งที่ฉันชอบ</h1>
+                <h1>
+
+                    สิ่งที่ฉันชอบ
+
+                    <span class="gradient-text">
+                        ☆
+                    </span>
+
+                </h1>
 
                 <p>
-                    งานอดิเรกและความสนใจ
-                    ที่ทำให้เวลาว่างของฉันเต็มไปด้วยความสนุก
+
+                    งานอดิเรกคือพื้นที่ที่ทำให้ฉันได้พัก
+                    ได้สนุก
+                    และได้ค้นพบตัวเองในมุมใหม่ ๆ
+
                 </p>
 
             </div>
@@ -88,197 +115,228 @@
         </section>
 
 
-        <!-- Hobby Grid -->
-        <section class="section section-white">
+
+        <section class="section">
 
             <div class="container">
-
-                <div class="section-heading center">
-
-                    <span class="section-label">
-                        WHAT I LIKE
-                    </span>
-
-                    <h2>
-                        งานอดิเรกของฉัน
-                    </h2>
-
-                    <p>
-                        แต่ละกิจกรรมช่วยให้ฉันได้เรียนรู้
-                        และใช้เวลาว่างอย่างสร้างสรรค์
-                    </p>
-
-                </div>
-
 
                 <div class="hobby-grid">
 
-                    <article class="hobby-card">
 
-                        <div class="hobby-card-top">
-                            <span class="hobby-icon">🎮</span>
-                            <span class="hobby-number">01</span>
+                    <article class="card hobby-card tilt-card reveal">
+
+                        <div>
+
+                            <span class="hobby-emoji">
+                                🎮
+                            </span>
+
+                            <h3>
+                                เกม
+                            </h3>
+
+                            <p>
+                                เกมที่ช่วยฝึกการคิด
+                                วิเคราะห์ วางแผน
+                                และใช้เวลาว่างอย่างสนุกสนาน
+                            </p>
+
                         </div>
 
-                        <h3>เกม</h3>
+                        <div class="tag-row">
 
-                        <p>
-                            [เกมRoblox]
-                        </p>
+                            <span class="tag">
+                                Fun
+                            </span>
 
-                        <div class="hobby-line"></div>
+                            <span class="tag">
+                                Strategy
+                            </span>
 
-                        <span class="hobby-tag">
-                            Entertainment
-                        </span>
+                        </div>
 
                     </article>
 
 
-                    <article class="hobby-card">
 
-                        <div class="hobby-card-top">
-                            <span class="hobby-icon">⚽</span>
-                            <span class="hobby-number">02</span>
+                    <article class="card hobby-card tilt-card reveal">
+
+                        <div>
+
+                            <span class="hobby-emoji">
+                                ⚽
+                            </span>
+
+                            <h3>
+                                กีฬา
+                            </h3>
+
+                            <p>
+                                กิจกรรมที่ช่วยให้ได้เคลื่อนไหว
+                                ฝึกความมีวินัย
+                                และใช้เวลาร่วมกับเพื่อน
+                            </p>
+
                         </div>
 
-                        <h3>กีฬา</h3>
+                        <div class="tag-row">
 
-                        <p>
-                            [เปตอง]
-                        </p>
+                            <span class="tag">
+                                Active
+                            </span>
 
-                        <div class="hobby-line"></div>
+                            <span class="tag">
+                                Teamwork
+                            </span>
 
-                        <span class="hobby-tag">
-                            Activity
-                        </span>
+                        </div>
 
                     </article>
 
 
-                    <article class="hobby-card">
 
-                        <div class="hobby-card-top">
-                            <span class="hobby-icon">🎵</span>
-                            <span class="hobby-number">03</span>
+                    <article class="card hobby-card tilt-card reveal">
+
+                        <div>
+
+                            <span class="hobby-emoji">
+                                🎵
+                            </span>
+
+                            <h3>
+                                เพลง
+                            </h3>
+
+                            <p>
+                                ฟังเพลงเพื่อผ่อนคลาย
+                                สร้างแรงบันดาลใจ
+                                และเติมสีสันให้แต่ละวัน
+                            </p>
+
                         </div>
 
-                        <h3>เพลง</h3>
+                        <div class="tag-row">
 
-                        <p>
-                            [เล่นกับใจ]
-                        </p>
+                            <span class="tag">
+                                Music
+                            </span>
 
-                        <div class="hobby-line"></div>
+                            <span class="tag">
+                                Relax
+                            </span>
 
-                        <span class="hobby-tag">
-                            Music
-                        </span>
+                        </div>
 
                     </article>
 
 
-                    <article class="hobby-card">
 
-                        <div class="hobby-card-top">
-                            <span class="hobby-icon">🎬</span>
-                            <span class="hobby-number">04</span>
+                    <article class="card hobby-card tilt-card reveal">
+
+                        <div>
+
+                            <span class="hobby-emoji">
+                                🎬
+                            </span>
+
+                            <h3>
+                                ภาพยนตร์
+                            </h3>
+
+                            <p>
+                                ชอบดูเรื่องราวหลากหลายแนว
+                                และสังเกตมุมมองหรือไอเดีย
+                                ที่น่าสนใจ
+                            </p>
+
                         </div>
 
-                        <h3>ภาพยนตร์</h3>
+                        <div class="tag-row">
 
-                        <p>
-                            [ตลก]
-                        </p>
+                            <span class="tag">
+                                Movies
+                            </span>
 
-                        <div class="hobby-line"></div>
+                            <span class="tag">
+                                Stories
+                            </span>
 
-                        <span class="hobby-tag">
-                            Movies
-                        </span>
+                        </div>
 
                     </article>
 
 
-                    <article class="hobby-card">
 
-                        <div class="hobby-card-top">
-                            <span class="hobby-icon">💻</span>
-                            <span class="hobby-number">05</span>
+                    <article class="card hobby-card tilt-card reveal">
+
+                        <div>
+
+                            <span class="hobby-emoji">
+                                💻
+                            </span>
+
+                            <h3>
+                                เทคโนโลยี
+                            </h3>
+
+                            <p>
+                                สนใจเว็บไซต์
+                                การออกแบบ
+                                และการทดลองสร้างสิ่งใหม่
+                                ด้วยคอมพิวเตอร์
+                            </p>
+
                         </div>
 
-                        <h3>เทคโนโลยี</h3>
+                        <div class="tag-row">
 
-                        <p>
-                            [เล่นเกม]
-                        </p>
+                            <span class="tag">
+                                Coding
+                            </span>
 
-                        <div class="hobby-line"></div>
+                            <span class="tag">
+                                Design
+                            </span>
 
-                        <span class="hobby-tag">
-                            Technology
-                        </span>
+                        </div>
 
                     </article>
 
 
-                    <article class="hobby-card featured-hobby">
 
-                        <div class="hobby-card-top">
-                            <span class="hobby-icon">📷</span>
-                            <span class="hobby-number">06</span>
+                    <article class="card hobby-card tilt-card reveal">
+
+                        <div>
+
+                            <span class="hobby-emoji">
+                                📷
+                            </span>
+
+                            <h3>
+                                ความสนใจ
+                            </h3>
+
+                            <p>
+                                [แต่งนิยาย]
+                                สิ่งเล็ก ๆ ที่ช่วยให้ฉัน
+                                ได้เรียนรู้และสร้างแรงบันดาลใจ
+                            </p>
+
                         </div>
 
-                        <h3>ความสนใจ</h3>
+                        <div class="tag-row">
 
-                        <p>
-                            [แต่งนิยาย]
-                        </p>
+                            <span class="tag">
+                                Creative
+                            </span>
 
-                        <div class="hobby-line"></div>
+                            <span class="tag">
+                                Explore
+                            </span>
 
-                        <span class="hobby-tag">
-                            Creativity
-                        </span>
+                        </div>
 
                     </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <!-- Quote -->
-        <section class="section section-soft">
-
-            <div class="container">
-
-                <div class="hobby-message">
-
-                    <div class="message-icon">
-                        ✦
-                    </div>
-
-                    <div>
-
-                        <span class="section-label">
-                            MY FREE TIME
-                        </span>
-
-                        <h2>
-                            งานอดิเรกไม่ใช่แค่ความสนุก
-                        </h2>
-
-                        <p>
-                            เพราะทุกสิ่งที่เราสนใจสามารถช่วยให้เรา
-                            ค้นพบตัวเอง เรียนรู้สิ่งใหม่
-                            และพัฒนาทักษะที่ไม่รู้ตัว
-                        </p>
-
-                    </div>
 
                 </div>
 
@@ -289,52 +347,93 @@
     </main>
 
 
-    <!-- Footer -->
-    <footer class="site-footer">
+
+    <footer class="footer">
 
         <div class="container footer-grid">
 
-            <div class="footer-brand">
+            <div>
 
-                <a href="index.html" class="logo footer-logo">
-                    <span class="logo-mark">M</span>
-                    <span>My Portfolio</span>
-                </a>
+                <h3>
+                    MY PORTFOLIO ✦
+                </h3>
 
                 <p>
-                    เว็บไซต์ Portfolio ของนักเรียน
+                    เว็บไซต์แนะนำตัว
+                    ของนักเรียน ม.3
                 </p>
 
             </div>
 
-            <div class="footer-info">
-                <strong>[จรินทร์พรรณ แก้วเคียงคำ</strong>
-                <span>นักเรียนชั้น ม.3/[2]</span>
+
+            <div>
+
+                <h3>
+                    เมนู
+                </h3>
+
+                <div class="footer-links">
+
+                    <a href="index.html">
+                        หน้าแรก
+                    </a>
+
+                    <a href="profile.html">
+                        ประวัติส่วนตัว
+                    </a>
+
+                    <a href="education.html">
+                        การศึกษา
+                    </a>
+
+                    <a href="hobby.html">
+                        งานอดิเรก
+                    </a>
+
+                    <a href="contact.html">
+                        ติดต่อ
+                    </a>
+
+                </div>
+
             </div>
 
-            <div class="footer-nav">
-                <a href="index.html">หน้าแรก</a>
-                <a href="profile.html">ประวัติส่วนตัว</a>
-                <a href="education.html">การศึกษา</a>
-                <a href="hobby.html">งานอดิเรก</a>
-                <a href="contact.html">ติดต่อ</a>
+
+            <div>
+
+                <h3>
+                    ข้อมูล
+                </h3>
+
+                <p>
+                    นักเรียนชั้น ม.3
+                </p>
+
+                <p>
+                    [โรงเรียนจอมทอง]
+                </p>
+
             </div>
 
         </div>
 
-        <div class="footer-bottom container">
-            <p>
-                © 2026 My Portfolio. Created for Computer Project.
-            </p>
+
+        <div class="container footer-bottom">
+
+            <span>
+                © 2026 My Portfolio
+            </span>
+
+            <span>
+                Made with love ♡
+            </span>
+
         </div>
 
     </footer>
 
 
     <script src="script.js"></script>
-    
-    <!-- 🌸❤️ Floating Hearts & Sakura -->
-    <script src="floating.js"></script>
-    
+
 </body>
 </html>
