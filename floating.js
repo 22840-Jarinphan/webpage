@@ -83,3 +83,54 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 });
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    const container = document.createElement("div");
+    container.className = "floating-particles";
+
+    const symbols = ["🌸", "💗", "💕", "🌷", "❤️"];
+
+    for (let i = 0; i < 18; i++) {
+
+        const particle = document.createElement("span");
+
+        particle.className = "floating-particle";
+
+        particle.textContent =
+            symbols[Math.floor(Math.random() * symbols.length)];
+
+        particle.style.left =
+            Math.random() * 100 + "%";
+
+        particle.style.setProperty(
+            "--size",
+            16 + Math.random() * 18 + "px"
+        );
+
+        particle.style.setProperty(
+            "--sway",
+            40 + Math.random() * 70 + "px"
+        );
+
+        particle.style.setProperty(
+            "--duration",
+            9 + Math.random() * 8 + "s"
+        );
+
+        particle.style.setProperty(
+            "--delay",
+            Math.random() * 10 + "s"
+        );
+
+        particle.style.setProperty(
+            "--opacity",
+            0.45 + Math.random() * 0.45
+        );
+
+        container.appendChild(particle);
+    }
+
+    document.body.appendChild(container);
+
+});
