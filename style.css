@@ -6979,3 +6979,149 @@ p {
         max-height: 380px !important;
     }
 }
+
+/* =====================================================
+   🌸❤️ FLOATING HEARTS & SAKURA
+===================================================== */
+
+.floating-particles {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 5;
+}
+
+
+/* อิโมจิแต่ละตัว */
+
+.floating-particle {
+    position: absolute;
+
+    top: -60px;
+
+    display: block;
+
+    user-select: none;
+
+    filter:
+        drop-shadow(0 4px 8px rgba(255, 20, 100, 0.25));
+
+    animation-name: falling-particle;
+
+    animation-timing-function: linear;
+
+    animation-iteration-count: infinite;
+
+    will-change: transform;
+}
+
+
+/* =====================================================
+   การตกลง + แกว่งซ้ายขวา
+===================================================== */
+
+@keyframes falling-particle {
+
+    0% {
+        transform:
+            translate3d(0, -70px, 0)
+            rotate(0deg);
+
+    }
+
+    20% {
+        transform:
+            translate3d(
+                calc(var(--sway) * -0.5),
+                20vh,
+                0
+            )
+            rotate(45deg);
+    }
+
+    40% {
+        transform:
+            translate3d(
+                var(--sway),
+                40vh,
+                0
+            )
+            rotate(90deg);
+    }
+
+    60% {
+        transform:
+            translate3d(
+                calc(var(--sway) * -0.4),
+                60vh,
+                0
+            )
+            rotate(150deg);
+    }
+
+    80% {
+        transform:
+            translate3d(
+                calc(var(--sway) * 0.7),
+                80vh,
+                0
+            )
+            rotate(220deg);
+    }
+
+    100% {
+        transform:
+            translate3d(
+                calc(var(--sway) * -0.2),
+                115vh,
+                0
+            )
+            rotate(360deg);
+    }
+}
+
+
+/* =====================================================
+   ให้บางอันดูอยู่ด้านหลัง
+===================================================== */
+
+.floating-particle:nth-child(3n) {
+    filter:
+        blur(0.3px)
+        drop-shadow(
+            0 4px 8px rgba(255, 50, 120, 0.2)
+        );
+}
+
+.floating-particle:nth-child(4n) {
+    opacity: 0.55 !important;
+}
+
+.floating-particle:nth-child(5n) {
+    transform: scale(0.8);
+}
+
+
+/* =====================================================
+   มือถือ
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .floating-particles {
+        z-index: 5;
+    }
+
+    .floating-particle {
+        font-size: 14px !important;
+    }
+}
