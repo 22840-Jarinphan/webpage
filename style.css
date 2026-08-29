@@ -5491,10 +5491,6 @@ document.querySelectorAll(".btn-home").forEach((button) => {
     z-index: 0;
 }
 
-/* ทำให้เนื้อหาเว็บไซต์อยู่เหนืออิโมจิ */
-body > *:not(.emoji-background) {
-    position: relative;
-    z-index: 2;
 }
 
 /* ตัวอิโมจิ */
