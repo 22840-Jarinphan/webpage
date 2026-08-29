@@ -6229,3 +6229,753 @@ main,
     }
 
 }
+
+/* =========================================================
+   FINAL OVERRIDE
+   DARK PINK / RED PORTFOLIO THEME
+   อ่านง่าย + ลดขนาด + ไม่มีกรอบขาว
+========================================================= */
+
+:root {
+    --bg-dark: #3a071d;
+    --bg-main: #500a27;
+    --bg-section: #610d31;
+
+    --wine: #720d38;
+    --wine-light: #8f1247;
+
+    --pink: #e91e63;
+    --pink-light: #ff4f8b;
+    --pink-soft: #ff9fbe;
+
+    --cream: #fff1f5;
+    --text-main: #fff4f7;
+    --text-soft: #f5c9d7;
+    --text-muted: #dda8bc;
+
+    --card: #6d1238;
+    --card-dark: #570b2b;
+    --border: rgba(255, 120, 165, 0.28);
+
+    --shadow: 0 15px 40px rgba(20, 0, 10, 0.35);
+}
+
+
+/* =========================================================
+   1. พื้นหลังทั้งเว็บไซต์
+========================================================= */
+
+html,
+body {
+    background:
+        radial-gradient(circle at 10% 10%, rgba(255, 40, 110, 0.10), transparent 30%),
+        radial-gradient(circle at 90% 20%, rgba(255, 80, 140, 0.08), transparent 28%),
+        linear-gradient(135deg, #3a071d 0%, #500a27 45%, #42051f 100%) !important;
+
+    color: var(--text-main);
+}
+
+
+/* ไม่ให้ section กลับไปเป็นสีขาว */
+
+section,
+main,
+.hero,
+.section,
+.section-white,
+.page-hero,
+.about-section,
+.education-section,
+.hobby-section,
+.contact-section {
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   2. Container ไม่ให้เนื้อหาชิดขอบ
+========================================================= */
+
+.container {
+    width: min(92%, 1180px);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* =========================================================
+   3. Navigation
+========================================================= */
+
+.site-header {
+    background: rgba(48, 4, 24, 0.94) !important;
+    border-bottom: 1px solid rgba(255, 90, 140, 0.22);
+    box-shadow: 0 10px 30px rgba(20, 0, 10, 0.25);
+}
+
+.navbar {
+    min-height: 88px;
+}
+
+.logo {
+    color: var(--pink-light) !important;
+    font-size: 1.35rem !important;
+}
+
+.logo-mark {
+    width: 54px !important;
+    height: 54px !important;
+    background: linear-gradient(135deg, #ff1f63, #b70945) !important;
+}
+
+.nav-links a {
+    color: #ffe3eb !important;
+    font-size: 1rem !important;
+    padding: 13px 19px !important;
+}
+
+.nav-links a:hover {
+    color: #ffffff !important;
+    background: rgba(233, 30, 99, 0.18);
+}
+
+.nav-links a.active {
+    color: #ffffff !important;
+    background: linear-gradient(
+        135deg,
+        #ed165e,
+        #c70d4e
+    ) !important;
+
+    box-shadow: 0 8px 20px rgba(233, 30, 99, 0.25);
+}
+
+
+/* =========================================================
+   4. Hero
+========================================================= */
+
+.hero {
+    min-height: auto !important;
+    padding-top: 110px !important;
+    padding-bottom: 80px !important;
+
+    background:
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(255, 42, 111, 0.15),
+            transparent 30%
+        ),
+        transparent !important;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.eyebrow,
+.section-label {
+    color: var(--pink-light) !important;
+    font-size: 0.85rem !important;
+    letter-spacing: 0.16em;
+}
+
+.hero-small-title {
+    color: var(--text-soft) !important;
+}
+
+.hero h1 {
+    font-size: clamp(2.8rem, 5vw, 4.7rem) !important;
+    line-height: 1.12 !important;
+}
+
+.hero h1 span {
+    color: #ff3d78 !important;
+}
+
+.hero h1 strong {
+    color: #fff3f7 !important;
+}
+
+.hero-description {
+    color: #f4c9d7 !important;
+    font-size: 1rem !important;
+    line-height: 1.9 !important;
+}
+
+
+/* =========================================================
+   5. ปุ่ม
+========================================================= */
+
+.btn {
+    font-size: 0.95rem !important;
+    padding: 12px 22px !important;
+    border-radius: 14px !important;
+}
+
+.btn-primary {
+    background: linear-gradient(
+        135deg,
+        #f01863,
+        #c50c4b
+    ) !important;
+
+    color: #ffffff !important;
+}
+
+.btn-outline {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 130, 170, 0.45) !important;
+    color: #ffe6ee !important;
+}
+
+.btn-outline:hover {
+    background: rgba(233, 30, 99, 0.18) !important;
+}
+
+
+/* =========================================================
+   6. STATS
+========================================================= */
+
+.hero-stats,
+.stats {
+    color: var(--text-main);
+}
+
+.stat-item strong,
+.stat strong {
+    color: var(--pink-light) !important;
+    font-size: 1.5rem !important;
+}
+
+.stat-item span,
+.stat span {
+    color: var(--text-muted) !important;
+    font-size: 0.85rem !important;
+}
+
+
+/* =========================================================
+   7. หัวข้อทุกหน้า
+========================================================= */
+
+.section-heading h2,
+.page-hero h1,
+.about-section h1,
+.education-section h1,
+.hobby-section h1,
+.contact-section h1 {
+    color: #fff2f6 !important;
+    font-size: clamp(2rem, 4vw, 3.4rem) !important;
+    line-height: 1.25 !important;
+}
+
+.section-heading h2 span {
+    color: var(--pink-light) !important;
+}
+
+.section-heading p {
+    color: #eab8ca !important;
+    font-size: 0.98rem !important;
+    line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   8. เปลี่ยน CARD สีขาวทั้งหมด
+========================================================= */
+
+.feature-card,
+.info-card,
+.fact-card,
+.education-card,
+.hobby-card,
+.contact-card,
+.profile-card,
+.timeline-card,
+.about-card,
+.stat-card,
+.card {
+    background:
+        linear-gradient(
+            145deg,
+            rgba(125, 18, 63, 0.98),
+            rgba(82, 8, 40, 0.98)
+        ) !important;
+
+    border: 1px solid var(--border) !important;
+    box-shadow: var(--shadow) !important;
+    color: var(--text-main) !important;
+
+    border-radius: 22px !important;
+}
+
+
+/* =========================================================
+   9. ลดขนาด Feature Card
+========================================================= */
+
+.feature-grid {
+    gap: 22px !important;
+}
+
+.feature-card {
+    padding: 28px !important;
+    min-height: 250px !important;
+}
+
+.feature-icon {
+    width: 54px !important;
+    height: 54px !important;
+
+    font-size: 1.4rem !important;
+
+    background: rgba(255, 95, 145, 0.16) !important;
+    color: #ff82aa !important;
+}
+
+.feature-number {
+    color: rgba(255, 150, 185, 0.45) !important;
+    font-size: 0.85rem !important;
+}
+
+.feature-card h3 {
+    color: #fff0f5 !important;
+    font-size: 1.25rem !important;
+}
+
+.feature-card p {
+    color: #e9b7c8 !important;
+    font-size: 0.92rem !important;
+    line-height: 1.8 !important;
+}
+
+.text-link {
+    color: #ff78a5 !important;
+    font-size: 0.9rem !important;
+}
+
+
+/* =========================================================
+   10. การ์ดข้อมูล Profile
+========================================================= */
+
+.profile-info,
+.profile-details,
+.info-grid {
+    gap: 16px !important;
+}
+
+.profile-info > *,
+.profile-details > *,
+.info-grid > * {
+    background:
+        linear-gradient(
+            145deg,
+            #74133d,
+            #5a0c2d
+        ) !important;
+
+    border: 1px solid rgba(255, 120, 165, 0.25) !important;
+    color: #fff1f5 !important;
+    border-radius: 18px !important;
+}
+
+
+/* หัวข้อเล็ก */
+
+.profile-info span,
+.profile-details span,
+.info-grid span {
+    color: #e7aabd !important;
+}
+
+
+/* ข้อมูลหลัก */
+
+.profile-info strong,
+.profile-details strong,
+.info-grid strong {
+    color: #fff4f7 !important;
+}
+
+
+/* =========================================================
+   11. ลดขนาดรูปโปรไฟล์
+========================================================= */
+
+.profile-frame {
+    max-width: 450px !important;
+    max-height: 560px !important;
+
+    border-radius: 28px !important;
+    border: 7px solid #b80d4d !important;
+
+    box-shadow:
+        0 20px 50px rgba(20, 0, 10, 0.4) !important;
+}
+
+.profile-frame img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+}
+
+
+/* =========================================================
+   12. About / My Story
+========================================================= */
+
+.about-content,
+.story-content {
+    color: #f5cbd8 !important;
+}
+
+.about-content p,
+.story-content p {
+    color: #eab8ca !important;
+    font-size: 0.95rem !important;
+    line-height: 1.9 !important;
+}
+
+blockquote,
+.quote-box {
+    background:
+        linear-gradient(
+            135deg,
+            #73123d,
+            #560a2c
+        ) !important;
+
+    color: #fff0f5 !important;
+
+    border-left: 4px solid #ed2366 !important;
+
+    border-radius: 16px !important;
+    padding: 22px 26px !important;
+}
+
+
+/* =========================================================
+   13. ตารางการศึกษา
+========================================================= */
+
+table {
+    background: #570b2c !important;
+    color: #fff0f5 !important;
+    border-radius: 18px !important;
+    overflow: hidden;
+}
+
+thead {
+    background:
+        linear-gradient(
+            135deg,
+            #a81250,
+            #760d39
+        ) !important;
+}
+
+thead th {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+}
+
+tbody tr {
+    background: #5c0d30 !important;
+}
+
+tbody tr:nth-child(even) {
+    background: #650f34 !important;
+}
+
+tbody td {
+    color: #f7d5e0 !important;
+    font-size: 0.9rem !important;
+    border-color: rgba(255, 120, 165, 0.15) !important;
+}
+
+
+/* สถานะ */
+
+.status,
+.badge {
+    background: #f6c5d5 !important;
+    color: #8c1243 !important;
+    font-size: 0.78rem !important;
+    padding: 7px 13px !important;
+}
+
+
+/* =========================================================
+   14. Hobby Card
+========================================================= */
+
+.hobby-card {
+    padding: 28px !important;
+}
+
+.hobby-card h3 {
+    color: #fff1f5 !important;
+    font-size: 1.25rem !important;
+}
+
+.hobby-card p {
+    color: #e8b6c7 !important;
+    font-size: 0.9rem !important;
+    line-height: 1.8 !important;
+}
+
+.hobby-card .icon,
+.hobby-icon {
+    width: 60px !important;
+    height: 60px !important;
+
+    background: #a90f4b !important;
+    color: #ffffff !important;
+}
+
+
+/* =========================================================
+   15. Contact Card
+========================================================= */
+
+.contact-card {
+    padding: 25px !important;
+    min-height: 190px !important;
+}
+
+.contact-card h3 {
+    color: #fff2f6 !important;
+    font-size: 1.1rem !important;
+}
+
+.contact-card p,
+.contact-card span {
+    color: #e5b1c3 !important;
+    font-size: 0.88rem !important;
+}
+
+.contact-icon {
+    width: 56px !important;
+    height: 56px !important;
+
+    background: #f8d4df !important;
+    color: #a80f4a !important;
+}
+
+
+/* =========================================================
+   16. CTA
+========================================================= */
+
+.cta-section {
+    background: transparent !important;
+    padding: 70px 0 !important;
+}
+
+.cta-card {
+    background:
+        linear-gradient(
+            135deg,
+            #9d124d,
+            #e71961
+        ) !important;
+
+    padding: 42px !important;
+    border-radius: 28px !important;
+
+    box-shadow:
+        0 20px 50px rgba(40, 0, 20, 0.4) !important;
+}
+
+.cta-card h2 {
+    color: #ffffff !important;
+    font-size: clamp(1.8rem, 4vw, 3rem) !important;
+}
+
+.cta-card p {
+    color: #ffe1ea !important;
+    font-size: 0.95rem !important;
+}
+
+.btn-white {
+    background: #fff0f5 !important;
+    color: #a50d48 !important;
+}
+
+
+/* =========================================================
+   17. Footer
+========================================================= */
+
+.site-footer {
+    background:
+        linear-gradient(
+            135deg,
+            #2d0418,
+            #500823
+        ) !important;
+
+    color: #f7d5e0 !important;
+}
+
+.footer-brand p,
+.footer-info span {
+    color: #d9a3b6 !important;
+    font-size: 0.88rem !important;
+}
+
+.footer-info strong {
+    color: #fff1f5 !important;
+}
+
+.footer-nav a {
+    color: #e7bdca !important;
+    font-size: 0.88rem !important;
+}
+
+.footer-nav a:hover {
+    color: #ff6697 !important;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 120, 165, 0.18) !important;
+}
+
+.footer-bottom p {
+    color: #c995aa !important;
+    font-size: 0.8rem !important;
+}
+
+
+/* =========================================================
+   18. ลดขนาดโดยรวม ไม่ให้เว็บดูใหญ่เกิน
+========================================================= */
+
+h1 {
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    letter-spacing: -0.015em;
+}
+
+h3 {
+    letter-spacing: -0.01em;
+}
+
+p {
+    max-width: 900px;
+}
+
+
+/* =========================================================
+   19. Hover ทำให้เว็บดูมีชีวิต
+========================================================= */
+
+.feature-card,
+.hobby-card,
+.contact-card,
+.info-card,
+.fact-card,
+.education-card {
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.feature-card:hover,
+.hobby-card:hover,
+.contact-card:hover,
+.info-card:hover,
+.fact-card:hover,
+.education-card:hover {
+    transform: translateY(-5px);
+
+    border-color: rgba(255, 100, 155, 0.55) !important;
+
+    box-shadow:
+        0 20px 45px rgba(20, 0, 10, 0.45) !important;
+}
+
+
+/* =========================================================
+   20. Responsive
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .navbar {
+        min-height: 75px;
+    }
+
+    .nav-links a {
+        padding: 10px 11px !important;
+        font-size: 0.85rem !important;
+    }
+
+    .hero {
+        padding-top: 80px !important;
+    }
+
+    .hero h1 {
+        font-size: 2.7rem !important;
+    }
+
+    .profile-frame {
+        max-width: 360px !important;
+        max-height: 460px !important;
+    }
+
+    .feature-card {
+        padding: 24px !important;
+    }
+
+    .cta-card {
+        padding: 30px !important;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+    }
+
+    .nav-links {
+        gap: 4px !important;
+    }
+
+    .nav-links a {
+        padding: 8px 7px !important;
+        font-size: 0.72rem !important;
+    }
+
+    .hero h1 {
+        font-size: 2.25rem !important;
+    }
+
+    .hero-description {
+        font-size: 0.9rem !important;
+    }
+
+    .feature-card {
+        min-height: auto !important;
+        padding: 22px !important;
+    }
+
+    .cta-card {
+        padding: 25px !important;
+        border-radius: 22px !important;
+    }
+
+    .profile-frame {
+        max-width: 300px !important;
+        max-height: 380px !important;
+    }
+}
