@@ -7125,3 +7125,741 @@ p {
         font-size: 14px !important;
     }
 }
+
+/* =========================================================
+   🌹 FINAL DESIGN OVERRIDE
+   DARK PINK × RED PORTFOLIO
+   ปรับสีกรอบ + ตัวอักษร + ลดขนาด
+========================================================= */
+
+
+/* =========================================================
+   🎨 COLOR SYSTEM
+========================================================= */
+
+:root {
+    --pink-dark: #3b071d;
+    --pink-deep: #4d0826;
+    --red-wine: #650b32;
+    --red-main: #8f1247;
+
+    --pink-main: #d91b5b;
+    --pink-bright: #f04b7a;
+    --pink-soft: #ff9fbd;
+
+    --text-white: #fff5f8;
+    --text-cream: #ffe8ef;
+    --text-soft: #edc0cf;
+    --text-muted: #c995aa;
+
+    --card-dark: #520b2c;
+    --card-mid: #661037;
+    --card-light: #74123e;
+
+    --border-pink: rgba(255, 112, 157, 0.28);
+
+    --shadow-dark:
+        0 15px 35px rgba(20, 0, 10, 0.38);
+}
+
+
+/* =========================================================
+   🌙 GLOBAL BACKGROUND
+========================================================= */
+
+html {
+    background: #3b071d !important;
+}
+
+body {
+    margin: 0;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(240, 45, 110, 0.13),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(255, 100, 160, 0.08),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #3b071d 0%,
+            #500a29 48%,
+            #3b071d 100%
+        ) !important;
+
+    color: var(--text-white);
+}
+
+
+/* =========================================================
+   🚫 REMOVE WHITE BACKGROUNDS
+========================================================= */
+
+main,
+section,
+.section,
+.section-white,
+.section-soft,
+.hobby-section,
+.hobby-message-section,
+.page-hero {
+    background-color: transparent !important;
+}
+
+
+/* =========================================================
+   📐 GLOBAL SIZE
+========================================================= */
+
+.container {
+    width: min(91%, 1120px) !important;
+}
+
+
+/* =========================================================
+   🧭 NAVIGATION
+========================================================= */
+
+.site-header {
+    background: rgba(48, 4, 23, 0.94) !important;
+
+    border-bottom:
+        1px solid rgba(255, 100, 150, 0.20) !important;
+
+    box-shadow:
+        0 8px 25px rgba(20, 0, 10, 0.28) !important;
+
+    backdrop-filter: blur(14px);
+}
+
+.navbar {
+    min-height: 76px !important;
+}
+
+.logo {
+    color: #ff709b !important;
+    font-size: 1.18rem !important;
+}
+
+.logo-mark {
+    width: 46px !important;
+    height: 46px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ed2867,
+            #9e0c48
+        ) !important;
+
+    box-shadow:
+        0 8px 20px rgba(230, 20, 90, 0.25);
+}
+
+.nav-links {
+    gap: 5px !important;
+}
+
+.nav-links a {
+    color: #f7dce5 !important;
+
+    font-size: 0.88rem !important;
+
+    padding: 10px 15px !important;
+
+    border-radius: 12px !important;
+
+    transition:
+        0.25s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff !important;
+
+    background:
+        rgba(235, 30, 100, 0.16) !important;
+}
+
+.nav-links a.active {
+    color: #ffffff !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #df195d,
+            #a50d49
+        ) !important;
+
+    box-shadow:
+        0 7px 18px rgba(220, 20, 90, 0.25);
+}
+
+
+/* =========================================================
+   🌸 PAGE HERO
+========================================================= */
+
+.page-hero {
+    padding:
+        85px 0 65px !important;
+
+    min-height: auto !important;
+}
+
+.page-hero-content {
+    max-width: 850px !important;
+}
+
+.page-hero h1 {
+    color: #fff4f7 !important;
+
+    font-size:
+        clamp(2.2rem, 5vw, 3.5rem) !important;
+
+    line-height: 1.2 !important;
+}
+
+.page-hero p {
+    color: #e8bdcc !important;
+
+    font-size: 0.95rem !important;
+
+    line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   ✨ SECTION HEADING
+========================================================= */
+
+.section-heading {
+    margin-bottom: 42px !important;
+}
+
+.section-heading h2 {
+    color: #fff1f5 !important;
+
+    font-size:
+        clamp(1.8rem, 4vw, 2.7rem) !important;
+
+    line-height: 1.25 !important;
+}
+
+.section-heading p {
+    color: #ddb0c1 !important;
+
+    font-size: 0.92rem !important;
+
+    line-height: 1.8 !important;
+}
+
+.section-label {
+    color: #ff719b !important;
+
+    font-size: 0.78rem !important;
+
+    letter-spacing: 0.13em;
+}
+
+
+/* =========================================================
+   🎀 HOBBY GRID
+========================================================= */
+
+.hobby-grid {
+    gap: 20px !important;
+}
+
+
+/* =========================================================
+   💗 HOBBY CARDS
+========================================================= */
+
+.hobby-card {
+    position: relative;
+
+    padding: 24px !important;
+
+    min-height: 220px !important;
+
+    background:
+        linear-gradient(
+            145deg,
+            #74143e 0%,
+            #5a0c2f 100%
+        ) !important;
+
+    border:
+        1px solid
+        rgba(255, 112, 157, 0.25) !important;
+
+    border-radius: 20px !important;
+
+    box-shadow:
+        0 12px 30px
+        rgba(20, 0, 10, 0.32) !important;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+}
+
+
+/* Hover */
+
+.hobby-card:hover {
+    transform:
+        translateY(-6px) !important;
+
+    border-color:
+        rgba(255, 105, 155, 0.55) !important;
+
+    box-shadow:
+        0 20px 38px
+        rgba(20, 0, 10, 0.45) !important;
+}
+
+
+/* =========================================================
+   🎮 HOBBY ICON
+========================================================= */
+
+.hobby-icon {
+    width: 52px !important;
+    height: 52px !important;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.35rem !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a91650,
+            #741039
+        ) !important;
+
+    border:
+        1px solid
+        rgba(255, 150, 185, 0.25) !important;
+
+    border-radius: 15px !important;
+
+    box-shadow:
+        0 8px 18px
+        rgba(20, 0, 10, 0.25);
+}
+
+
+/* =========================================================
+   🔢 NUMBER
+========================================================= */
+
+.hobby-number {
+    color:
+        rgba(255, 177, 200, 0.55) !important;
+
+    font-size: 0.78rem !important;
+}
+
+
+/* =========================================================
+   📝 HOBBY TEXT
+========================================================= */
+
+.hobby-card h3 {
+    color: #fff3f7 !important;
+
+    font-size: 1.18rem !important;
+
+    margin-top: 18px !important;
+
+    margin-bottom: 8px !important;
+}
+
+.hobby-card p {
+    color: #e5b7c7 !important;
+
+    font-size: 0.88rem !important;
+
+    line-height: 1.75 !important;
+
+    margin-bottom: 15px !important;
+}
+
+
+/* =========================================================
+   ─── HOBBY LINE
+========================================================= */
+
+.hobby-line {
+    background:
+        linear-gradient(
+            90deg,
+            #e52b69,
+            rgba(229, 43, 105, 0)
+        ) !important;
+
+    height: 2px !important;
+
+    opacity: 0.7;
+}
+
+
+/* =========================================================
+   🏷 TAG
+========================================================= */
+
+.hobby-tag {
+    display: inline-block;
+
+    margin-top: 13px !important;
+
+    padding: 6px 11px !important;
+
+    border-radius: 20px !important;
+
+    background:
+        rgba(255, 105, 155, 0.13) !important;
+
+    border:
+        1px solid
+        rgba(255, 125, 165, 0.20) !important;
+
+    color: #ff9fba !important;
+
+    font-size: 0.68rem !important;
+
+    letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   ✦ FEATURED CARD
+========================================================= */
+
+.featured-hobby {
+    background:
+        linear-gradient(
+            145deg,
+            #841542,
+            #610c32
+        ) !important;
+
+    border-color:
+        rgba(255, 105, 155, 0.38) !important;
+}
+
+
+/* =========================================================
+   💬 HOBBY MESSAGE
+========================================================= */
+
+.hobby-message {
+    background:
+        linear-gradient(
+            135deg,
+            #6c1037,
+            #4d0828
+        ) !important;
+
+    border:
+        1px solid
+        rgba(255, 110, 155, 0.25) !important;
+
+    border-radius: 22px !important;
+
+    padding: 30px !important;
+
+    box-shadow:
+        var(--shadow-dark) !important;
+}
+
+.message-icon {
+    width: 55px !important;
+    height: 55px !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #e31d60,
+            #a50c48
+        ) !important;
+
+    color: #ffffff !important;
+
+    border-radius: 16px !important;
+
+    font-size: 1.35rem !important;
+}
+
+.message-content h2 {
+    color: #fff2f6 !important;
+
+    font-size: 1.65rem !important;
+
+    margin:
+        7px 0 10px !important;
+}
+
+.message-content p {
+    color: #dfb1c1 !important;
+
+    font-size: 0.9rem !important;
+
+    line-height: 1.8 !important;
+}
+
+
+/* =========================================================
+   🔗 LINKS
+========================================================= */
+
+a {
+    transition:
+        color 0.25s ease,
+        background 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* =========================================================
+   🌹 FOOTER
+========================================================= */
+
+.site-footer {
+    margin-top: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2c0418,
+            #470722
+        ) !important;
+
+    color: #f5d5df !important;
+}
+
+.footer-grid {
+    padding:
+        50px 0 35px !important;
+}
+
+.footer-brand p {
+    color: #c996aa !important;
+
+    font-size: 0.82rem !important;
+
+    line-height: 1.7 !important;
+}
+
+.footer-info strong {
+    color: #fff0f5 !important;
+
+    font-size: 0.9rem !important;
+}
+
+.footer-info span {
+    color: #c995aa !important;
+
+    font-size: 0.78rem !important;
+}
+
+.footer-nav {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px 16px !important;
+}
+
+.footer-nav a {
+    color: #ddb1c1 !important;
+
+    font-size: 0.78rem !important;
+}
+
+.footer-nav a:hover {
+    color: #ff719c !important;
+}
+
+.footer-bottom {
+    border-top:
+        1px solid
+        rgba(255, 120, 165, 0.14) !important;
+
+    padding:
+        18px 0 !important;
+}
+
+.footer-bottom p {
+    color: #a9788b !important;
+
+    font-size: 0.72rem !important;
+}
+
+
+/* =========================================================
+   ❤️ FLOATING EMOJI
+   ไม่ไปทับปุ่มและเนื้อหา
+========================================================= */
+
+.floating-petals {
+    pointer-events: none !important;
+
+    z-index: 4 !important;
+}
+
+
+/* =========================================================
+   📱 TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .container {
+        width: 90% !important;
+    }
+
+    .navbar {
+        min-height: 70px !important;
+    }
+
+    .nav-links a {
+        padding:
+            8px 10px !important;
+
+        font-size:
+            0.78rem !important;
+    }
+
+    .page-hero {
+        padding:
+            70px 0 55px !important;
+    }
+
+    .hobby-card {
+        padding: 22px !important;
+    }
+
+    .hobby-message {
+        padding: 25px !important;
+    }
+}
+
+
+/* =========================================================
+   📱 MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 88% !important;
+    }
+
+    .navbar {
+        min-height: 64px !important;
+    }
+
+    .logo {
+        font-size: 0.95rem !important;
+    }
+
+    .logo-mark {
+        width: 38px !important;
+        height: 38px !important;
+    }
+
+    .nav-links {
+        gap: 2px !important;
+    }
+
+    .nav-links a {
+        padding:
+            7px 6px !important;
+
+        font-size:
+            0.68rem !important;
+    }
+
+    .page-hero {
+        padding:
+            60px 0 45px !important;
+    }
+
+    .page-hero h1 {
+        font-size: 2.15rem !important;
+    }
+
+    .page-hero p {
+        font-size: 0.85rem !important;
+    }
+
+    .section-heading {
+        margin-bottom: 30px !important;
+    }
+
+    .section-heading h2 {
+        font-size: 1.85rem !important;
+    }
+
+    .hobby-grid {
+        gap: 15px !important;
+    }
+
+    .hobby-card {
+        padding: 20px !important;
+
+        min-height: 195px !important;
+
+        border-radius: 17px !important;
+    }
+
+    .hobby-icon {
+        width: 46px !important;
+        height: 46px !important;
+
+        font-size: 1.15rem !important;
+    }
+
+    .hobby-card h3 {
+        font-size: 1.08rem !important;
+    }
+
+    .hobby-card p {
+        font-size: 0.82rem !important;
+    }
+
+    .hobby-message {
+        padding: 21px !important;
+
+        border-radius: 18px !important;
+    }
+
+    .message-icon {
+        width: 48px !important;
+        height: 48px !important;
+    }
+
+    .message-content h2 {
+        font-size: 1.35rem !important;
+    }
+
+    .message-content p {
+        font-size: 0.82rem !important;
+    }
+
+    .footer-grid {
+        padding:
+            40px 0 25px !important;
+    }
+}
