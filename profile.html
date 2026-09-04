@@ -600,5 +600,52 @@
     <script src="script.js"></script>
 <script src="floating.js"></script>
 
+    <!-- ==========================================
+     GLOBAL MUSIC PLAYER
+========================================== -->
+
+<div id="music-player">
+    
+    <div class="music-box">
+
+        <!-- YouTube Player -->
+        <div id="youtube-player"></div>
+
+        <!-- ปุ่มควบคุม -->
+        <div class="music-controls">
+
+            <button id="music-toggle" title="เล่น / หยุดเพลง">
+                ▶
+            </button>
+
+            <div class="music-info">
+                <div class="music-title">
+                    🎵 Hey Daddy — Slowed
+                </div>
+
+                <div class="music-status" id="music-status">
+                    กำลังเตรียมเพลง...
+                </div>
+            </div>
+
+            <button id="music-hide" title="ซ่อนเครื่องเล่น">
+                ×
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ปุ่มเปิด Music Player -->
+<button id="music-show" title="เปิดเพลง">
+    🎵
+</button>
+
+
+<script src="music.js"></script>
+    
 </body>
 </html>
