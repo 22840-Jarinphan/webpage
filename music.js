@@ -1,387 +1,574 @@
-/* =====================================================
-   🎵 CONTINUOUS MUSIC + PAGE NAVIGATION
-   เพลงเล่นต่อเนื่องขณะเปลี่ยนหน้า
-===================================================== */
+/* =========================================================
+   GLOBAL MUSIC PLAYER
+   เพลงจะเล่นต่อเมื่อเปลี่ยนหน้าแบบ SPA
+========================================================= */
 
-document.addEventListener("DOMContentLoaded", () => {
+(() => {
 
-    /* =================================================
-       🎵 MUSIC PLAYER
-    ================================================= */
-
-    const musicHTML = `
-        <div class="music-box" id="musicBox">
-
-            <div class="music-header">
-
-                <div class="music-disc">
-                    🎵
-                </div>
-
-                <div class="music-info">
-
-                    <span class="music-label">
-                        NOW PLAYING
-                    </span>
-
-                    <strong>
-                        Hey Daddy
-                    </strong>
-
-                    <small>
-                        Usher • Slowed
-                    </small>
-
-                </div>
-
-                <button
-                    class="music-close"
-                    id="musicMinimize"
-                    aria-label="ย่อเครื่องเล่นเพลง">
-                    −
-                </button>
-
-            </div>
+    "use strict";
 
 
-            <div class="music-wave">
+    /* =====================================================
+       SETTINGS
+    ===================================================== */
 
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
-                <span></span>
+    const VIDEO_ID = "9-WagXIJZo4";
 
-            </div>
+    const PLAYER_STORAGE = "portfolio_music_state";
 
 
-            <div class="music-video">
+    /* =====================================================
+       VARIABLES
+    ===================================================== */
 
-                <iframe
-                    id="youtubeMusic"
-                    src="https://www.youtube.com/embed/9-WagXIJZo4?enablejsapi=1&rel=0"
-                    title="Hey Daddy - Usher Slowed"
-                    allow="autoplay; encrypted-media"
-                    allowfullscreen>
-                </iframe>
+    let player = null;
 
-            </div>
+    let playerReady = false;
 
-        </div>
-    `;
+    let currentTime = 0;
+
+    let isPlaying = false;
+
+    let isHidden = false;
 
 
-    /* =================================================
-       เพิ่ม Music Player
-    ================================================= */
+    /* =====================================================
+       ELEMENTS
+    ===================================================== */
 
-    if (!document.getElementById("musicBox")) {
+    const musicPlayer =
+        document.getElementById("music-player");
 
-        document.body.insertAdjacentHTML(
-            "beforeend",
-            musicHTML
-        );
+    const musicToggle =
+        document.getElementById("music-toggle");
+
+    const musicHide =
+        document.getElementById("music-hide");
+
+    const musicShow =
+        document.getElementById("music-show");
+
+    const musicStatus =
+        document.getElementById("music-status");
+
+
+    /* =====================================================
+       LOAD SAVED STATE
+    ===================================================== */
+
+    function loadState() {
+
+        try {
+
+            const saved =
+                sessionStorage.getItem(PLAYER_STORAGE);
+
+            if (!saved) return;
+
+            const data = JSON.parse(saved);
+
+            currentTime =
+                Number(data.time) || 0;
+
+            isPlaying =
+                data.playing === true;
+
+            isHidden =
+                data.hidden === true;
+
+        } catch (error) {
+
+            console.log(
+                "Music state error:",
+                error
+            );
+
+        }
 
     }
 
 
-    /* =================================================
-       🎵 ปุ่มย่อ
-    ================================================= */
+    /* =====================================================
+       SAVE STATE
+    ===================================================== */
 
-    const minimizeButton =
-        document.getElementById("musicMinimize");
+    function saveState() {
 
-    const musicBox =
-        document.getElementById("musicBox");
+        if (!playerReady || !player) return;
+
+        try {
+
+            const time =
+                player.getCurrentTime();
+
+            const state = {
+
+                time: time,
+
+                playing:
+                    player.getPlayerState() ===
+                    YT.PlayerState.PLAYING,
+
+                hidden: isHidden
+
+            };
+
+            sessionStorage.setItem(
+                PLAYER_STORAGE,
+                JSON.stringify(state)
+            );
+
+        } catch (error) {
+
+            console.log(
+                "Cannot save music state"
+            );
+
+        }
+
+    }
 
 
-    if (minimizeButton && musicBox) {
+    /* =====================================================
+       LOAD YOUTUBE API
+    ===================================================== */
 
-        minimizeButton.addEventListener(
-            "click",
+    function loadYouTubeAPI() {
+
+        if (
+            window.YT &&
+            window.YT.Player
+        ) {
+
+            createPlayer();
+
+            return;
+
+        }
+
+
+        const oldScript =
+            document.querySelector(
+                'script[src="https://www.youtube.com/iframe_api"]'
+            );
+
+
+        if (!oldScript) {
+
+            const script =
+                document.createElement("script");
+
+            script.src =
+                "https://www.youtube.com/iframe_api";
+
+            document.head.appendChild(script);
+
+        }
+
+
+        window.onYouTubeIframeAPIReady =
             () => {
 
-                musicBox.classList.toggle(
-                    "music-mini"
-                );
+                createPlayer();
 
-                minimizeButton.textContent =
-                    musicBox.classList.contains(
-                        "music-mini"
-                    )
-                    ? "+"
-                    : "−";
-
-            }
-        );
+            };
 
     }
 
 
-    /* =================================================
-       ✨ PAGE NAVIGATION
-       เปลี่ยนหน้าโดยไม่ Reload ทั้งเว็บ
-    ================================================= */
+    /* =====================================================
+       CREATE PLAYER
+    ===================================================== */
 
-    const pageLinks =
-        document.querySelectorAll(
-            'a[href$=".html"]'
-        );
+    function createPlayer() {
+
+        if (player) return;
 
 
-    pageLinks.forEach(link => {
+        player = new YT.Player(
+            "youtube-player",
+            {
 
-        link.addEventListener(
-            "click",
-            async (event) => {
+                videoId: VIDEO_ID,
 
-                const href =
-                    link.getAttribute("href");
+                width: "1",
 
+                height: "1",
 
-                /* ไม่จัดการลิงก์ภายนอก */
+                playerVars: {
 
-                if (
-                    !href ||
-                    href.startsWith("http") ||
-                    href.startsWith("#") ||
-                    link.target === "_blank"
-                ) {
-                    return;
-                }
+                    autoplay: 0,
 
+                    controls: 0,
 
-                event.preventDefault();
+                    disablekb: 1,
 
+                    playsinline: 1,
 
-                try {
+                    rel: 0,
 
-                    await loadPage(
-                        href,
-                        true
-                    );
+                    modestbranding: 1
 
-                } catch (error) {
-
-                    console.error(
-                        "ไม่สามารถโหลดหน้า:",
-                        error
-                    );
-
-                    /*
-                       ถ้าเกิดปัญหา ให้เปิดหน้า
-                       ตามปกติแทน
-                    */
-
-                    window.location.href =
-                        href;
-
-                }
-
-            }
-        );
-
-    });
-
-
-    /* =================================================
-       โหลดหน้าใหม่โดยไม่ทำลาย Music Player
-    ================================================= */
-
-    async function loadPage(
-        url,
-        changeHistory = true
-    ) {
-
-        const response =
-            await fetch(url);
-
-
-        if (!response.ok) {
-            throw new Error(
-                "Page not found"
-            );
-        }
-
-
-        const html =
-            await response.text();
-
-
-        const parser =
-            new DOMParser();
-
-
-        const newDocument =
-            parser.parseFromString(
-                html,
-                "text/html"
-            );
-
-
-        /*
-           หาเนื้อหาหลักของหน้าใหม่
-        */
-
-        const newMain =
-            newDocument.querySelector(
-                "main"
-            );
-
-
-        const currentMain =
-            document.querySelector(
-                "main"
-            );
-
-
-        if (!newMain || !currentMain) {
-
-            throw new Error(
-                "ไม่พบ <main>"
-            );
-
-        }
-
-
-        /*
-           เปลี่ยนเฉพาะเนื้อหา main
-           Music Player จึงไม่ถูกสร้างใหม่
-        */
-
-        currentMain.innerHTML =
-            newMain.innerHTML;
-
-
-        /*
-           เปลี่ยน title
-        */
-
-        document.title =
-            newDocument.title;
-
-
-        /*
-           เปลี่ยน URL
-        */
-
-        if (changeHistory) {
-
-            history.pushState(
-                {
-                    page: url
                 },
-                "",
-                url
-            );
-
-        }
 
 
-        /*
-           เลื่อนกลับด้านบน
-        */
+                events: {
 
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+                    onReady:
+                        onPlayerReady,
 
+                    onStateChange:
+                        onPlayerStateChange,
 
-        /*
-           อัปเดตเมนู Active
-        */
-
-        updateActiveMenu(url);
-
-
-        /*
-           ใส่ animation ให้เนื้อหาใหม่
-        */
-
-        currentMain.classList.remove(
-            "page-changing"
-        );
-
-
-        void currentMain.offsetWidth;
-
-
-        currentMain.classList.add(
-            "page-changing"
-        );
-
-    }
-
-
-    /* =================================================
-       💗 ACTIVE MENU
-    ================================================= */
-
-    function updateActiveMenu(url) {
-
-        document
-            .querySelectorAll(
-                ".nav-links a"
-            )
-            .forEach(link => {
-
-                link.classList.remove(
-                    "active"
-                );
-
-
-                const linkURL =
-                    link.getAttribute(
-                        "href"
-                    );
-
-
-                if (
-                    linkURL === url
-                ) {
-
-                    link.classList.add(
-                        "active"
-                    );
+                    onError:
+                        onPlayerError
 
                 }
 
-            });
+            }
+        );
 
     }
 
 
-    /* =================================================
-       ⬅️ ปุ่ม Back / Forward
-    ================================================= */
+    /* =====================================================
+       PLAYER READY
+    ===================================================== */
 
-    window.addEventListener(
-        "popstate",
-        async () => {
+    function onPlayerReady(event) {
+
+        playerReady = true;
+
+
+        /*
+           กลับไปยังวินาทีเดิม
+        */
+
+        if (currentTime > 0) {
 
             try {
 
-                await loadPage(
-                    location.pathname
-                    .split("/")
-                    .pop() || "index.html",
-                    false
+                event.target.seekTo(
+                    currentTime,
+                    true
                 );
 
             } catch (error) {
 
-                console.error(error);
+                console.log(
+                    "Seek error"
+                );
 
             }
 
         }
+
+
+        updateUI();
+
+
+        /*
+           ถ้าก่อนเปลี่ยนหน้ากำลังเล่น
+           ให้เล่นต่อ
+        */
+
+        if (isPlaying) {
+
+            try {
+
+                event.target.playVideo();
+
+            } catch (error) {
+
+                console.log(
+                    "Autoplay ถูกเบราว์เซอร์บล็อก"
+                );
+
+                updateStatus(
+                    "กด ▶ เพื่อเล่นเพลงต่อ"
+                );
+
+            }
+
+        }
+
+    }
+
+
+    /* =====================================================
+       PLAYER STATE
+    ===================================================== */
+
+    function onPlayerStateChange(event) {
+
+        if (
+            event.data ===
+            YT.PlayerState.PLAYING
+        ) {
+
+            isPlaying = true;
+
+            updateStatus(
+                "กำลังเล่นเพลง ♪"
+            );
+
+            updatePlayButton(true);
+
+        }
+
+
+        else if (
+            event.data ===
+            YT.PlayerState.PAUSED
+        ) {
+
+            isPlaying = false;
+
+            updateStatus(
+                "หยุดชั่วคราว"
+            );
+
+            updatePlayButton(false);
+
+            saveState();
+
+        }
+
+
+        else if (
+            event.data ===
+            YT.PlayerState.ENDED
+        ) {
+
+            isPlaying = false;
+
+            updateStatus(
+                "เพลงจบแล้ว"
+            );
+
+            updatePlayButton(false);
+
+            saveState();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       PLAYER ERROR
+    ===================================================== */
+
+    function onPlayerError(event) {
+
+        console.log(
+            "YouTube Player Error:",
+            event.data
+        );
+
+        updateStatus(
+            "ไม่สามารถเล่นเพลงนี้ได้"
+        );
+
+    }
+
+
+    /* =====================================================
+       PLAY / PAUSE
+    ===================================================== */
+
+    function toggleMusic() {
+
+        if (!playerReady || !player) {
+
+            return;
+
+        }
+
+
+        const state =
+            player.getPlayerState();
+
+
+        if (
+            state ===
+            YT.PlayerState.PLAYING
+        ) {
+
+            player.pauseVideo();
+
+        }
+
+        else {
+
+            player.playVideo();
+
+        }
+
+    }
+
+
+    /* =====================================================
+       HIDE PLAYER
+    ===================================================== */
+
+    function hideMusic() {
+
+        isHidden = true;
+
+        if (musicPlayer) {
+
+            musicPlayer.classList.add(
+                "music-hidden"
+            );
+
+        }
+
+        if (musicShow) {
+
+            musicShow.classList.add(
+                "music-show-visible"
+            );
+
+        }
+
+        saveState();
+
+    }
+
+
+    /* =====================================================
+       SHOW PLAYER
+    ===================================================== */
+
+    function showMusic() {
+
+        isHidden = false;
+
+        if (musicPlayer) {
+
+            musicPlayer.classList.remove(
+                "music-hidden"
+            );
+
+        }
+
+        if (musicShow) {
+
+            musicShow.classList.remove(
+                "music-show-visible"
+            );
+
+        }
+
+        saveState();
+
+    }
+
+
+    /* =====================================================
+       UI
+    ===================================================== */
+
+    function updatePlayButton(playing) {
+
+        if (!musicToggle) return;
+
+        musicToggle.textContent =
+            playing ? "Ⅱ" : "▶";
+
+    }
+
+
+    function updateStatus(text) {
+
+        if (!musicStatus) return;
+
+        musicStatus.textContent = text;
+
+    }
+
+
+    function updateUI() {
+
+        if (isHidden) {
+
+            musicPlayer?.classList.add(
+                "music-hidden"
+            );
+
+            musicShow?.classList.add(
+                "music-show-visible"
+            );
+
+        }
+
+    }
+
+
+    /* =====================================================
+       SAVE POSITION EVERY SECOND
+    ===================================================== */
+
+    setInterval(() => {
+
+        if (
+            playerReady &&
+            player &&
+            player.getPlayerState() ===
+            YT.PlayerState.PLAYING
+        ) {
+
+            saveState();
+
+        }
+
+    }, 1000);
+
+
+    /* =====================================================
+       SAVE BEFORE PAGE UNLOAD
+    ===================================================== */
+
+    window.addEventListener(
+        "beforeunload",
+        () => {
+
+            saveState();
+
+        }
     );
 
-});
+
+    /* =====================================================
+       BUTTON EVENTS
+    ===================================================== */
+
+    musicToggle?.addEventListener(
+        "click",
+        toggleMusic
+    );
+
+
+    musicHide?.addEventListener(
+        "click",
+        hideMusic
+    );
+
+
+    musicShow?.addEventListener(
+        "click",
+        showMusic
+    );
+
+
+    /* =====================================================
+       INITIALIZE
+    ===================================================== */
+
+    loadState();
+
+    loadYouTubeAPI();
+
+
+})();
