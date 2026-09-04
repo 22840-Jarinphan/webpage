@@ -5779,3 +5779,533 @@ document.querySelectorAll(".btn-home").forEach((button) => {
     }
 
 }
+
+/* =====================================================
+   🎵 CONTINUOUS MUSIC PLAYER
+===================================================== */
+
+.music-box {
+
+    position: fixed;
+
+    right: 22px;
+    bottom: 22px;
+
+    width: 340px;
+
+    padding: 15px;
+
+    border-radius: 28px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255, 241, 247, 0.98),
+            rgba(255, 210, 228, 0.97)
+        );
+
+    border: 3px solid
+        rgba(255, 255, 255, 0.8);
+
+    box-shadow:
+
+        0 20px 60px
+        rgba(70, 0, 30, 0.38),
+
+        0 0 40px
+        rgba(236, 64, 122, 0.3);
+
+    backdrop-filter: blur(20px);
+
+    z-index: 99999;
+
+    overflow: hidden;
+
+    transition:
+        width .35s ease,
+        height .35s ease,
+        transform .35s ease,
+        box-shadow .35s ease;
+}
+
+
+/* =====================================================
+   ✨ Glow
+===================================================== */
+
+.music-box::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 150px;
+    height: 150px;
+
+    top: -90px;
+    right: -70px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255, 64, 129, 0.25);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   🎵 HEADER
+===================================================== */
+
+.music-header {
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    padding: 2px 2px 12px;
+}
+
+
+/* =====================================================
+   💿 DISC
+===================================================== */
+
+.music-disc {
+
+    width: 52px;
+    height: 52px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background:
+        conic-gradient(
+            #D81B60,
+            #FF1744,
+            #EC407A,
+            #D81B60
+        );
+
+    color: white;
+
+    font-size: 22px;
+
+    box-shadow:
+
+        0 8px 25px
+        rgba(216, 27, 96, .4);
+
+    animation:
+        musicRotate 5s linear infinite;
+}
+
+
+/* =====================================================
+   📝 INFO
+===================================================== */
+
+.music-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    line-height: 1.15;
+}
+
+
+.music-label {
+
+    font-size: 9px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+
+    color: #D81B60;
+
+    margin-bottom: 4px;
+}
+
+
+.music-info strong {
+
+    font-size: 16px;
+
+    font-weight: 800;
+
+    color: #58152f;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+.music-info small {
+
+    margin-top: 3px;
+
+    font-size: 11px;
+
+    color: #8c5268;
+}
+
+
+/* =====================================================
+   ➖ MINIMIZE
+===================================================== */
+
+.music-close {
+
+    margin-left: auto;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        rgba(216, 27, 96, .12);
+
+    color: #D81B60;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+
+.music-close:hover {
+
+    background: #D81B60;
+
+    color: white;
+
+    transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   🎵 WAVE
+===================================================== */
+
+.music-wave {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 4px;
+
+    height: 20px;
+
+    margin-bottom: 10px;
+}
+
+
+.music-wave span {
+
+    width: 4px;
+
+    height: 8px;
+
+    border-radius: 10px;
+
+    background:
+        linear-gradient(
+            to top,
+            #D81B60,
+            #FF4081
+        );
+
+    animation:
+        soundWave 1s ease-in-out infinite;
+}
+
+
+.music-wave span:nth-child(1) {
+    animation-delay: .1s;
+}
+
+.music-wave span:nth-child(2) {
+    animation-delay: .2s;
+}
+
+.music-wave span:nth-child(3) {
+    animation-delay: .3s;
+}
+
+.music-wave span:nth-child(4) {
+    animation-delay: .4s;
+}
+
+.music-wave span:nth-child(5) {
+    animation-delay: .5s;
+}
+
+.music-wave span:nth-child(6) {
+    animation-delay: .4s;
+}
+
+.music-wave span:nth-child(7) {
+    animation-delay: .3s;
+}
+
+.music-wave span:nth-child(8) {
+    animation-delay: .2s;
+}
+
+.music-wave span:nth-child(9) {
+    animation-delay: .1s;
+}
+
+.music-wave span:nth-child(10) {
+    animation-delay: .3s;
+}
+
+
+/* =====================================================
+   🎬 VIDEO
+===================================================== */
+
+.music-video {
+
+    width: 100%;
+
+    height: 185px;
+
+    border-radius: 18px;
+
+    overflow: hidden;
+
+    background: #250714;
+
+    box-shadow:
+        0 8px 25px
+        rgba(80, 0, 35, .25);
+}
+
+
+.music-video iframe {
+
+    display: block;
+
+    width: 100% !important;
+
+    height: 100% !important;
+
+    min-width: 0 !important;
+    min-height: 0 !important;
+
+    max-width: 100% !important;
+    max-height: 100% !important;
+
+    border: 0;
+
+}
+
+
+/* =====================================================
+   ✨ PAGE TRANSITION
+===================================================== */
+
+main.page-changing {
+
+    animation:
+        pageFade .45s ease;
+}
+
+
+@keyframes pageFade {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(15px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   💿 ROTATE
+===================================================== */
+
+@keyframes musicRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =====================================================
+   🎵 SOUND WAVE
+===================================================== */
+
+@keyframes soundWave {
+
+    0%,
+    100% {
+        height: 6px;
+    }
+
+    50% {
+        height: 18px;
+    }
+
+}
+
+
+/* =====================================================
+   🪄 HOVER
+===================================================== */
+
+.music-box:hover {
+
+    transform:
+        translateY(-7px);
+
+    box-shadow:
+
+        0 28px 70px
+        rgba(70, 0, 30, .45),
+
+        0 0 50px
+        rgba(236, 64, 122, .4);
+}
+
+
+/* =====================================================
+   🔽 MINI MODE
+===================================================== */
+
+.music-box.music-mini {
+
+    width: 85px;
+
+    height: 85px;
+
+    padding: 10px;
+
+    border-radius: 50%;
+}
+
+
+.music-box.music-mini
+.music-header {
+
+    padding: 0;
+
+    justify-content: center;
+}
+
+
+.music-box.music-mini
+.music-info,
+
+.music-box.music-mini
+.music-wave,
+
+.music-box.music-mini
+.music-video {
+
+    display: none;
+}
+
+
+.music-box.music-mini
+.music-disc {
+
+    width: 62px;
+    height: 62px;
+}
+
+
+.music-box.music-mini
+.music-close {
+
+    position: absolute;
+
+    right: -2px;
+    top: -2px;
+
+    width: 24px;
+    height: 24px;
+
+    font-size: 15px;
+
+}
+
+
+/* =====================================================
+   📱 MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .music-box {
+
+        right: 12px;
+
+        bottom: 12px;
+
+        width:
+            calc(100vw - 24px);
+
+        max-width: 340px;
+
+    }
+
+
+    .music-video {
+
+        height: 180px;
+
+    }
+
+}
