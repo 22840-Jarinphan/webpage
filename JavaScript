@@ -48,3 +48,261 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.appendChild(container);
 
 });
+
+/* =========================================================
+   SPA NAVIGATION
+   เปลี่ยนหน้าโดยไม่ Reload
+========================================================= */
+
+(() => {
+
+    "use strict";
+
+
+    const main =
+        document.querySelector("main");
+
+
+    if (!main) return;
+
+
+    document.addEventListener(
+        "click",
+        async (event) => {
+
+            const link =
+                event.target.closest(
+                    "a[data-page]"
+                );
+
+
+            if (!link) return;
+
+
+            /*
+               ถ้า Ctrl / Shift / Command
+               ให้ทำงานแบบปกติ
+            */
+
+            if (
+                event.ctrlKey ||
+                event.shiftKey ||
+                event.metaKey ||
+                event.altKey
+            ) {
+
+                return;
+
+            }
+
+
+            const url =
+                link.getAttribute("href");
+
+
+            if (!url) return;
+
+
+            /*
+               ป้องกันการโหลดหน้าใหม่
+            */
+
+            event.preventDefault();
+
+
+            try {
+
+                /*
+                   โหลด HTML หน้าใหม่
+                   โดยไม่ Reload document ปัจจุบัน
+                */
+
+                const response =
+                    await fetch(url);
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "โหลดหน้าไม่ได้"
+                    );
+
+                }
+
+
+                const html =
+                    await response.text();
+
+
+                const parser =
+                    new DOMParser();
+
+
+                const doc =
+                    parser.parseFromString(
+                        html,
+                        "text/html"
+                    );
+
+
+                const newMain =
+                    doc.querySelector("main");
+
+
+                if (!newMain) {
+
+                    window.location.href = url;
+
+                    return;
+
+                }
+
+
+                /*
+                   เปลี่ยนเฉพาะ MAIN
+                   Music Player ไม่ถูกแตะ
+                */
+
+                main.innerHTML =
+                    newMain.innerHTML;
+
+
+                /*
+                   เปลี่ยน URL
+                   แต่ไม่ Reload
+                */
+
+                history.pushState(
+                    {},
+                    "",
+                    url
+                );
+
+
+                /*
+                   เลื่อนกลับด้านบน
+                */
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+
+                /*
+                   เปลี่ยน active menu
+                */
+
+                document
+                    .querySelectorAll(
+                        "nav a[data-page]"
+                    )
+                    .forEach(item => {
+
+                        item.classList.remove(
+                            "active"
+                        );
+
+                    });
+
+
+                link.classList.add(
+                    "active"
+                );
+
+
+                /*
+                   ให้ script หน้าใหม่ทำงาน
+                   ถ้ามีฟังก์ชันเฉพาะหน้า
+                */
+
+                document.dispatchEvent(
+                    new CustomEvent(
+                        "pageLoaded",
+                        {
+                            detail: {
+                                url: url
+                            }
+                        }
+                    )
+                );
+
+
+            } catch (error) {
+
+                console.error(error);
+
+                /*
+                   ถ้ามีปัญหา
+                   กลับไปใช้ navigation ปกติ
+                */
+
+                window.location.href =
+                    url;
+
+            }
+
+        }
+    );
+
+
+    /* =====================================================
+       BACK / FORWARD
+    ===================================================== */
+
+    window.addEventListener(
+        "popstate",
+        async () => {
+
+            const url =
+                window.location.pathname
+                    .split("/")
+                    .pop();
+
+
+            if (!url) return;
+
+
+            try {
+
+                const response =
+                    await fetch(url);
+
+
+                const html =
+                    await response.text();
+
+
+                const parser =
+                    new DOMParser();
+
+
+                const doc =
+                    parser.parseFromString(
+                        html,
+                        "text/html"
+                    );
+
+
+                const newMain =
+                    doc.querySelector("main");
+
+
+                if (newMain) {
+
+                    main.innerHTML =
+                        newMain.innerHTML;
+
+                }
+
+            } catch (error) {
+
+                console.error(error);
+
+            }
+
+        }
+    );
+
+
+})();
