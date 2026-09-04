@@ -6309,3 +6309,1326 @@ main.page-changing {
     }
 
 }
+
+/* =========================================================
+💗 HOBBY PAGE — ULTRA PREMIUM PINK / RED EDITION
+ใช้กับ hobby.html ที่ส่งมาได้ทันที
+วางโค้ดนี้ไว้ท้ายสุดของ style.css
+========================================================= */
+
+/* =========================================================
+🎀 HOBBY COLOR SYSTEM
+========================================================= */
+
+:root {
+--hobby-pink: #EC407A;
+--hobby-deep: #C2185B;
+--hobby-red: #E53935;
+--hobby-rose: #F06292;
+--hobby-soft: #F8BBD0;
+--hobby-pale: #FCE4EC;
+--hobby-dark: #5A1832;
+--hobby-text: #3D1828;
+--hobby-glass: rgba(255, 255, 255, 0.68);
+}
+
+/* =========================================================
+🌸 PAGE BACKGROUND
+========================================================= */
+
+body {
+background:
+radial-gradient(circle at 8% 12%, rgba(236, 64, 122, .22), transparent 25%),
+radial-gradient(circle at 92% 18%, rgba(229, 57, 53, .18), transparent 25%),
+radial-gradient(circle at 50% 90%, rgba(240, 98, 146, .18), transparent 30%),
+linear-gradient(135deg, #FFF4F8 0%, #FFE5EF 45%, #FFF0F4 100%);
+
+```
+color: var(--hobby-text);
+```
+
+}
+
+/* =========================================================
+✨ DECORATIVE LIGHT ORBS
+========================================================= */
+
+body::before,
+body::after {
+content: "";
+position: fixed;
+z-index: -1;
+border-radius: 50%;
+pointer-events: none;
+filter: blur(5px);
+}
+
+body::before {
+width: 320px;
+height: 320px;
+top: 120px;
+left: -170px;
+
+```
+background: radial-gradient(
+    circle,
+    rgba(236, 64, 122, .25),
+    transparent 70%
+);
+
+animation: hobbyOrbOne 8s ease-in-out infinite;
+```
+
+}
+
+body::after {
+width: 380px;
+height: 380px;
+right: -200px;
+bottom: 100px;
+
+```
+background: radial-gradient(
+    circle,
+    rgba(229, 57, 53, .18),
+    transparent 70%
+);
+
+animation: hobbyOrbTwo 10s ease-in-out infinite;
+```
+
+}
+
+@keyframes hobbyOrbOne {
+0%, 100% {
+transform: translate(0, 0);
+}
+
+```
+50% {
+    transform: translate(40px, 30px);
+}
+```
+
+}
+
+@keyframes hobbyOrbTwo {
+0%, 100% {
+transform: translate(0, 0);
+}
+
+```
+50% {
+    transform: translate(-35px, -25px);
+}
+```
+
+}
+
+/* =========================================================
+💗 HEADER
+========================================================= */
+
+.site-header {
+background:
+linear-gradient(
+135deg,
+rgba(255, 255, 255, .82),
+rgba(255, 228, 238, .78)
+);
+
+```
+border-bottom: 1px solid rgba(236, 64, 122, .18);
+
+box-shadow:
+    0 10px 35px rgba(194, 24, 91, .12),
+    0 1px 0 rgba(255,255,255,.9) inset;
+
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+```
+
+}
+
+/* =========================================================
+✦ LOGO
+========================================================= */
+
+.logo {
+position: relative;
+}
+
+.logo-mark {
+color: var(--hobby-pink);
+
+```
+text-shadow:
+    0 0 8px rgba(236, 64, 122, .65),
+    0 0 20px rgba(236, 64, 122, .35);
+
+animation: logoSparkle 2s ease-in-out infinite;
+```
+
+}
+
+@keyframes logoSparkle {
+0%, 100% {
+transform: scale(1) rotate(0deg);
+}
+
+```
+50% {
+    transform: scale(1.2) rotate(8deg);
+}
+```
+
+}
+
+/* =========================================================
+💕 NAVIGATION
+========================================================= */
+
+.nav-links a {
+position: relative;
+
+```
+transition:
+    color .3s ease,
+    transform .3s ease,
+    text-shadow .3s ease;
+```
+
+}
+
+.nav-links a::after {
+content: "";
+
+```
+position: absolute;
+
+left: 50%;
+bottom: -8px;
+
+width: 0;
+height: 3px;
+
+border-radius: 99px;
+
+background:
+    linear-gradient(
+        90deg,
+        var(--hobby-pink),
+        var(--hobby-red)
+    );
+
+box-shadow:
+    0 0 10px rgba(236, 64, 122, .65);
+
+transform: translateX(-50%);
+
+transition: width .35s ease;
+```
+
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+color: var(--hobby-deep);
+
+```
+transform: translateY(-2px);
+
+text-shadow:
+    0 0 12px rgba(236, 64, 122, .25);
+```
+
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+width: 70%;
+}
+
+/* =========================================================
+🌸 HOBBY HERO
+========================================================= */
+
+.hobby-hero {
+position: relative;
+overflow: hidden;
+
+```
+min-height: 500px;
+
+display: flex;
+align-items: center;
+
+background:
+    radial-gradient(
+        circle at 20% 30%,
+        rgba(236, 64, 122, .28),
+        transparent 32%
+    ),
+    radial-gradient(
+        circle at 80% 70%,
+        rgba(229, 57, 53, .20),
+        transparent 30%
+    ),
+    linear-gradient(
+        135deg,
+        #FFF0F5,
+        #FFD8E7 50%,
+        #FFECEF
+    );
+```
+
+}
+
+/* เส้นตกแต่งด้านบน */
+
+.hobby-hero::before {
+content: "✦  ♡  ✧  ♥  ✦  ♡  ✧";
+
+```
+position: absolute;
+
+top: 35px;
+left: 50%;
+
+transform: translateX(-50%);
+
+width: 100%;
+
+text-align: center;
+
+color: rgba(194, 24, 91, .25);
+
+font-size: 24px;
+letter-spacing: 22px;
+
+animation: decorativeFloat 4s ease-in-out infinite;
+```
+
+}
+
+/* วงกลมเรืองแสง */
+
+.hobby-hero::after {
+content: "";
+
+```
+position: absolute;
+
+width: 420px;
+height: 420px;
+
+right: -120px;
+top: -150px;
+
+border-radius: 50%;
+
+border: 2px solid rgba(236, 64, 122, .18);
+
+box-shadow:
+    0 0 40px rgba(236, 64, 122, .12),
+    inset 0 0 40px rgba(236, 64, 122, .08);
+
+animation: heroRing 10s linear infinite;
+```
+
+}
+
+@keyframes heroRing {
+from {
+transform: rotate(0deg);
+}
+
+```
+to {
+    transform: rotate(360deg);
+}
+```
+
+}
+
+/* =========================================================
+💗 HERO TEXT
+========================================================= */
+
+.hobby-hero .container {
+position: relative;
+z-index: 2;
+
+```
+padding-top: 55px;
+padding-bottom: 55px;
+```
+
+}
+
+.hobby-hero h1 {
+font-size: clamp(3rem, 7vw, 6rem);
+
+```
+line-height: 1;
+
+letter-spacing: -2px;
+
+margin: 18px 0;
+
+color: var(--hobby-dark);
+
+text-shadow:
+    0 8px 30px rgba(194, 24, 91, .12);
+```
+
+}
+
+.hobby-hero h1 span {
+position: relative;
+
+```
+color: var(--hobby-pink);
+
+background:
+    linear-gradient(
+        90deg,
+        #C2185B,
+        #EC407A,
+        #E53935,
+        #EC407A
+    );
+
+background-size: 300% auto;
+
+-webkit-background-clip: text;
+background-clip: text;
+
+-webkit-text-fill-color: transparent;
+
+animation: pinkGradient 5s linear infinite;
+```
+
+}
+
+@keyframes pinkGradient {
+0% {
+background-position: 0% center;
+}
+
+```
+100% {
+    background-position: 300% center;
+}
+```
+
+}
+
+.hobby-hero h1 span::after {
+content: "♡";
+
+```
+position: absolute;
+
+right: -45px;
+top: -20px;
+
+font-size: 28px;
+
+color: var(--hobby-pink);
+
+-webkit-text-fill-color: var(--hobby-pink);
+
+animation: heartBounce 1.8s ease-in-out infinite;
+```
+
+}
+
+@keyframes heartBounce {
+0%, 100% {
+transform: translateY(0) rotate(-10deg);
+}
+
+```
+50% {
+    transform: translateY(-10px) rotate(10deg);
+}
+```
+
+}
+
+/* =========================================================
+🎀 SECTION LABEL
+========================================================= */
+
+.section-label {
+display: inline-flex;
+align-items: center;
+gap: 10px;
+
+```
+padding: 9px 18px;
+
+border-radius: 999px;
+
+color: var(--hobby-deep);
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.8),
+        rgba(248,187,208,.45)
+    );
+
+border: 1px solid rgba(236,64,122,.25);
+
+box-shadow:
+    0 8px 25px rgba(194,24,91,.10),
+    inset 0 1px 0 rgba(255,255,255,.9);
+
+font-weight: 800;
+
+letter-spacing: 2px;
+
+backdrop-filter: blur(12px);
+```
+
+}
+
+.section-label::before {
+content: "✦";
+
+```
+color: var(--hobby-pink);
+
+animation: sparkleRotate 2s linear infinite;
+```
+
+}
+
+@keyframes sparkleRotate {
+to {
+transform: rotate(360deg);
+}
+}
+
+/* =========================================================
+💎 HOBBY GRID
+========================================================= */
+
+.hobby-grid {
+position: relative;
+
+```
+display: grid;
+
+grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+gap: 28px;
+
+padding-top: 35px;
+padding-bottom: 35px;
+```
+
+}
+
+/* =========================================================
+💗 HOBBY CARD
+========================================================= */
+
+.hobby-card {
+position: relative;
+
+```
+min-height: 330px;
+
+padding: 34px 30px;
+
+overflow: hidden;
+
+border-radius: 30px;
+
+background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,.82),
+        rgba(255,239,245,.72)
+    );
+
+border: 1px solid rgba(236,64,122,.20);
+
+box-shadow:
+    0 18px 45px rgba(194,24,91,.12),
+    0 2px 0 rgba(255,255,255,.9) inset;
+
+backdrop-filter: blur(18px);
+-webkit-backdrop-filter: blur(18px);
+
+transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease,
+    border-color .45s ease;
+```
+
+}
+
+/* เส้น Gradient รอบการ์ด */
+
+.hobby-card::before {
+content: "";
+
+```
+position: absolute;
+
+inset: 0;
+
+padding: 2px;
+
+border-radius: inherit;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(236,64,122,.75),
+        transparent 35%,
+        rgba(229,57,53,.55),
+        transparent 70%,
+        rgba(236,64,122,.65)
+    );
+
+-webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+
+-webkit-mask-composite: xor;
+mask-composite: exclude;
+
+pointer-events: none;
+
+opacity: .45;
+
+transition: opacity .4s ease;
+```
+
+}
+
+/* แสงภายใน */
+
+.hobby-card::after {
+content: "";
+
+```
+position: absolute;
+
+width: 180px;
+height: 180px;
+
+top: -80px;
+right: -80px;
+
+border-radius: 50%;
+
+background:
+    radial-gradient(
+        circle,
+        rgba(236,64,122,.25),
+        transparent 70%
+    );
+
+transition:
+    transform .5s ease,
+    opacity .5s ease;
+```
+
+}
+
+/* =========================================================
+✨ HOVER CARD
+========================================================= */
+
+.hobby-card:hover {
+transform:
+translateY(-15px)
+rotateX(2deg)
+rotateY(-2deg);
+
+```
+border-color: rgba(236,64,122,.55);
+
+box-shadow:
+    0 28px 65px rgba(194,24,91,.22),
+    0 0 35px rgba(236,64,122,.12),
+    inset 0 1px 0 rgba(255,255,255,.95);
+```
+
+}
+
+.hobby-card:hover::before {
+opacity: 1;
+}
+
+.hobby-card:hover::after {
+transform: scale(1.7);
+opacity: .8;
+}
+
+/* =========================================================
+🔢 NUMBER
+========================================================= */
+
+.hobby-number {
+position: absolute;
+
+```
+top: 20px;
+right: 24px;
+
+font-size: 4rem;
+
+font-weight: 900;
+
+line-height: 1;
+
+color: rgba(194,24,91,.07);
+
+transition:
+    color .4s ease,
+    transform .4s ease;
+```
+
+}
+
+.hobby-card:hover .hobby-number {
+color: rgba(236,64,122,.16);
+
+```
+transform:
+    scale(1.15)
+    rotate(5deg);
+```
+
+}
+
+/* =========================================================
+🎮 ICON
+========================================================= */
+
+.hobby-icon {
+position: relative;
+
+```
+width: 82px;
+height: 82px;
+
+display: grid;
+place-items: center;
+
+margin-bottom: 25px;
+
+border-radius: 24px;
+
+font-size: 42px;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(236,64,122,.15),
+        rgba(229,57,53,.10)
+    );
+
+border: 1px solid rgba(236,64,122,.22);
+
+box-shadow:
+    0 12px 28px rgba(194,24,91,.12),
+    inset 0 1px 0 rgba(255,255,255,.9);
+
+transition:
+    transform .45s cubic-bezier(.2,.8,.2,1),
+    box-shadow .45s ease;
+```
+
+}
+
+.hobby-icon::before {
+content: "";
+
+```
+position: absolute;
+
+inset: -7px;
+
+border-radius: 30px;
+
+border: 1px dashed rgba(236,64,122,.35);
+
+animation: iconOrbit 8s linear infinite;
+```
+
+}
+
+@keyframes iconOrbit {
+to {
+transform: rotate(360deg);
+}
+}
+
+.hobby-card:hover .hobby-icon {
+transform:
+translateY(-8px)
+rotate(-5deg)
+scale(1.12);
+
+```
+box-shadow:
+    0 18px 38px rgba(194,24,91,.20),
+    0 0 25px rgba(236,64,122,.20);
+```
+
+}
+
+/* =========================================================
+💕 CARD TITLE
+========================================================= */
+
+.hobby-card h3 {
+position: relative;
+z-index: 2;
+
+```
+margin: 0 0 12px;
+
+font-size: 1.65rem;
+
+color: var(--hobby-dark);
+
+transition:
+    color .3s ease,
+    transform .3s ease;
+```
+
+}
+
+.hobby-card:hover h3 {
+color: var(--hobby-deep);
+
+```
+transform: translateX(5px);
+```
+
+}
+
+/* =========================================================
+📝 CARD TEXT
+========================================================= */
+
+.hobby-card p {
+position: relative;
+z-index: 2;
+
+```
+margin: 0;
+
+padding-right: 5px;
+
+color: #70465A;
+
+line-height: 1.9;
+
+font-size: 1rem;
+```
+
+}
+
+/* =========================================================
+🎀 TAG
+========================================================= */
+
+.hobby-tag {
+display: inline-flex;
+
+```
+margin-top: 24px;
+
+padding: 7px 15px;
+
+border-radius: 999px;
+
+color: #fff;
+
+background:
+    linear-gradient(
+        135deg,
+        var(--hobby-deep),
+        var(--hobby-pink),
+        var(--hobby-red)
+    );
+
+background-size: 200% 200%;
+
+box-shadow:
+    0 8px 20px rgba(194,24,91,.22);
+
+font-size: .75rem;
+
+font-weight: 900;
+
+letter-spacing: 2px;
+
+animation: tagGradient 4s ease infinite;
+```
+
+}
+
+@keyframes tagGradient {
+0%, 100% {
+background-position: 0% 50%;
+}
+
+```
+50% {
+    background-position: 100% 50%;
+}
+```
+
+}
+
+/* =========================================================
+💕 FREE TIME MESSAGE
+========================================================= */
+
+.hobby-message {
+position: relative;
+
+```
+display: grid;
+
+grid-template-columns: 110px 1fr;
+
+align-items: center;
+
+gap: 30px;
+
+padding: 42px;
+
+margin-top: 30px;
+
+border-radius: 34px;
+
+overflow: hidden;
+
+background:
+    linear-gradient(
+        135deg,
+        rgba(255,255,255,.82),
+        rgba(255,224,235,.75)
+    );
+
+border: 1px solid rgba(236,64,122,.22);
+
+box-shadow:
+    0 20px 55px rgba(194,24,91,.13),
+    inset 0 1px 0 rgba(255,255,255,.95);
+
+backdrop-filter: blur(18px);
+```
+
+}
+
+/* แสงด้านใน */
+
+.hobby-message::before {
+content: "";
+
+```
+position: absolute;
+
+width: 300px;
+height: 300px;
+
+right: -130px;
+top: -130px;
+
+border-radius: 50%;
+
+background:
+    radial-gradient(
+        circle,
+        rgba(236,64,122,.20),
+        transparent 70%
+    );
+
+animation: messageGlow 5s ease-in-out infinite;
+```
+
+}
+
+@keyframes messageGlow {
+0%, 100% {
+transform: scale(1);
+}
+
+```
+50% {
+    transform: scale(1.25);
+}
+```
+
+}
+
+/* =========================================================
+💗 MESSAGE ICON
+========================================================= */
+
+.message-icon {
+position: relative;
+
+```
+width: 105px;
+height: 105px;
+
+display: grid;
+place-items: center;
+
+border-radius: 32px;
+
+font-size: 48px;
+
+background:
+    linear-gradient(
+        135deg,
+        #F8BBD0,
+        #F06292
+    );
+
+box-shadow:
+    0 18px 35px rgba(194,24,91,.22),
+    0 0 35px rgba(236,64,122,.18);
+
+animation:
+    messageHeart 2.5s ease-in-out infinite;
+```
+
+}
+
+@keyframes messageHeart {
+0%, 100% {
+transform: translateY(0) rotate(-3deg);
+}
+
+```
+50% {
+    transform: translateY(-8px) rotate(3deg);
+}
+```
+
+}
+
+/* =========================================================
+💫 MESSAGE TEXT
+========================================================= */
+
+.hobby-message h2 {
+position: relative;
+z-index: 2;
+
+```
+margin: 12px 0;
+
+font-size: clamp(2rem, 4vw, 3.2rem);
+
+color: var(--hobby-dark);
+```
+
+}
+
+.hobby-message p {
+position: relative;
+z-index: 2;
+
+```
+max-width: 700px;
+
+margin: 0;
+
+color: #70465A;
+
+line-height: 1.9;
+```
+
+}
+
+/* =========================================================
+🌸 FLOATING PARTICLES
+========================================================= */
+
+.floating-particles {
+pointer-events: none;
+}
+
+.floating-particles span {
+filter:
+drop-shadow(
+0 0 8px rgba(236,64,122,.35)
+);
+}
+
+/* =========================================================
+💗 SCROLL PROGRESS
+========================================================= */
+
+#scroll-progress {
+background:
+linear-gradient(
+90deg,
+#C2185B,
+#EC407A,
+#E53935
+);
+
+```
+box-shadow:
+    0 0 12px rgba(236,64,122,.55);
+```
+
+}
+
+/* =========================================================
+💎 FOOTER
+========================================================= */
+
+.site-footer {
+position: relative;
+
+```
+margin-top: 70px;
+
+background:
+    linear-gradient(
+        135deg,
+        #5A1832,
+        #7B2045 50%,
+        #4A1228
+    );
+
+color: #FFEAF1;
+
+box-shadow:
+    0 -15px 45px rgba(194,24,91,.15);
+```
+
+}
+
+.site-footer::before {
+content: "♡   ✦   🌸   ✦   ♡   ✦   🌸   ✦   ♡";
+
+```
+position: absolute;
+
+top: -22px;
+left: 0;
+
+width: 100%;
+
+text-align: center;
+
+color: var(--hobby-pink);
+
+font-size: 22px;
+
+letter-spacing: 14px;
+
+opacity: .85;
+```
+
+}
+
+.footer-logo {
+color: #fff;
+
+```
+text-shadow:
+    0 0 15px rgba(236,64,122,.65);
+```
+
+}
+
+.footer-nav a {
+transition:
+color .25s ease,
+transform .25s ease;
+}
+
+.footer-nav a:hover {
+color: #F8BBD0;
+
+```
+transform: translateX(5px);
+```
+
+}
+
+/* =========================================================
+✨ REVEAL
+========================================================= */
+
+.reveal {
+opacity: 0;
+transform: translateY(35px);
+
+```
+transition:
+    opacity .8s ease,
+    transform .8s cubic-bezier(.2,.8,.2,1);
+```
+
+}
+
+.reveal.active {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* =========================================================
+💗 STAGGER CARD ANIMATION
+========================================================= */
+
+.hobby-card:nth-child(1) {
+transition-delay: .05s;
+}
+
+.hobby-card:nth-child(2) {
+transition-delay: .12s;
+}
+
+.hobby-card:nth-child(3) {
+transition-delay: .19s;
+}
+
+.hobby-card:nth-child(4) {
+transition-delay: .26s;
+}
+
+.hobby-card:nth-child(5) {
+transition-delay: .33s;
+}
+
+.hobby-card:nth-child(6) {
+transition-delay: .40s;
+}
+
+/* =========================================================
+📱 TABLET
+========================================================= */
+
+@media (max-width: 950px) {
+
+```
+.hobby-grid {
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+}
+
+.hobby-card {
+    min-height: 310px;
+}
+
+.hobby-message {
+    grid-template-columns: 90px 1fr;
+    padding: 32px;
+}
+
+.message-icon {
+    width: 85px;
+    height: 85px;
+
+    font-size: 38px;
+}
+```
+
+}
+
+/* =========================================================
+📱 MOBILE
+========================================================= */
+
+@media (max-width: 650px) {
+
+```
+.hobby-hero {
+    min-height: 430px;
+}
+
+.hobby-hero h1 {
+    font-size: clamp(2.8rem, 15vw, 4.2rem);
+
+    letter-spacing: -1px;
+}
+
+.hobby-hero h1 span::after {
+    right: -25px;
+    top: -15px;
+    font-size: 20px;
+}
+
+.hobby-grid {
+    grid-template-columns: 1fr;
+
+    gap: 20px;
+}
+
+.hobby-card {
+    min-height: auto;
+
+    padding: 30px 25px;
+}
+
+.hobby-number {
+    font-size: 3rem;
+}
+
+.hobby-icon {
+    width: 72px;
+    height: 72px;
+
+    font-size: 36px;
+}
+
+.hobby-message {
+    grid-template-columns: 1fr;
+
+    text-align: center;
+
+    padding: 30px 24px;
+}
+
+.message-icon {
+    margin: 0 auto;
+}
+
+.hobby-message p {
+    margin-left: auto;
+    margin-right: auto;
+}
+```
+
+}
+
+/* =========================================================
+♿ REDUCE MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+```
+*,
+*::before,
+*::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+    scroll-behavior: auto !important;
+}
+```
+
+}
