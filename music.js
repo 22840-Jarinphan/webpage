@@ -572,3 +572,6 @@
 
 
 })();
+
+<script src="music.js"></script>
+<script src="navigation.js"></script>
