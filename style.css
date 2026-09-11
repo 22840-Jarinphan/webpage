@@ -6956,3 +6956,177 @@ document.addEventListener("click", e => {
     padding-top: 18px;
     padding-bottom: 18px;
 }
+
+/* =========================================================
+   🌈 ANIMATED PINK RED PURPLE BACKGROUND
+========================================================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(255, 40, 100, .75),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at 80% 30%,
+            rgba(170, 40, 255, .70),
+            transparent 40%
+        ),
+        radial-gradient(
+            circle at 50% 90%,
+            rgba(255, 20, 120, .65),
+            transparent 40%
+        ),
+        linear-gradient(
+            135deg,
+            #7a003c,
+            #d4145a,
+            #8e24aa,
+            #4a148c,
+            #c2185b
+        );
+
+    background-size:
+        180% 180%,
+        180% 180%,
+        180% 180%,
+        400% 400%;
+
+    animation: backgroundMove 14s ease-in-out infinite;
+
+    color: #fff;
+}
+
+
+/* 🌈 ขยับสีไปเรื่อย ๆ */
+
+@keyframes backgroundMove {
+
+    0% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            50% 100%,
+            0% 50%;
+    }
+
+    25% {
+        background-position:
+            100% 20%,
+            20% 80%,
+            80% 20%,
+            100% 50%;
+    }
+
+    50% {
+        background-position:
+            80% 100%,
+            0% 50%,
+            20% 0%,
+            50% 100%;
+    }
+
+    75% {
+        background-position:
+            20% 70%,
+            100% 100%,
+            50% 20%,
+            0% 50%;
+    }
+
+    100% {
+        background-position:
+            0% 0%,
+            100% 0%,
+            50% 100%,
+            0% 50%;
+    }
+}
+
+body::before {
+    content: "";
+
+    position: fixed;
+    inset: -50%;
+
+    pointer-events: none;
+    z-index: -1;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255,255,255,.10) 0 2px,
+            transparent 3px
+        );
+
+    background-size: 55px 55px;
+
+    animation: sparkleBackground 18s linear infinite;
+}
+
+@keyframes sparkleBackground {
+
+    from {
+        transform: translate(0, 0);
+    }
+
+    to {
+        transform: translate(55px, 55px);
+    }
+}
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 450px;
+    height: 450px;
+
+    top: 10%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    border-radius: 50%;
+
+    background:
+        radial-gradient(
+            circle,
+            rgba(255, 80, 170, .22),
+            rgba(150, 30, 255, .10),
+            transparent 70%
+        );
+
+    filter: blur(30px);
+
+    pointer-events: none;
+    z-index: -1;
+
+    animation: auraMove 9s ease-in-out infinite alternate;
+}
+
+@keyframes auraMove {
+
+    0% {
+        transform:
+            translate(-55%, -20%)
+            scale(.8);
+    }
+
+    50% {
+        transform:
+            translate(20%, 30%)
+            scale(1.25);
+    }
+
+    100% {
+        transform:
+            translate(-20%, 60%)
+            scale(.9);
+    }
+}
