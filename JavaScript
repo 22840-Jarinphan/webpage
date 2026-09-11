@@ -306,3 +306,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 })();
+
+<script>
+document.querySelectorAll(".info-button").forEach(button => {
+
+    button.addEventListener("click", () => {
+
+        const content =
+            button.nextElementSibling;
+
+        button.classList.toggle("active");
+        content.classList.toggle("show");
+
+    });
+
+});
+</script>
