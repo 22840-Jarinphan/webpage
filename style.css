@@ -6880,3 +6880,79 @@ document.addEventListener("click", e => {
         opacity: .7;
     }
 }
+
+.info-button {
+    position: relative;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    padding: 18px 22px;
+
+    color: white;
+    background: linear-gradient(
+        135deg,
+        rgba(20,120,100,.75),
+        rgba(30,180,150,.55)
+    );
+
+    border: 1px solid rgba(150,255,220,.35);
+    border-radius: 20px;
+
+    font-size: 1.05rem;
+    font-weight: 700;
+
+    cursor: pointer;
+    overflow: hidden;
+
+    transition: .35s ease;
+
+    box-shadow:
+        0 8px 25px rgba(0,80,70,.25);
+}
+
+.info-button:hover {
+    transform: translateY(-5px) scale(1.02);
+
+    box-shadow:
+        0 15px 35px rgba(0,180,150,.35),
+        0 0 25px rgba(100,255,220,.2);
+}
+
+.info-icon {
+    font-size: 1.5rem;
+}
+
+.info-arrow {
+    margin-left: auto;
+    font-size: 1.4rem;
+
+    transition: transform .4s ease;
+}
+
+.info-button.active .info-arrow {
+    transform: rotate(180deg);
+}
+
+.info-content {
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+
+    padding: 0 22px;
+
+    transition:
+        max-height .5s ease,
+        opacity .4s ease,
+        padding .4s ease;
+}
+
+.info-content.show {
+    max-height: 300px;
+    opacity: 1;
+
+    padding-top: 18px;
+    padding-bottom: 18px;
+}
